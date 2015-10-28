@@ -11,7 +11,7 @@
     {{ .Hugo.Generator }}
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,300,600,100" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}public/images/favicon.ico"/>
-    <title>HTML Template</title>
+    <title>{{ .Site.Title}}</title>
     <meta property="og:title" content="" />
     <meta property="og:description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}" />
     <meta property="og:image" content="{{ .Site.BaseURL }}images/logo/eclipse.png" />
@@ -24,6 +24,17 @@
   </head>
   <body class="" id="body_solstice">
     <a class="sr-only" href="#content">Skip to main content</a>
+    <div id="toolbar-container-wrapper" class="clearfix">
+      <div class="container">
+        <div id="row-toolbar" class="region region-toolbar text-right hidden-print">
+          <div id="row-toolbar-col" class="col-md-24">
+            <section id="block-solstice-support-solstice-support-toolbar" class="block block-solstice-support clearfix">
+              <div class="block-content"><ul class="list-inline"><li>&nbsp;</li></ul></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
     <header role="banner">
       <div class="container">
         <div id="row-logo-search">
@@ -46,7 +57,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   </button>
-                  <a href="https://eclipse.org/" class="navbar-brand visible-xs"><img src="/eclipse.org-common/themes/solstice/public/images/logo/eclipse-800x188.png" alt="Eclipse.org logo" width="174" class="logo-eclipse-default"/></a>                
+                  <a href="https://eclipse.org/" class="navbar-brand visible-xs"><img src="{{ .Site.BaseURL }}/public/images/logo/eclipse-800x188.png" alt="Eclipse.org logo" width="174" class="logo-eclipse-default"/></a>
                 </div>
               </div>
             </div>
@@ -55,7 +66,6 @@
             <div id="header-right-container">
               {{ partial "google-cse.html" . }}
               <!-- /input-group -->
-              <a id="btn-call-for-action" href="//www.eclipse.org/downloads/" class="btn btn-huge btn-warning"><i class="fa fa-download"></i> Download</a>            
             </div>
           </div>
         </div>
