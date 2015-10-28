@@ -1,12 +1,9 @@
 {{ partial "header.html" . }}
 <div class="container">
-  <h1>{{ .Title }}</h1>
   {{ range .Data.Pages }}
-  <div>
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <span class="lead">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-    <p>{{ .Summary }}</p>
-  </div>
+    {{if eq .Type "index" }}
+        {{.Content}}
+    {{end}}
   {{ end }}
 </div>
 {{ partial "footer.html" . }}
