@@ -1,15 +1,10 @@
 {{ partial "header.html" . }}
 
 {{ if .Params.toc }}
-<div class="col-lg-8 col-md-12">
-  {{ .Content }}
-</div>
-<div id="toc" class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
   {{ .TableOfContents }}
-</div>
+  {{ .Content }}
 {{ else }}
-<h1>{{ .Title }}</h1>
-{{ .Content }}
+  {{ .Content }}
 {{ end }}
 
 {{ partial "footer.html" . }}
