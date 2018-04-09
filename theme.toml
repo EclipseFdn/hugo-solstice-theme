@@ -1,13 +1,13 @@
 name = "solstice"
-license = "EPL"
-licenselink = "https://github.com/EclipseFdn/solstice-hugo-theme/blob/master/LICENSE.md"
+license = "EPL-v2"
+licenselink = "https://github.com/EclipseFdn/hugo-solstice-theme/blob/master/LICENSE.md"
 description = ""
-homepage = "http://www.eclipse.org/"
+homepage = "https://www.eclipse.org/"
 tags = ["", ""]
 features = ["", ""]
-min_version = 0.13
+min_version = 0.32
 
 [author]
   name = "Christopher Guindon"
-  homepage = "http://www.chrisguindon.com"
+  homepage = "https://www.chrisguindon.com"
 

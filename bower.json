@@ -1,6 +1,5 @@
 {
-  "name": "solstice",
-  "version": "0.0.1",
+  "name": "solstice-assets",
   "authors": [
     "Christopher Guindon <chris.guindon@eclipse.org>"
   ],
@@ -15,10 +14,10 @@
     "test",
     "tests"
   ],
+  "dependencies": {
+    "solstice-assets": "git@github.com:EclipseFdn/solstice-assets.git"
+  },
   "devDependencies": {
-    "bootstrap": "3.3.1",
-    "yamm3": "git://github.com/chrisguindon/yamm3#69ba4a32b3b7228421920d6300011745be374029",
-    "fontawesome": "4.2.0",
-    "solstice-assets": "git://github.com/eclipsefdn/solstice-assets.git"
+    "prism-js": "^1.0.0"
   }
 }

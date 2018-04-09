@@ -1,20 +1,21 @@
-<section id="breadcrumb" class="defaut-breadcrumbs hidden-print">
+<section class="default-breadcrumbs hidden-print" id="breadcrumb">
   <div class="container">
-    <h3 class="sr-only">Breadcrumbs</h3>
-    <div class="col-xs-24">
-      {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-      {{ $.Scratch.Add "path" .Site.BaseURL }}
+  <h3 class="sr-only">Breadcrumbs</h3>
+  <div class="row">
+    <div class="col-sm-24">
       <ol class="breadcrumb">
-        <li><a href="https://www.eclipse.org/">Home</a></li>
-        <li><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></li>
-        {{ range $index, $element := split $url "/" }}
-        {{ $.Scratch.Add "path" $element }}
-        {{ if ne $element "" }}
-        <li><a href='{{ $.Scratch.Get "path" }}'>{{ . }}</a></li>
-        {{ $.Scratch.Add "path" "/" }}
-        {{ end }}
-        {{ end }}
+        {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
       </ol>
+      {{ define "breadcrumbnav" }}
+      {{ if .p1.Parent }}
+      {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+      {{ else if not .p1.IsHome }}
+      {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+      {{ end }}
+      <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
+        <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+      </li>
+      {{ end }}
     </div>
   </div>
 </section>
