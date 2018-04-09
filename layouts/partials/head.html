@@ -1,0 +1,52 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Site Title, Description, Author, and Favicon -->
+  {{- with .Params.seo_title | default .Params.headline | default .Title | default .Site.Title }}
+  <title>{{ . }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}</title>
+  <meta property="og:title" content="{{ . }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}" />
+  <meta name="twitter:title" content="{{ . | truncate 70 }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}" />
+  {{- end }}
+  {{- with .Description | default .Summary  | default .Site.Params.description }}
+  <meta name="description" content="{{ . }}">
+  <meta property="og:description" content="{{ . }}">
+  <meta name="twitter:description" content="{{ . | truncate 200 }}">
+  {{- end }}
+  <meta name="author" content="{{ .Site.Author.name }}"/>
+  {{- with .Site.Params.favicon }}
+  <link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
+  {{- end -}}
+  <!-- Social Media Tags -->
+  {{- with .Params.share_img | default .Params.image  | default .Site.Params.share_img | default .Site.Params.logo }}
+  <meta property="og:image" content="{{ . | absURL }}" />
+  <meta name="twitter:image" content="{{ . | absURL }}" />
+  {{- end }}
+  <meta name="twitter:card" content="summary" />
+  {{- with .Site.Author.twitter }}
+  <meta name="twitter:site" content="@{{ . }}" />
+  <meta name="twitter:creator" content="@{{ . }}" />
+  {{- end }}
+  {{- with .Site.Params.fb_app_id }}
+  <meta property="fb:app_id" content="{{ . }}" />
+  {{- end }}
+  <meta property="og:url" content="{{ .URL | absLangURL }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  {{- with .Keywords | default .Site.Params.keywords }}
+  <meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
+  {{ end }}
+  <!-- Hugo Version number -->
+  {{ .Hugo.Generator -}}
+  <!-- Links and stylesheets -->
+  <link rel="canonical" href="{{ .URL | absLangURL }}" />
+  {{- if .RSSLink }}
+  <link rel="alternate" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
+  {{- else }}
+  <link rel="alternate" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
+  {{- end }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}public/stylesheets/{{ .Site.Params.subtheme }}.min.css">
+  <link href="//fonts.googleapis.com/css?family=Libre+Franklin:400,700,300,600,100" rel="stylesheet" type="text/css"/>
+  {{ template "_internal/google_analytics_async.html" . }}
+  {{- partial "head_custom.html" . }}
+</head>
