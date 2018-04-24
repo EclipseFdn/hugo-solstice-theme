@@ -1,0 +1,20 @@
+sudo: true
+dist: trusty
+
+install:
+  - sudo apt-get --yes install snapd
+  - sudo snap install hugo
+
+script:
+  - /snap/bin/hugo --source=exampleSite --baseUrl=https://eclipsefdn.github.io/hugo-solstice-theme/ --destination=../public
+
+deploy:
+  local-dir: public
+  repo: EclipseFdn/hugo-solstice-theme
+  target-branch: gh-pages
+  provider: pages
+  keep-history: true
+  skip-cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
