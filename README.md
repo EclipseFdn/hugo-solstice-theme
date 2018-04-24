@@ -1,10 +1,3 @@
-# solstice-hugo-theme
+# hugo-solstice-theme
 
-## Requirements
-* Hugo http://gohugo.io/
-* Node.js https://www.npmjs.com/
-
-## How to build
-
-## Development
-
+[![Build Status](https://travis-ci.org/EclipseFdn/hugo-solstice-theme.svg?branch=master)](https://travis-ci.org/EclipseFdn/hugo-solstice-theme)
