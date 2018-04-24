@@ -16,5 +16,7 @@ deploy:
   keep-history: true
   skip-cleanup: true
   github_token: $GITHUB_TOKEN
+  email: chris.guindon@eclipse-foundation.org
+  name: Christopher Guindon
   on:
     branch: master
