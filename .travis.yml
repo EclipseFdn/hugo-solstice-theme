@@ -2,18 +2,25 @@ sudo: true
 dist: trusty
 
 install:
-  - sudo apt-get --yes install snapd
-  - sudo snap install hugo
-
+  - sudo apt-get --yes install autoconf libtool nasm
+  - npm install
+  - npm run production
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.40.1/hugo_0.40.1_Linux-64bit.deb
+  - sudo dpkg -i hugo*.deb
+  
 script:
-  - /snap/bin/hugo --source=exampleSite --baseUrl=https://eclipsefdn.github.io/hugo-solstice-theme/ --destination=../public
+  - hugo --source=exampleSite --baseUrl=https://eclipsefdn.github.io/hugo-solstice-theme/ --destination=../public
+
+cache:
+  directories:
+    - "node_modules"
 
 deploy:
   local-dir: public
   repo: EclipseFdn/hugo-solstice-theme
   target-branch: gh-pages
   provider: pages
-  keep-history: true
+  keep-history: false
   skip-cleanup: true
   github_token: $GITHUB_TOKEN
   email: chris.guindon@eclipse-foundation.org
