@@ -1,3 +1,15 @@
+<!-- 
+  Copyright (c) 2018 Eclipse Foundation, Inc.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v. 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0.
+
+  Contributors:
+    Christopher Guindon <chris.guindon@eclipse-foundation.org>
+
+  SPDX-License-Identifier: EPL-2.0
+-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +26,7 @@
   <meta name="twitter:description" content="{{ . | truncate 200 }}">
   {{- end }}
   <meta name="author" content="{{ .Site.Author.name }}"/>
-  {{- with .Site.Params.favicon }}
+  {{- with .Site.Params.favicon | default "https://www.eclipse.org/favicon.ico"}}
   <link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
   {{- end -}}
   <!-- Social Media Tags -->
@@ -45,7 +57,9 @@
   {{- else }}
   <link rel="alternate" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
   {{- end }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ .Site.Params.subtheme }}.css">
+  {{- with .Site.Params.styles | default "https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/quicksilver.min.css" }}
+  <link rel="stylesheet" href="{{ . | absURL }}">
+  {{- end }}
   <link href="//fonts.googleapis.com/css?family=Libre+Franklin:400,700,300,600,100" rel="stylesheet" type="text/css"/>
   {{ template "_internal/google_analytics_async.html" . }}
   {{- partial "head_custom.html" . }}
