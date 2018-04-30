@@ -12,13 +12,14 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [Params]
   description = "Eclipse Foundation: Solstice theme for Hugo."
-  subtitle = "Eclipse Foundtion"
+  subtitle = "Eclipse Foundation"
   seo_title_suffix = " | The Eclipse Foundation"
   keywords = ["hugo", "solstice", "eclipse foundation"]
-  logo = "images/logo/eclipse-foundation-white.svg"
-  favicon = "public/images/favicon.ico"
+#  logo = "images/logo/eclipse-foundation-white.svg"
+#  favicon = "images/favicon.ico"
+#  styles = "css/styles.css"
+#  js = "js/solstice.js"
   gcse = ""
-  subtheme = "quicksilver" # Valid subtheme ("quicksilver", "eclipse-id", "jakarta")
   header_wrapper_class = "header-default-bg-img"
   call_for_action_text = "Download"
   call_for_action_url = "https://www.eclipse.org/downloads"
