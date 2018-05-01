@@ -4,12 +4,12 @@ dist: trusty
 install:
   - sudo apt-get --yes install autoconf libtool nasm
   - npm install
-  - npm run production
   - wget https://github.com/gohugoio/hugo/releases/download/v0.40.1/hugo_0.40.1_Linux-64bit.deb
   - sudo dpkg -i hugo*.deb
   
 script:
   - hugo --source=exampleSite --baseUrl=https://eclipsefdn.github.io/hugo-solstice-theme/ --destination=../public
+  - rm -rf public/fonts && rm -rf public/js && rm -rf public/css
 
 cache:
   directories:
