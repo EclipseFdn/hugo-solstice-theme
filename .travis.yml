@@ -10,7 +10,7 @@ install:
 script:
   - npm run production
   - hugo --source=exampleSite --baseUrl=https://eclipsefdn.github.io/hugo-solstice-theme/ --destination=../public
-  - rm -rf public/fonts && rm -rf public/js && rm -rf public/css
+  - rm -rf public/fonts && rm -rf public/js && rm -rf public/css && rm -rf public/images
 
 cache:
   directories:

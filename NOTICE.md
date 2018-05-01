@@ -1,4 +1,4 @@
-# Notices for Eclipse OpenMQ
+# Notices for hugo-solstice-theme
 
 This content is produced and maintained by the Eclipse Foundation.
 

@@ -32,4 +32,4 @@ https://www.eclipse.org/projects/handbook/#resources-commit
 
 ## Contact
 
-Contact the Eclipse Foundation Webdev team via webdev@eclispe-foundtion.org.
+Contact the Eclipse Foundation Webdev team via webdev@eclipse-foundation.org.
