@@ -61,6 +61,6 @@
   <link rel="stylesheet" href="{{ . | absURL }}">
   {{- end }}
   <link href="//fonts.googleapis.com/css?family=Libre+Franklin:400,700,300,600,100" rel="stylesheet" type="text/css"/>
-  {{ template "_internal/google_analytics_async.html" . }}
+  {{- partial "google_tag_manager.html" . }}
   {{- partial "head_custom.html" . }}
 </head>
