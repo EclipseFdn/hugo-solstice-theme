@@ -7,7 +7,8 @@
         <h1>{{.Title}}</h1>
         <div class="news-list">
           <div class="news-list-col">
-            {{ range first 10 .Data.Pages }}
+            {{ $paginator := .Paginate .Data.Pages }}
+            {{ range $paginator.Pages }}
             <ul class="news-list-media list-unstyled">
               <li>
                 <a href="{{- with .Params.link | default .RelPermalink }} {{.}} {{- end }}" class="media media-link">
@@ -18,6 +19,7 @@
               </li>
             </ul>
             {{ end }}
+            {{ template "_internal/pagination.html" . }}
           </div>
         </div>
       </div>
