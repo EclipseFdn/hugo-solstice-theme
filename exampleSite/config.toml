@@ -4,11 +4,7 @@ theme = "hugo-solstice-theme"
 metaDataFormat = "yaml"
 googleAnalytics = ""
 themesDir = "../.."
-disableKinds = ["taxonomy", "taxonomyTerm"]
-
-[blackfriday]
-  plainIDAnchors = true
-  hrefTargetBlank = true
+#disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [Params]
   google_tag_manager = ""
@@ -38,6 +34,10 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [permalinks]
   news = "/:sections/:year/:month/:day/:slug/"
+
+[blackfriday]
+  plainIDAnchors = true
+  hrefTargetBlank = true
 
 [[menu.main]]
     name = "About"
