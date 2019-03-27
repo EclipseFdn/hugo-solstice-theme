@@ -21,6 +21,7 @@ themesDir = "../.."
   call_for_action_text = "Download"
   call_for_action_url = "https://www.eclipse.org/downloads"
   call_for_action_icon = "fa-download"
+  show_events = true
   
 [Author]
   name = "Christopher Guindon"
