@@ -1,0 +1,30 @@
+{{ define "breadcrumbs"}}{{ partial "breadcrumbs.html" . }}{{end}}
+{{ define "main" }}
+<main>
+  <div class="{{ if (and (isset .Page.Params "container") (ne .Page.Params ""))}}{{ .Page.Params.container }}{{else}}container{{end}}">
+    {{ if ne .Page.Params.hide_sidebar "true" }}
+      <div class="row">
+        <div class="col-md-18 padding-bottom-30">
+    {{ end }}
+    <h1>{{.Title}}</h1>
+    {{ .Content }} 
+    
+    {{ range $index, $meeting_minutes := .Site.Data.meeting_minutes}}
+      <h2>{{.title}}</h2>
+      <ul>
+      {{ range $meeting_minutes.items}}
+        <li><a href="{{.url}}">{{.title}}</a></li>
+      {{ end }}
+      </ul>
+    {{ end }}
+    
+    {{ if ne .Page.Params.hide_sidebar "true" }}
+      </div>
+        <div class="col-md-6 padding-bottom-30">
+          {{ partial "sidebar.html" . }}
+        </div>
+      </div>
+    {{ end }}
+    </div>
+</main>
+{{ end }}
