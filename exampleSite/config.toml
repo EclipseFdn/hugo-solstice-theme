@@ -49,3 +49,9 @@ themesDir = "../.."
     name = "News"
     url = "/news/"
     weight = 2
+    
+[[menu.main]]
+    name = "Meeting Minutes"
+    url = "/meeting_minutes/"
+    parent = "About"
+    weight = 3

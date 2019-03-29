@@ -4,14 +4,14 @@ tagline: Come meet the Eclipse Community at these upcoming events!
 #buttons
 more_button_text: View More Events <i class="fa fa-arrow-down"></i>
 submit_button_text: Submit Event
-submit_button_link: https://url.org
+submit_button_link: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
 
 items:
   -
     name: Example Event 1
     location: Location, Location
     date: Month xx, xxxx
-    expire_date: 2019-03-28T23:59:00-00:00
+    expire_date: 2030-03-28T23:59:00-00:00
     button_url: https://url.org
     button_text: Button text
     
@@ -19,6 +19,6 @@ items:
     name: Example Event 2
     location: Location, Location
     date: Month xx, xxxx
-    expire_date: 2019-03-28T23:59:00-00:00
+    expire_date: 2030-03-28T23:59:00-00:00
     button_url: https://url.org
     button_text: Button text

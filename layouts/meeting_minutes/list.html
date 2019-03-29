@@ -10,7 +10,7 @@
     {{ .Content }} 
     
     {{ range $index, $meeting_minutes := .Site.Data.meeting_minutes}}
-      <h2>{{.title}}</h2>
+      <h2 class="h3">{{.title}}</h2>
       <ul>
       {{ range $meeting_minutes.items}}
         <li><a href="{{.url}}">{{.title}}</a></li>
