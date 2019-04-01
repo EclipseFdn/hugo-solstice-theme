@@ -2,7 +2,8 @@ title: Events
 tagline: Come meet the Eclipse Community at these upcoming events!
 
 #buttons
-more_button_text: View More Events <i class="fa fa-arrow-down"></i>
+more_button_text: View More Events
+more_button_link: /events
 submit_button_text: Submit Event
 submit_button_link: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
 
@@ -12,7 +13,7 @@ items:
     location: Location, Location
     date: Month xx, xxxx
     expire_date: 2030-03-28T23:59:00-00:00
-    button_url: https://url.org
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
     button_text: Button text
     
   -
@@ -20,5 +21,29 @@ items:
     location: Location, Location
     date: Month xx, xxxx
     expire_date: 2030-03-28T23:59:00-00:00
-    button_url: https://url.org
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
+    button_text: Button text
+    
+  -
+    name: Example Event 3
+    location: Location, Location
+    date: Month xx, xxxx
+    expire_date: 2030-03-28T23:59:00-00:00
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
+    button_text: Button text
+    
+  -
+    name: Example Event 4
+    location: Location, Location
+    date: Month xx, xxxx
+    expire_date: 2019-03-28T23:59:00-00:00
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
+    button_text: Button text
+    
+  -
+    name: Example Event 5
+    location: Location, Location
+    date: Month xx, xxxx
+    expire_date: 2019-03-28T23:59:00-00:00
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
     button_text: Button text
