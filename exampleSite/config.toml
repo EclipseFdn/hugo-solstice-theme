@@ -79,3 +79,10 @@ themesDir = "../.."
     url = "/events/"
     weight = 3
     parent = "Examples"
+
+[[menu.main]]
+    name = "FAQ"
+    url = "/faq/"
+    weight = 4
+    parent = "Examples"
+
