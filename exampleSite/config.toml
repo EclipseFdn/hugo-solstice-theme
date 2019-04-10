@@ -36,6 +36,12 @@ themesDir = "../.."
 [permalinks]
   news = "/:sections/:year/:month/:day/:slug/"
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  membership_level = "membership_levels"
+  participation_level = "participation_levels"
+
 [blackfriday]
   plainIDAnchors = true
   hrefTargetBlank = true
@@ -51,7 +57,6 @@ themesDir = "../.."
     weight = 2
     
 [[menu.main]]
-    name = "Meeting Minutes"
-    url = "/meeting_minutes/"
-    parent = "About"
+    name = "Documentation"
+    url = "/documentation/"
     weight = 3

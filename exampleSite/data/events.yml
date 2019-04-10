@@ -12,13 +12,40 @@ items:
     location: Location, Location
     date: Month xx, xxxx
     expire_date: 2030-03-28T23:59:00-00:00
-    button_url: https://url.org
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
     button_text: Button text
-    
   -
     name: Example Event 2
     location: Location, Location
     date: Month xx, xxxx
     expire_date: 2030-03-28T23:59:00-00:00
-    button_url: https://url.org
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
+    button_text: Button text
+  -
+    name: Example Event 1
+    location: Location, Location
+    date: Month xx, xxxx
+    expire_date: 2030-03-28T23:59:00-00:00
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
+    button_text: Button text
+  -
+    name: Example Event 2
+    location: Location, Location
+    date: Month xx, xxxx
+    expire_date: 2030-03-28T23:59:00-00:00
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
+    button_text: Button text
+  -
+    name: Example Event 1
+    location: Location, Location
+    date: Month xx, xxxx
+    expire_date: 2030-03-28T23:59:00-00:00
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
+    button_text: Button text
+  -
+    name: Example Event 2
+    location: Location, Location
+    date: Month xx, xxxx
+    expire_date: 2010-03-28T23:59:00-00:00
+    button_url: https://github.com/EclipseFdn/hugo-solstice-theme/issues/new
     button_text: Button text
