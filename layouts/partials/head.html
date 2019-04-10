@@ -46,21 +46,19 @@
 {{- with .Site.Params.fb_app_id }}
 <meta property="fb:app_id" content="{{ . }}" />
 {{- end }}
-<meta property="og:url" content="{{ .URL | absLangURL }}" />
+<meta property="og:url" content="{{ .Permalink | absLangURL }}" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 {{- with .Keywords | default .Site.Params.keywords }}
 <meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
 {{ end }}
 <!-- Hugo Version number -->
-{{ .Hugo.Generator -}}
+{{ hugo.Generator -}}
 <!-- Links and stylesheets -->
-<link rel="canonical" href="{{ .URL | absLangURL }}" />
-{{- if .RSSLink }}
-<link rel="alternate" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
-{{- else }}
-<link rel="alternate" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
-{{- end }}
+<link rel="canonical" href="{{ .Permalink | absLangURL }}" />
+{{ with .OutputFormats.Get "RSS" }}
+<link rel="alternate" href="{{ .RelPermalink }}" type="application/rss+xml" title="">
+{{ end }}
 {{ if ne .Page.Params.disable_css "true" }}
 {{- with .Site.Params.styles | default "https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/quicksilver.min.css" }}
 <link rel="stylesheet" href="{{ . | absURL }}">

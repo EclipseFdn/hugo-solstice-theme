@@ -1,4 +1,5 @@
 {{ define "main" }}
+  {{ .Content }} 
   {{ $paginator := .Paginate .Data.Pages }}
   {{ if ne $paginator.NumberOfElements 0 }}
     <div class="news-list">

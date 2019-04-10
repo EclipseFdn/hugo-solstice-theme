@@ -1,0 +1,21 @@
+<!-- 
+  Copyright (c) 2019 Eclipse Foundation, Inc.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v. 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0.
+
+  Contributors:
+    Eric Poirier <eric.poirier@eclipse-foundation.org>
+
+  SPDX-License-Identifier: EPL-2.0
+-->
+
+{{ range $index, $meeting_minute_types := .Site.Data.meeting_minutes.items}}
+<h2>{{ humanize $index }}</h2>
+  <ul>
+  {{ range $index, $meeting_minute := $meeting_minute_types }}
+    <li><a href="{{$meeting_minute.url}}">{{$meeting_minute.title}}</a></li>
+  {{ end }}
+  </ul>
+{{ end }}

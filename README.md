@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/EclipseFdn/hugo-solstice-theme.svg?branch=master)](https://travis-ci.org/EclipseFdn/hugo-solstice-theme)
 
+## Documentation
+
+- <https://eclipsefdn.github.io/hugo-solstice-theme/docs>
 
 ## Bugs and feature requests
 
