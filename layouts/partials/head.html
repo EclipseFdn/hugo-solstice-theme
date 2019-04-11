@@ -19,6 +19,11 @@
 <meta property="og:title" content="{{ . }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}" />
 <meta name="twitter:title" content="{{ . | truncate 70 }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}" />
 {{- end }}
+{{ if isset .Page.Params "redirect_url" }}
+<link rel="canonical" href="{{ .Page.Params.redirect_url }}"/>
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={{ .Page.Params.redirect_url }}" />
+{{ end }}
 {{- with .Description | default .Summary  | default .Site.Params.description }}
 <meta name="description" content="{{ . }}">
 <meta property="og:description" content="{{ . }}">

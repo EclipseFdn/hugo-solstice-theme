@@ -1,7 +1,7 @@
 ---
 title: "Hello World: Hugo Solstice Theme"
 date: 2019-03-14T05:10:00-00:00
-#link: ""
+#redirect_url: ""
 categories: ["announcements"]
 ---
 
