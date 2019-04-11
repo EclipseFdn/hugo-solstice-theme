@@ -3,7 +3,6 @@ title: "title"
 headline: "headline"
 date: 2018-04-05T16:09:45-04:00
 description: "description"
-layout: "single"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet tortor id rhoncus pulvinar. Suspendisse nec aliquam ante. Sed vel convallis ex, ac elementum nisi. Nam eros lectus, tempus sit amet lorem at, laoreet blandit enim. Vestibulum metus justo, venenatis mollis ex quis, pretium ultricies orci. Pellentesque accumsan nulla ac leo convallis ornare. Cras rhoncus sapien lacus, vel tincidunt nibh lacinia ac. Vivamus vel egestas mi. Morbi nulla ante, rutrum quis congue non, luctus vehicula dui. Sed et nisi eu est egestas rhoncus.
