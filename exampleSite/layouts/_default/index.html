@@ -1,0 +1,38 @@
+{{ define "main" }}
+{{ $headless := .Site.GetPage "/components" }}
+{{ $reusablePages := $headless.Resources.Match "*" }}
+<div class="col-md-18">
+  {{ .Content }} 
+  {{ range sort $reusablePages "Name" "asc" }}
+  {{ $id := .Title | lower | replaceRE "[^0-9a-z]" "-" | replaceRE "-+" "-" -}}
+  <div class="panel panel-warning" id="{{ $id }}">
+    <div class="panel-heading">{{ .Title }}</div>
+    <div class="panel-body">
+      {{ .Content }}</li>
+    </div>
+  </div>
+  {{ end }}
+</div>
+<div class="col-md-6" id="sidebar-column">
+  <nav id="main-sidebar" data-spy="affix"  data-offset-bottom="500" class="hidden-print hidden-sm hidden-xs" style="position:fixed; width: 255px;" >
+    <ul id="leftnav" class="ul-left-nav fa-ul hidden-print">
+      <li class="separator">
+        <a class="separator" href="#">Components</a>
+      </li>
+      {{ range sort $reusablePages "Name" "asc" }}
+      {{ $id := .Title | lower | replaceRE "[^0-9a-z]" "-" | replaceRE "-+" "-" -}}
+      <li><i class="fa fa-caret-right fa-fw"></i> <a href="#{{ $id }}" class="padding-reset">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
+{{ end }}
+
+{{ define "footer-suffix" }}
+<script> 
+$(document).ready(function() {
+  var new_width = $('#sidebar-column').width();
+  $('#main-sidebar').width(new_width); 
+});
+</script>
+{{end}}
