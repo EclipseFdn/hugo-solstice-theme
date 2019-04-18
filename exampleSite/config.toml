@@ -22,7 +22,7 @@ themesDir = "../.."
   call_for_action_url = "https://www.eclipse.org/downloads"
   call_for_action_icon = "fa-download"
   show_events = true
-  
+
 [Author]
   name = "Christopher Guindon"
   website = "https://www.eclipse.org"
@@ -48,15 +48,34 @@ themesDir = "../.."
 
 [[menu.main]]
     name = "About"
-    url = "/about/"
+    url = "https://www.eclipse.org/eclipse.org-common/themes/solstice/docs/"
     weight = 1
 
+[[menu.main]]
+    name = "Examples"
+    url = "#"
+    weight = 2
+    
+[[menu.main]]
+    name = "Single Page"
+    url = "/single_page/"
+    weight = 1
+    parent = "Examples"
+    
 [[menu.main]]
     name = "News"
     url = "/news/"
     weight = 2
+    parent = "Examples"
     
 [[menu.main]]
-    name = "Documentation"
-    url = "/documentation/"
+    name = "Membership"
+    url = "/membership/"
     weight = 3
+    parent = "Examples"
+    
+[[menu.main]]
+    name = "Events"
+    url = "/events/"
+    weight = 3
+    parent = "Examples"
