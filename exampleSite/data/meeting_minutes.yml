@@ -10,8 +10,11 @@ items:
        
    type_2:
      -
-       title: Type 2 - Hugo Solstice Theme Num-1
+       title: Type 1 - Hugo Solstice Theme Num-1
        url: https://github.com/EclipseFdn/hugo-solstice-theme
      -
-       title: Type 2 - Hugo Solstice Theme Num-2
+       title: Type 1 - Hugo Solstice Theme Num-2
+       url: https://github.com/EclipseFdn/hugo-solstice-theme
+     -
+       title: Type 1 - Hugo Solstice Theme Num-3
        url: https://github.com/EclipseFdn/hugo-solstice-theme
