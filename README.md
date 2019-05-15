@@ -4,7 +4,7 @@
 
 ## Documentation
 
-- <https://eclipsefdn.github.io/hugo-solstice-theme/docs>
+- <https://eclipsefdn.github.io/hugo-solstice-theme/>
 
 ## Bugs and feature requests
 
