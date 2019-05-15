@@ -22,6 +22,7 @@ deploy:
   name: Christopher Guindon
   on:
     branch: master
+    node_js: "10"
 env:
   global:
     secure: olBnguKxxL1+3IOTnwZ+ruBXESqbmFctsS6pZb59wr1BVvLZY8IAldVBNYRxX2oL4a1iq6/wtHfvkfkxdz97EgOlA9FlWjPn/AXUboirfk0NI/XGEhwPkGf0OZ+/SclA+prDSMPCiVDqRiGa+uCnoEV9tPcA2Mmyh10a2MznfDkxjIqlkBx/MFYbEQ45kfGqmXKwmxnxQ4BWBEbJ2SIbJyVM/+VugkxDFIT5bh/fXXyzXAc83ZXsYTzqn3DD/gWiZryyh6KWDD4HlOWTYfs8WbTwODNdZ4BnlxcCWY57Yniq74EM3T9v6+MK4knSFdc+3G47JWr5+nyeHDljr2VBVnYCElCTDethw6Bcpnbpt9JO/1mtpMRwY0APbIz5qge/7Q/s+D5eghT4pL0Xslq7eiIRtVztAb7OaOKUcedjx+n+54dj0bpufKM0n8isw53cFdQLZ4vRJKBm8/98XacsweATGsiTQdPWDKmd5XMCnoIYB/EGjW2Q8mU83CBM8CumyP3PGPAUm+WQjomKPRAgXZOn0Gb1WCHEWm7deY52RLAxIRra4npHrsanVcBCp4/7+FcESDq/KwXszPHe+RSGk13lDiT88b7SCAPfGlWYFVmROptRbF6imxojuHUdbyT3X7TX43INnIQBw8bAQBcuDJtHXhCpbYmKWfA57E2Sn+w=
