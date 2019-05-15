@@ -47,11 +47,6 @@ themesDir = "../.."
   hrefTargetBlank = true
 
 [[menu.main]]
-    name = "About"
-    url = "https://www.eclipse.org/eclipse.org-common/themes/solstice/docs/"
-    weight = 1
-
-[[menu.main]]
     name = "Examples"
     url = "#"
     weight = 2
