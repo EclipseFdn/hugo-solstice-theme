@@ -127,3 +127,15 @@ themesDir = "../.."
     url = "/components/faq/"
     weight = 4
     parent = "Components"
+
+[[menu.main]]
+    name = "Featured Footer"
+    url = "/components/featured_footer/"
+    weight = 3
+    parent = "Components"
+    
+[[menu.main]]
+    name = "Featured Story"
+    url = "/components/featured_story/"
+    weight = 3
+    parent = "Components"
