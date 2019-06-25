@@ -58,26 +58,72 @@ themesDir = "../.."
     parent = "Examples"
     
 [[menu.main]]
-    name = "News"
+    name = "News sample"
     url = "/news/"
     weight = 2
     parent = "Examples"
     
 [[menu.main]]
-    name = "Membership"
+    name = "Membership sample"
     url = "/membership/"
     weight = 3
     parent = "Examples"
     
 [[menu.main]]
-    name = "Events"
+    name = "Events sample"
     url = "/events/"
     weight = 3
     parent = "Examples"
 
 [[menu.main]]
-    name = "FAQ"
+    name = "FAQ sample"
     url = "/faq/"
     weight = 4
     parent = "Examples"
 
+[[menu.main]]
+    name = "Components"
+    url = "/components/"
+    weight = 3
+ 
+[[menu.main]]
+    name = "News"
+    url = "/components/news/"
+    weight = 2
+    parent = "Components"
+    
+[[menu.main]]
+    name = "Membership"
+    url = "/components/members/"
+    weight = 3
+    parent = "Components"
+    
+[[menu.main]]
+    name = "Taxonomy list"
+    url = "/components/taxonomy_list/"
+    weight = 3
+    parent = "Components"
+    
+[[menu.main]]
+    name = "Testimonials"
+    url = "/components/testimonials/"
+    weight = 3
+    parent = "Components"
+    
+[[menu.main]]
+    name = "YouTube videos"
+    url = "/components/youtube/"
+    weight = 3
+    parent = "Components"
+    
+[[menu.main]]
+    name = "Events"
+    url = "/components/events/"
+    weight = 3
+    parent = "Components"
+
+[[menu.main]]
+    name = "FAQ"
+    url = "/components/faq/"
+    weight = 4
+    parent = "Components"
