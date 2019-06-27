@@ -2,19 +2,9 @@
   {{ .Content }} 
   {{ $paginator := .Paginate .Data.Pages }}
   {{ if ne $paginator.NumberOfElements 0 }}
-    <div class="news-list">
-      <div class="news-list-col">
-        {{ range $paginator.Pages }}
-          <div class="news-list-media">
-            <a href="{{- with .Params.link | default .RelPermalink }} {{.}} {{- end }}" class="media media-link">
-            <p class="media-date">{{ .Date.Format "Monday, Jan 2, 2006" }}</p>
-            <h4 class="media-heading">{{ .Title }}</h4>
-            <p class="media-text">{{ .Summary }}</p>
-            </a>
-          </div>
-        {{ end }}
-        {{ template "_internal/pagination.html" . }}
-      </div>
-    </div>
+    {{ range $paginator.Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+    {{ template "_internal/pagination.html" . }}
   {{ end }}
 {{ end }}
