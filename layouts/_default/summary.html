@@ -10,9 +10,10 @@
 
   SPDX-License-Identifier: EPL-2.0
 -->
-
-<a href="{{- with .Params.redirect_url | default .RelPermalink }} {{.}} {{- end }}" class="media media-link match-height-item">
-  <p class="media-date">{{ .Date.Format "Monday, Jan 2, 2006" }}</p>
-  <h4 class="media-heading">{{ .Title }}</h4>
-  <p class="media-text">{{ .Summary }}</p>
-</a>
+<div class="news-list">
+  <a href="{{- with .Params.redirect_url | default .RelPermalink }} {{.}} {{- end }}" class="media media-link{{ if eq .Section "news" }} match-height-item{{ end }}">
+    <p class="media-date">{{ .Date.Format "Monday, Jan 2, 2006" }}</p>
+    <h4 class="media-heading">{{ .Title }}</h4>
+    <p class="media-text">{{ .Summary }}</p>
+  </a>
+</div>
