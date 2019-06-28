@@ -41,6 +41,9 @@ themesDir = "../.."
   tag = "tags"
   membership_level = "membership_levels"
   participation_level = "participation_levels"
+  technology_types = "technology_types"
+  build_technologies = "build_technologies"
+  other_tags = "other_tags"
 
 [blackfriday]
   plainIDAnchors = true
@@ -137,5 +140,11 @@ themesDir = "../.."
 [[menu.main]]
     name = "Featured Story"
     url = "/components/featured_story/"
+    weight = 3
+    parent = "Components"
+    
+[[menu.main]]
+    name = "Project list"
+    url = "/components/project_list/"
     weight = 3
     parent = "Components"
