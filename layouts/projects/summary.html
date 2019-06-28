@@ -1,0 +1,44 @@
+<div class="project-summary clearfix">
+	<div about="{{ .Permalink | relURL }}">
+		<div class="col-xs-6 col-md-4">
+			<a href="{{ .Permalink | relURL }}" >
+				<img class="img-responsive center-block" src="{{ .Params.logo }}" alt="{{ .Title }} logo" />
+			</a>
+		</div>
+
+		<div class="col-xs-18 col-md-14 project-teaser">
+			<h2 class="name">{{ .Title }}</h2>
+			{{ if isset .Params.technology_types 0 }}
+				<ul class="labels list-inline">
+					{{range .Params.technology_types }}
+			            <li><a class="label label-warning" href="/{{ "technology_types" | urlize }}/{{ . | urlize}}/">{{ . }}</a></li>
+					{{ end }}
+				</ul>
+			{{ end }}
+			<div class="project-teaser-description">
+				{{ .Summary }} 
+				<p><a href="{{ .Permalink | relURL }}">Read more...</a></p>
+			</div>
+		</div>
+
+		<div class="col-md-6 details hidden-xs hidden-sm">
+			{{ if ne .Params.latest_version nil }}
+			<p class="latest-release">
+				Latest release: <a href="{{ .Params.download_url }}"><span class="badge version">{{ .Params.latest_version }}</span></a>
+			</p>
+			{{ end }}
+			<div class="btn-group">
+				<a href="{{ .Params.download_url }}" class="btn btn-sm btn-warning details-link">Download</a>
+				<button type="button" class="btn btn-sm btn-warning dropdown-toggle details-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="caret"></span> <span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="{{ .Params.website }}">Website</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- End release col -->
+	</div>
+	<!-- End node -->
+	<hr class="hr-border-dotted">
+</div>
