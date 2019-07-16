@@ -25,11 +25,11 @@
 </div>
 <div class="container">
   <div class="row" id="header-row">
-    <div class="col-sm-5 col-md-4" id="header-left">
+    <div class="{{ $.Site.Params.header_left_classes | default "col-sm-5 col-md-4" }}" id="header-left">
       <div class="wrapper-logo-default">
         {{- with .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
           <a title="{{ $.Site.Title}}" href="{{ "" | absLangURL }}">
-            <img width="140" class="logo-eclipse-default img-responsive hidden-xs" src="{{ . | absURL }}" alt="{{ $.Site.Title}}" />
+            <img width="{{ $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ . | absURL }}" alt="{{ $.Site.Title}}" />
           </a>
         {{ end }}
       </div>
@@ -40,7 +40,7 @@
     </div>
     <div class="col-sm-15 col-md-15 reset margin-top-10" id="main-menu-wrapper">
     {{ else }}
-    <div class="col-sm-19 col-md-20 reset margin-top-10" id="main-menu-wrapper">
+    <div class="{{ $.Site.Params.header_right_classes | default "col-sm-19 col-md-20 reset margin-top-10" }}" id="main-menu-wrapper">
     {{ end }}
       <div class="navbar yamm" id="main-menu">
         <div class="navbar-collapse collapse reset float-right" id="navbar-main-menu">
@@ -59,7 +59,7 @@
           <div class="wrapper-logo-mobile">
             {{ if isset .Site.Params "logo" }}
               <a class="navbar-brand visible-xs" title="{{ .Site.Title }}" href="{{ "" | absLangURL }}">
-                <img width="140" class="logo-eclipse-default-mobile img-responsive" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" />
+                <img width="{{ $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default-mobile img-responsive" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" />
               </a>
             {{ end }}
           </div>
