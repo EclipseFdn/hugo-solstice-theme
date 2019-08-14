@@ -17,3 +17,8 @@ mix.scripts([
     './node_modules/eclipsefdn-solstice-assets/js/solstice.cookies.js',
     './node_modules/eclipsefdn-solstice-assets/js/solstice.js'
 ], './static/js/solstice.js');
+
+
+mix.scripts([
+    './node_modules/eclipsefdn-solstice-assets/js/solstice.tables.js'
+], './static/js/solstice.hugo.js');
