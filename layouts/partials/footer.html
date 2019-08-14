@@ -102,3 +102,10 @@
 {{- with .Site.Params.js | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/main.min.js"}}
 <script src="{{ . | absURL }}"></script>
 {{ end }}
+{{ if isset .Site.Params "hugo_js" }}
+  {{- with .Site.Params.hugo_js }}
+    <script src="{{ . | absURL }}"></script>
+  {{ end }}
+{{ else }}
+    <script src="{{ "/js/solstice.hugo.js" | absURL }}"></script>
+{{ end }}
