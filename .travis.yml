@@ -7,6 +7,7 @@ install:
 - wget https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.deb
 - sudo dpkg -i hugo*.deb
 script:
+- npm run production
 - hugo --source=exampleSite --baseUrl=https://eclipsefdn.github.io/hugo-solstice-theme/ --destination=../public
 - rm -rf public/fonts && rm -rf public/js && rm -rf public/css && rm -rf public/images
 deploy:
