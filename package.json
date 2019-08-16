@@ -16,10 +16,12 @@
     "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "postinstall": "NODE_ENV=production npm run production",
+    "prepare_release": "rm -rf node_modules && rm package-lock.json && npm install && git add . && git commit -m \"prepare new release\" -s"
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "eclipsefdn-solstice-assets": "0.0.60"
+    "eclipsefdn-solstice-assets": "0.0.61"
   }
 }
