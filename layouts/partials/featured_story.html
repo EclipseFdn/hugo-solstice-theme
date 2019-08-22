@@ -1,81 +1,86 @@
-<div class="featured-story featured-alternate" id="featured-story">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-sm-offset-2 col-md-16 col-md-offset-0 featured-story-block featured-story-block-content match-height-item-by-row">
-      </div>
-      <div class="col-sm-9 col-md-8 featured-ad featured-story-block match-height-item-by-row">
-        <div class="featured-ad-content text-center">
-          {{ .Site.Data.featuredstory.defaultRight | safeHTML }}
+{{ if eq .Page.Params.show_featured_story true }}
+  <div class="featured-story featured-alternate" id="featured-story">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-sm-offset-2 col-md-16 col-md-offset-0 featured-story-block featured-story-block-content match-height-item-by-row">
+        </div>
+        <div class="col-sm-9 col-md-8 featured-ad featured-story-block match-height-item-by-row">
+          <div class="featured-ad-content text-center">
+            {{ .Site.Data.featuredstory.defaultRight | safeHTML }}
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<script>
-  var rawStoryJSON = {{ .Site.Data.featuredstory.items | jsonify }};
-  var sort = {{ .Site.Data.featuredstory.sort }};
-  var json = JSON.parse(rawStoryJSON);
-  // remove expired items
-  json = json.filter(a => new Date(a['endDate']) > new Date())
-    .filter(a => a['type'] === "both" || a['type'] === "story" );
-
-  // shuffle the array so that a random available story is featured
-  if (json.length > 1) {
-    shuffleArray(json);
-  }
+  <script>
+    var rawStoryJSON = {{ .Site.Data.featuredstory.items | jsonify }};
+    var sort = {{ .Site.Data.featuredstory.sort }};
+    var json = JSON.parse(rawStoryJSON);
+    // remove expired items
+    json = json.filter(a => new Date(a['endDate']) > new Date())
+      .filter(a => a['type'] === "both" || a['type'] === "story" );
   
-  // make sure we have a promotion to display
-  if (json.length > 0) {
-    var item = json[0];
-    var storyEl = document.querySelector("#featured-story");
-    // if a banner img exists, set it
-    if (item['bgImgSrc'] !== undefined || item['bgImgSrc'] !== "") {
-      document.write("<style>.featured-story-block-content:before {background-image:url(" + item['bgImgSrc'] + ")}</style>");
-      storyEl.style.backgroundSize = 'cover';
+    // shuffle the array so that a random available story is featured
+    if (json.length > 1) {
+      shuffleArray(json);
     }
     
-    // set the title and link
-    var headingEl = document.createElement('h2');
-    headingEl.classList.add("margin-top-30");
-    headingEl.innerHTML =  item['title'];
-    
-    var linkEl = document.createElement('p');
-    linkEl.innerHTML =  item['link'];
-
-    // if they exist, create and set the preamble + content
-    var preambleEl, contentEl = null;
-    if (item['preamble'] != undefined && item['premble'] != "") {
-      preambleEl = document.createElement('p');
-      preambleEl.innerHTML =  item['preamble'];
-    }
-    if (item['content'] != undefined && item['content'] != "") {
-      contentEl = document.createElement('p');
-      contentEl.innerHTML =  item['content'];
-    }
-    // get the content container and append the content
-    var divEl = storyEl.querySelector(".featured-story-block-content");
-    if (preambleEl != undefined) {
-      divEl.appendChild(preambleEl);
-    }
-    divEl.appendChild(headingEl);
-    if (contentEl != undefined) {
-      divEl.appendChild(contentEl);
-    }
-    divEl.appendChild(linkEl);
-  } else {
-    
-  }
-  /**
-   * Randomize array element order in-place.
-   * Using Durstenfeld shuffle algorithm.
-   * source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-   */
-  function shuffleArray(array) {
-      for (var i = array.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var temp = array[i];
-          array[i] = array[j];
-          array[j] = temp;
+    // make sure we have a promotion to display
+    if (json.length > 0) {
+      var item = json[0];
+      var storyEl = document.querySelector("#featured-story");
+      // if a banner img exists, set it
+      if (item['bgImgSrc'] !== undefined || item['bgImgSrc'] !== "") {
+        document.write("<style>.featured-story-block-content:before {background-image:url(" + item['bgImgSrc'] + ")}</style>");
+        storyEl.style.backgroundSize = 'cover';
       }
-  }
-</script>
+
+      // override featured-story classes
+      if (item['story_classes'] !== undefined && item['story_classes'] !== "") {
+        storyEl.className = item['story_classes'];
+      }
+
+      // set the title and link
+      var headingEl = document.createElement('h2');
+      headingEl.classList.add("margin-top-30");
+      headingEl.innerHTML =  item['title'];
+      
+      var linkEl = document.createElement('span');
+      linkEl.innerHTML =  item['link'];
+  
+      // if they exist, create and set the preamble + content
+      var preambleEl, contentEl = null;
+      if (item['preamble'] != undefined && item['premble'] != "") {
+        preambleEl = document.createElement('p');
+        preambleEl.innerHTML =  item['preamble'];
+      }
+      if (item['content'] != undefined && item['content'] != "") {
+        contentEl = document.createElement('p');
+        contentEl.innerHTML =  item['content'];
+      }
+      // get the content container and append the content
+      var divEl = storyEl.querySelector(".featured-story-block-content");
+      if (preambleEl != undefined) {
+        divEl.appendChild(preambleEl);
+      }
+      divEl.appendChild(headingEl);
+      if (contentEl != undefined) {
+        divEl.appendChild(contentEl);
+      }
+      divEl.appendChild(linkEl);
+    }
+    /**
+     * Randomize array element order in-place.
+     * Using Durstenfeld shuffle algorithm.
+     * source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+     */
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+  </script>
+{{ end }}
