@@ -36,12 +36,12 @@
         </div>
       </div>
       {{ if (and (isset .Site.Params "call_for_action_text") (isset .Site.Params "call_for_action_url") (isset .Site.Params "call_for_action_icon")) }}
-      <div class="col-sm-4 col-md-5 text-right hidden-print hidden-xs pull-right margin-top-10" id="header-right">
+      <div class="{{ $.Site.Params.header_right_classes | default "col-sm-4 col-md-5 text-right hidden-print hidden-xs pull-right margin-top-10" }}" id="header-right">
         <div id="btn-call-for-action"><a href="{{ .Site.Params.call_for_action_url }}" class="btn btn-huge btn-warning"><i class="fa {{ .Site.Params.call_for_action_icon }}"></i> {{ .Site.Params.call_for_action_text }}</a></div>
       </div>
       <div class="col-sm-15 col-md-15 reset margin-top-10" id="main-menu-wrapper">
       {{ else }}
-      <div class="{{ $.Site.Params.header_right_classes | default "col-sm-19 col-md-20 reset margin-top-10" }}" id="main-menu-wrapper">
+      <div class="{{ $.Site.Params.main_menu_wrapper_classes | default "col-sm-19 col-md-20 reset margin-top-10" }}" id="main-menu-wrapper">
       {{ end }}
         <div class="navbar yamm" id="main-menu">
           <div class="navbar-collapse collapse reset float-right" id="navbar-main-menu">
