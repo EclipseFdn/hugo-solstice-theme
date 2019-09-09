@@ -24,6 +24,11 @@ items:
     values:
       - Any string value
   - 
+    name: facebook_url
+    description: URL to the Facebook page for the site. If there is no value set, will default to Eclispe Foundation page.
+    values:
+      - Absolute link to Facebook profile
+  - 
     name: favicon
     description: URL to the favicon image for the site.
     values:
@@ -60,6 +65,11 @@ items:
       - Array of strings
     example: '["tag1", "tag2", "tag3"]'
   - 
+    name: linkedin_url
+    description: URL to the linkedin page for the site. If there is no value set, will default to Eclispe Foundation page.
+    values:
+      - Absolute link to linkedin profile
+  - 
     name: logo
     description: URL to the logo image for the site. If there is no other image set in page or site parameters, this image is used as the sharing image for social media links.
     values:
@@ -84,3 +94,13 @@ items:
     description: URL to the stylesheet to be used on the site. This does not affect any stylesheets added in custom sctions of the site. Defaults to https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/quicksilver.min.css
     values:
       - Absolute link or fully qualified URL to a CSS file
+  - 
+    name: twitter_url
+    description: URL to the Twitter page for the site. If there is no value set, will default to Eclispe Foundation page.
+    values:
+      - Absolute link to Twitter profile
+  - 
+    name: youtube_url
+    description: URL to the YouTube page for the site. If there is no value set, will default to Eclispe Foundation page.
+    values:
+      - Absolute link to YouTube profile
