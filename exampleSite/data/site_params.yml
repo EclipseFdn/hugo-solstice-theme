@@ -17,7 +17,7 @@ items:
     name: call_for_action_url
     description: The anchor URL for the CTA button in the navbar.
     values:
-      - Absolute link or fully qualified URL
+      - Absolute link or fully qualified URL. For best results with internal URLs, end URLs without extensions with a slash. e.g. /downloads -> /downloads/
   - 
     name: description
     description: Description of the overall site, used in a pages meta description if no page level description is set.
@@ -53,6 +53,11 @@ items:
     description:  Used in the header.html layout file, being appended to the header-wrapper class to optionally change or add to the header classes used on the page. Only used if not set at the page level.
     values:
       - Any string value
+  - 
+    name: hide_cfa_same_page
+    description: Attempt to hide CFA on the page it links to 
+    values:
+      - "true"
   - 
     name: js
     description: URL to the main javascript to be used on the site. This does not affect any scripts added in custom sctions of the site. Defaults to https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/main.min.js
