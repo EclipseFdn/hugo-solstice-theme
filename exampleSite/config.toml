@@ -6,6 +6,14 @@ googleAnalytics = ""
 themesDir = "../.."
 #disableKinds = ["taxonomy", "taxonomyTerm"]
 
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight =  1
+  [languages.fr]
+    languageName = "Francais"
+    weight =  2
+
 [Params]
   google_tag_manager = ""
   description = "Eclipse Foundation: Solstice theme for Hugo."

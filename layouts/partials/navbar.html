@@ -16,8 +16,22 @@
     <div class="text-right toolbar-row row hidden-print">
       <div class="col-md-24 row-toolbar-col">
         <ul class="list-inline">
-          <li><a href="https://accounts.eclipse.org/user/edit" class="" data-tab-destination="tab-profile"><i class="fa fa-edit fa-fw"></i> Edit my account</a></li>
-          <li><a class="toolbar-link toolbar-manage-cookies dropdown-toggle"><i class="fa fa-wrench"></i> Manage Cookies</a></li>
+          <li><a href="https://accounts.eclipse.org/user/edit" class="" data-tab-destination="tab-profile"><i class="fa fa-edit fa-fw"></i> {{ i18n "navbar-edit-acccount-label" }}</a></li>
+          <li><a class="toolbar-link toolbar-manage-cookies dropdown-toggle"><i class="fa fa-wrench"></i> {{ i18n "navbar-manage-cookies-label" }}</a></li>
+          {{ if gt (len .AllTranslations) 1 }}
+          <li class="language-selector dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <i class="fa fa-globe"></i>
+              <span> {{ .Language.LanguageName }}</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              {{ range .AllTranslations }}
+              <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ end }}
         </ul>
       </div>
     </div>
@@ -61,24 +75,7 @@
               {{ partial "nav.html" . }}
             </ul>
           </div>
-          <div class="navbar-header">
-            {{ if (ne .Site.Menus.main nil) and (ne (first .Site.Menus.main) nil) }}
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main-menu">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            {{ end }}
-            <div class="wrapper-logo-mobile">
-              {{ if isset .Site.Params "logo" }}
-                <a class="navbar-brand visible-xs" title="{{ .Site.Title }}" href="{{ "" | absLangURL }}">
-                  <img width="{{ $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default-mobile img-responsive" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" />
-                </a>
-              {{ end }}
-            </div>
-          </div>
+          {{ partial "nav_toggle.html" . }}
         </div>
       </div>
     </div>

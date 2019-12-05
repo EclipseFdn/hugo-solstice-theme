@@ -1,0 +1,30 @@
+<!-- 
+  Copyright (c) 2018 Eclipse Foundation, Inc.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v. 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0.
+
+  Contributors:
+    Christopher Guindon <chris.guindon@eclipse-foundation.org>
+
+  SPDX-License-Identifier: EPL-2.0
+-->
+<div class="navbar-header">
+  {{ if (ne .Site.Menus.main nil) and (ne (first .Site.Menus.main) nil) }}
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main-menu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  {{ end }}
+  <div class="wrapper-logo-mobile">
+    {{ if isset .Site.Params "logo" }}
+      <a class="navbar-brand visible-xs" title="{{ .Site.Title }}" href="{{ "" | absLangURL }}">
+        <img width="{{ $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default-mobile img-responsive" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" />
+      </a>
+    {{ end }}
+  </div>
+</div>
