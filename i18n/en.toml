@@ -1,0 +1,104 @@
+[eclipse-foundation-text]
+  other = "Eclipse Foundation"
+  
+[navbar-manage-cookies-label]
+  other = "Manage Cookies"
+  
+[navbar-edit-acccount-label]
+  other = "Edit my account"
+  
+[footer-foundation-about-us-text]
+  other = "About Us"
+  
+[footer-foundation-contact-us-text]
+  other = "Contact Us"
+  
+[footer-foundation-donate-text]
+  other = "Donate"
+  
+[footer-foundation-governance-text]
+  other = "Governance"
+  
+[footer-foundation-logo-artwork-text]
+  other = "Logo and Artwork"
+  
+[footer-foundation-board-of-directors-text]
+  other = "Board of Directors"
+  
+[footer-legal-section-text]
+  other = "Legal"
+  
+[footer-legal-privacy-policy-text]
+  other = "Privacy Policy"
+  
+[footer-legal-terms-use-text]
+  other = "Terms of Use"
+  
+[footer-legal-copyright-agent-text]
+  other = "Copyright Agent"
+  
+[footer-legal-epl-text]
+  other = "Eclipse Public License"
+  
+[footer-legal-resources-text]
+  other = "Legal Resources"
+  
+[footer-useful-links-section-text]
+  other = "Useful Links"
+  
+[footer-useful-links-report-bug-text]
+  other = "Report a Bug"
+  
+[footer-useful-links-documentation-text]
+  other = "Documentation"
+  
+[footer-useful-links-contribute-text]
+  other = "How to Contribute"
+  
+[footer-useful-links-mailing-list-text]
+  other = "Mailing Lists"
+  
+[footer-useful-links-forums-text]
+  other = "Forums"
+  
+[footer-useful-links-marketplace-text]
+  other = "Marketplace"
+  
+[footer-other-section-text]
+  other = "Other"
+  
+[footer-other-tools-text]
+  other = "IDE and Tools"
+  
+[footer-other-community-projects-text]
+  other = "Community of Projects"
+  
+[footer-other-working-groups-text]
+  other = "Working Groups"
+  
+[footer-other-research-text]
+  other = "Research@Eclipse"
+  
+[footer-other-report-vulnerability-text]
+  other = "Report a Vulnerability"
+  
+[footer-other-status-text]
+  other = "Service Status"
+
+[footer-sr-twitter-text]
+  other = "Twitter account"
+
+[footer-sr-facebook-text]
+  other = "Facebook account"
+
+[footer-sr-youtube-text]
+  other = "Youtube account"
+
+[footer-sr-linkedin-text]
+  other = "Linkedin account"
+
+[navigation-back-to-top]
+  other = "Back to the top"
+
+[footer-copyright-text]
+  other = "Copyright &copy; Eclipse Foundation, Inc. All Rights Reserved."
