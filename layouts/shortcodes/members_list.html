@@ -54,7 +54,7 @@
                 </a>
               </div>
               <div class="col-md-18">
-                <h4 class="h5 margin-top-0 fw-600"><a href="{{ .Scratch.Get "link" }}">{{ .Title }}</a></h4>
+                <h4 class="h5 margin-top-0 fw-600"><a href="{{ .Scratch.Get "link" }}">{{ .Title | safeHTML }}</a></h4>
                 <p>{{ .Summary }}</p>
               </div>
             </div>
