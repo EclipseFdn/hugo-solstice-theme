@@ -6,6 +6,7 @@ homepage = "https://www.eclipse.org/"
 tags = ["", ""]
 features = ["", ""]
 min_version = 0.32
+ignoreFiles = [ "static/mix.js" ]
 
 [author]
   name = "Christopher Guindon"
