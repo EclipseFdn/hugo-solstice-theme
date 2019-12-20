@@ -2,7 +2,7 @@
 	<div about="{{ .Permalink | relURL }}">
 		<div class="col-xs-6 col-md-4">
 			<a href="{{ .Permalink | relURL }}" >
-				<img class="img-responsive center-block" src="{{ .Params.logo }}" alt="{{ .Title }} logo" />
+				<img class="img-responsive center-block" src="{{ .Params.logo }}" alt="{{ i18n "project-summary-logo-text" . }}" />
 			</a>
 		</div>
 
@@ -17,23 +17,23 @@
 			{{ end }}
 			<div class="project-teaser-description">
 				{{ .Summary }} 
-				<p><a href="{{ .Permalink | relURL }}">Read more...</a></p>
+				<p><a href="{{ .Permalink | relURL }}">{{ i18n "project-summary-read-more" }}</a></p>
 			</div>
 		</div>
 
 		<div class="col-md-6 details hidden-xs hidden-sm">
 			{{ if ne .Params.latest_version nil }}
 			<p class="latest-release">
-				Latest release: <a href="{{ .Params.download_url }}"><span class="badge version">{{ .Params.latest_version }}</span></a>
+				{{ i18n "project-summary-latest-release" }} <a href="{{ .Params.download_url }}"><span class="badge version">{{ .Params.latest_version }}</span></a>
 			</p>
 			{{ end }}
 			<div class="btn-group">
-				<a href="{{ .Params.download_url }}" class="btn btn-sm btn-warning details-link">Download</a>
+				<a href="{{ .Params.download_url }}" class="btn btn-sm btn-warning details-link">{{ i18n "project-summary-download-label" }}</a>
 				<button type="button" class="btn btn-sm btn-warning dropdown-toggle details-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<span class="caret"></span> <span class="sr-only">Toggle Dropdown</span>
+					<span class="caret"></span> <span class="sr-only">{{ i18n "project-summary-toggle-dropdown" }}</span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="{{ .Params.website }}">Website</a></li>
+					<li><a href="{{ .Params.website }}">{{ i18n "project-summary-website-label" }}</a></li>
 				</ul>
 			</div>
 		</div>
