@@ -36,8 +36,8 @@
     </div>
     {{ if eq $term "news" }}
     <ul class="list-inline news-list-links">
-      <li class="news-list-links-view-all"><a href="{{ print "categories/" $term }}">View all</a></li>
-      <li class="news-list-links-rss"><a href="{{ print "categories/" $term "/index.xml" }}" title="Subscribe to our RSS-feed">Subscribe to our RSS-feed <i class="fa fa-rss"></i></a></li>
+      <li class="news-list-links-view-all"><a href="{{ print "categories/" $term }}">{{ i18n "taxonomy-list-view-all" }}</a></li>
+      <li class="news-list-links-rss"><a href="{{ print "categories/" $term "/index.xml" }}" title="{{ i18n "taxonomy-list-rss-feed-label" }}">{{ i18n "taxonomy-list-rss-feed-label" }} <i class="fa fa-rss"></i></a></li>
     </ul>
     {{ end }}
   </div>
