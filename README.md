@@ -10,6 +10,10 @@
 
 Have a bug or a feature request? Please search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/eclipsefdn/hugo-solstice-theme/issues/new).
 
+## Known issues
+
+- Versions of Hugo 0.60 and beyond do not support raw HTML in markdown files by default. To enable this feature, unsafe HTML rendering can be enabled in the Goldmark engine in the site configuration. This is not recommended as it exposes rendered content vulnerable to injected content on the site.
+
 ## Author
 
 **Christopher Guindon (Eclipse Foundation)**
