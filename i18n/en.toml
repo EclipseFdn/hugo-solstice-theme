@@ -215,7 +215,7 @@
   other = "Date"
 
 [members-list-members-label]
-  other = "{{ . }} Members"
+  other = "{{ .Count }} Members"
 
 [members-list-all-members]
   other = "All members"
