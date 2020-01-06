@@ -1,0 +1,70 @@
+<!-- 
+  Copyright (c) 2020 Eclipse Foundation, Inc.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v. 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0.
+
+  Contributors:
+    Martin Lowe <martin.lowe@eclipse-foundation.org>
+
+  SPDX-License-Identifier: EPL-2.0
+-->
+<section wg-filter="{{$.Site.Params.projects_working_group}}">
+  <style>
+    .btn-group .dropdown-menu a:hover {text-decoration:underline;}
+  </style>
+  <div class="row">
+    {{ range $.Site.Data.eclipsefdn_projects }}
+      {{ $project_contains_working_group:=false }}
+      {{ if isset $.Site.Params "projects_working_group" }}
+        {{ range .working_groups }}
+          {{ if and (ne $project_contains_working_group true) (eq .id $.Site.Params.projects_working_group) }}
+            {{ $project_contains_working_group = true }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if or (not (isset $.Site.Params "projects_working_group")) (eq $project_contains_working_group true) }}
+    <div class="project-summary">
+      <div class="col-xs-6 col-md-4 text-center project-teaser-left">
+        <a href="{{ .url }}" class="link">
+        <img class="img-responsive center-block" src="{{ .logo | default "https://projects.eclipse.org/sites/all/themes/solstice/public/images/logo/default.png" }}" alt="{{ i18n "project-list-logo-alt" . }}" title="{{ .name }}">
+        </a>
+      </div>
+      <div class="col-xs-18 col-md-14 margin-bottom-20">
+        <h2 class="name">
+          <a href="{{ .url }}">{{ .name }}</a>
+        </h2>
+        <div class="project-teaser-description">
+          {{ (.scope | default "<p></p>") | safeHTML }}
+          <p>
+            <a href="{{ .url }}">{{ i18n "project-list-read-more" . }}</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-24 col-md-4 text-center margin-top-20 margin-bottom-20">
+        <div class="btn-group">
+          <a class="btn btn-primary" href="{{ .url }}/downloads" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ i18n "project-list-downloads" }}</a>
+          <button type="button" class="btn btn-sm btn-warning dropdown-toggle details-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">{{ i18n "project-list-dropdown-sr" }}</span>
+          </button>
+          <ul class="dropdown-menu">
+          	{{ if isset .url "website" }}
+            <li><a href="{{ .website }}" >{{ i18n "project-list-website" }}</a></li>
+            {{ end }}
+            <li><a href="{{ .url }}/developer" >{{ i18n "project-list-resources" }}</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{ .url }}/who" >{{ i18n "project-list-who" }}</a></li>
+            <li><a href="{{ .url }}/governance" >{{ i18n "project-list-governance" }}</a></li>
+            <li><a href="{{ .url }}/contact" >{{ i18n "project-list-contact" }}</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="hr-border-dotted" />
+    </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+

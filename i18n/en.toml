@@ -265,6 +265,33 @@
 [faq-list-heading]
   other = "Table of content"
   
+[project-list-logo-alt]
+  other = "{{ .name }} logo"
+
+[project-list-read-more]
+  other = "Read more about {{ .name }}"
+
+[project-list-dropdown-sr]
+  other = "Toggle dropdown"
+  
+[project-list-downloads]
+  other = "Download"
+
+[project-list-website]
+  other = "Website"
+
+[project-list-resources]
+  other = "Developer Resources"
+
+[project-list-who]
+  other = "Who's involved"
+
+[project-list-governance]
+  other = "Governance"
+
+[project-list-contact]
+  other = "Contact"
+
 [agenda-schedule]
 other = "Plan of the Day"
 
