@@ -1,0 +1,24 @@
+types:
+    - name: Demo
+      id: demo 
+      color: "#66c"
+    - name: Keynote
+      id: keynote 
+      color: "#e44"
+items:
+    - name: How best to apologize, a workshop
+      presenter: Ken Canadian
+      time: 15:00-18:00
+      type: demo
+      vod: "#1"
+    - name: How to 'how to'
+      presenter: Jim Bob
+      time: 18:00-19:00
+      type: demo
+      vod: "#2"
+    - name: Industry Keynote
+      presenter: Eclipse Foundation, .etc
+      time: 19:00-20:00
+      type: keynote
+      vod: "#3"
+      

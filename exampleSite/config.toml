@@ -164,3 +164,11 @@ themesDir = "../.."
     url = "/components/tables/"
     weight = 3
     parent = "Components"
+
+    
+[[menu.main]]
+    name = "Agenda"
+    url = "/components/agenda/"
+    weight = 3
+    parent = "Components"
+    
