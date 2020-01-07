@@ -264,3 +264,33 @@
 
 [faq-list-heading]
   other = "Table of content"
+  
+[agenda-schedule]
+other = "Plan of the Day"
+
+[agenda-legend]
+other = "Legend"
+
+[agenda-sessions]
+other = "Sessions"
+
+[agenda-session-name]
+other = "Session Name"
+
+[agenda-presenter-name]
+other = "Presenter Name"
+
+[agenda-session-recording]
+other = "Session Recording"
+
+[agenda-session-schedule]
+other = "Scheduled Time"
+
+[agenda-session-recording-button-alt]
+other = "Session video for session {{ .name }}"
+
+[agenda-session-slides-button-alt]
+other = "Session slides for session {{ .name }}"
+
+[agenda-session-slides]
+other = "Slides"
