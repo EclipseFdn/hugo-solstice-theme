@@ -1,6 +1,6 @@
 [build]
 publish = "exampleSite/public"
-command = "npm run build_netlify && cd exampleSite && hugo --themesDir ../.."
+command = "npm run build_netlify && cd exampleSite && hugo --themesDir='../..'"
 
 [context.production.environment]
 HUGO_VERSION = "0.62.2"
