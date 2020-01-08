@@ -11,4 +11,4 @@ install:
 - sudo dpkg -i hugo*.deb
 script:
 - npm run production
-- hugo --source=exampleSite
+- hugo --source=exampleSite --destination=../public
