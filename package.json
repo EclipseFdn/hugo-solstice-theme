@@ -17,6 +17,7 @@
     "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "install": "NODE_ENV=production npm run production",
     "prepare_release": "rm -rf node_modules && rm package-lock.json && npm install && npm run production && git add . && git commit -m \"prepare new release\" -s"
   },
   "readmeFilename": "README.md",
