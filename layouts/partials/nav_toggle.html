@@ -21,9 +21,9 @@
     </button>
   {{ end }}
   <div class="wrapper-logo-mobile">
-    {{ if isset .Site.Params "logo" }}
-      <a class="navbar-brand visible-xs" title="{{ .Site.Title }}" href="{{ "" | absLangURL }}">
-        <img width="{{ $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default-mobile img-responsive" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" />
+    {{- with .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
+      <a class="navbar-brand visible-xs" title="{{ $.Site.Title }}" href="{{ "" | absLangURL }}">
+        <img width="{{ $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default-mobile img-responsive" src="{{ . | absURL }}" alt="{{ $.Site.Title }}" />
       </a>
     {{ end }}
   </div>
