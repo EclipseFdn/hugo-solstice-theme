@@ -1,6 +1,6 @@
 DefaultContentLanguage = "en"
 title = "Hugo Solstice Theme"
-#theme = "hugo-solstice-theme"
+theme = "hugo-solstice-theme"
 metaDataFormat = "yaml"
 googleAnalytics = ""
 themesDir = "../.."
