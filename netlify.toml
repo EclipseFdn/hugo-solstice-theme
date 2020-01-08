@@ -1,5 +1,5 @@
 [build]
-  command = "npm run production && hugo --gc --minify -b $URL --themesDir ../../"
+  command = "npm install && hugo --gc --minify -b $URL --themesDir ../../"
   base    = "exampleSite"
   publish = "exampleSite/public"
 
