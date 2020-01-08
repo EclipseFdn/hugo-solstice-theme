@@ -38,7 +38,7 @@
         <div class="project-teaser-description">
           {{ (.scope | default "<p></p>") | safeHTML }}
           <p>
-            <a href="{{ .url }}">{{ i18n "project-list-read-more" . }}</a>
+            <a href="{{ .url }}" aria-label="{{ i18n "project-list-read-more-sr" . }}">{{ i18n "project-list-read-more" . }}</a>
           </p>
         </div>
       </div>

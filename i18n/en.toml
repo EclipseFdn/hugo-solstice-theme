@@ -268,8 +268,11 @@
 [project-list-logo-alt]
   other = "{{ .name }} logo"
 
-[project-list-read-more]
+[project-list-read-more-sr]
   other = "Read more about {{ .name }}"
+  
+[project-list-read-more]
+  other = "Read more..."
 
 [project-list-dropdown-sr]
   other = "Toggle dropdown"
