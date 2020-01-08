@@ -2,3 +2,4 @@
 /static/*
 !/static/js/
 /static/js/solstice.js
+/exampleSite/public
