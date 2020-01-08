@@ -12,7 +12,7 @@
   HUGO_ENV = "production"
 
 [context.deploy-preview]
-  command = npm run production && "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL --themesDir ../../"
+  command = "npm run production && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL --themesDir ../../"
 
 [context.branch-deploy]
   command = "npm run production && hugo --gc --minify -b $DEPLOY_PRIME_URL --themesDir ../../"
