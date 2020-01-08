@@ -11,4 +11,5 @@ install:
 - sudo dpkg -i hugo*.deb
 script:
 - npm run production
-- cd exampleSite && hugo --gc --themesDir ../..
+- npm run fetch_project
+- hugo --gc --themesDir ../.. --source exampleSite
