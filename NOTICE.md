@@ -71,3 +71,7 @@ The project maintains the following source code repositories:
 ### jquery.matchHeight.js (^0.7.2)
 
 * License: The MIT License (MIT)
+
+### Hugo (master)
+
+* License: The Apache 2.0 License (Apache)
