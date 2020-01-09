@@ -15,7 +15,7 @@
     .btn-group .dropdown-menu a:hover {text-decoration:underline;}
   </style>
   <div class="row">
-    {{ range $.Site.Data.eclipsefdn_projects }}
+    {{ range (sort $.Site.Data.eclipsefdn_projects "name" "asc") }}
       {{ $project_contains_working_group := false }}
       {{ if $.Get "projects_working_group" }}
         {{ $working_group_id := $.Get "projects_working_group" }}
@@ -37,7 +37,7 @@
           <a href="{{ .url }}">{{ .name }}</a>
         </h2>
         <div class="project-teaser-description">
-          {{ (.scope | default "<p></p>") | safeHTML }}
+          {{ (.summary | default "<p></p>") | safeHTML }}
           <p>
             <a href="{{ .url }}" aria-label="{{ i18n "project-list-read-more-sr" . }}">{{ i18n "project-list-read-more" . }}</a>
           </p>
