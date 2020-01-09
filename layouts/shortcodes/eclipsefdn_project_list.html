@@ -16,15 +16,16 @@
   </style>
   <div class="row">
     {{ range $.Site.Data.eclipsefdn_projects }}
-      {{ $project_contains_working_group:=false }}
-      {{ if isset $.Site.Params "projects_working_group" }}
+      {{ $project_contains_working_group := false }}
+      {{ if $.Get "projects_working_group" }}
+        {{ $working_group_id := $.Get "projects_working_group" }}
         {{ range .working_groups }}
-          {{ if and (ne $project_contains_working_group true) (eq .id $.Site.Params.projects_working_group) }}
+          {{ if and (ne $project_contains_working_group true) (eq .id $working_group_id) }}
             {{ $project_contains_working_group = true }}
           {{ end }}
         {{ end }}
       {{ end }}
-      {{ if or (not (isset $.Site.Params "projects_working_group")) (eq $project_contains_working_group true) }}
+      {{ if or (not ($.Get "projects_working_group")) (eq $project_contains_working_group true) }}
     <div class="project-summary">
       <div class="col-xs-6 col-md-4 text-center project-teaser-left">
         <a href="{{ .url }}" class="link">
@@ -44,7 +45,7 @@
       </div>
       <div class="col-xs-24 col-md-4 text-center margin-top-20 margin-bottom-20">
         <div class="btn-group">
-          <a class="btn btn-primary" href="{{ .url }}/downloads" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ i18n "project-list-downloads" }}</a>
+          <a class="btn btn-primary" href="{{ .url }}/downloads">{{ i18n "project-list-downloads" }}</a>
           <button type="button" class="btn btn-sm btn-warning dropdown-toggle details-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="caret"></span>
             <span class="sr-only">{{ i18n "project-list-dropdown-sr" }}</span>

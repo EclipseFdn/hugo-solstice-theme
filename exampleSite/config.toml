@@ -31,7 +31,6 @@ googleAnalytics = ""
   show_events = true
   table_classes = "table table-bordered"
   hide_cfa_same_page = true
-  projects_working_group = "jakarta-ee"
 
 [Author]
   name = "Christopher Guindon"
