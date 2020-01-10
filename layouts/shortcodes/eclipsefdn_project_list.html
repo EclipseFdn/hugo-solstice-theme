@@ -10,12 +10,13 @@
 
   SPDX-License-Identifier: EPL-2.0
 -->
+{{ if $.Site.Data.eclipsefdn_projects }}
 <section wg-filter="{{$.Site.Params.projects_working_group}}">
   <style>
     .btn-group .dropdown-menu a:hover {text-decoration:underline;}
   </style>
   <div class="row">
-    {{ range (sort $.Site.Data.eclipsefdn_projects "name" "asc") }}
+    {{ range sort $.Site.Data.eclipsefdn_projects "name" "asc" }}
       {{ $project_contains_working_group := false }}
       {{ if $.Get "projects_working_group" }}
         {{ $working_group_id := $.Get "projects_working_group" }}
@@ -68,4 +69,4 @@
     {{ end }}
   </div>
 </section>
-
+{{ end }}
