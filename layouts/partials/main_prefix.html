@@ -19,5 +19,5 @@
     {{ end }}
 
     {{ if ne .Page.Params.hide_page_title true }}
-      <h1>{{ .Title | safeHTML }}</h1>
+      <h1>{{ .Title | safeHTML | title }}</h1>
     {{ end }}

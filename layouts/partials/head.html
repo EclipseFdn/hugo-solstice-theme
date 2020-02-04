@@ -15,9 +15,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Site Title, Description, Author, and Favicon -->
 {{- with .Params.seo_title | default (.Params.headline | plainify) | default (.Title | plainify) | default .Site.Title }}
-<title>{{ . }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}</title>
-<meta property="og:title" content="{{ . }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}" />
-<meta name="twitter:title" content="{{ . | truncate 70 }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}" />
+<title>{{ .  | title }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}</title>
+<meta property="og:title" content="{{ .  | title }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}" />
+<meta name="twitter:title" content="{{ . | truncate 70 | title }}{{- with $.Site.Params.seo_title_suffix }}{{ . }}{{- end }}" />
 {{- end }}
 {{ if isset .Page.Params "redirect_url" }}
 <link rel="canonical" href="{{ .Page.Params.redirect_url }}"/>
