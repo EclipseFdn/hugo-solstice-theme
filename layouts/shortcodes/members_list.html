@@ -88,19 +88,19 @@
           <div class="tab-pane active" id="tab-{{ .name | urlize}}">
           <h3 class="block-heading">{{ humanize .name }}</h3>
           {{ range sort .items "title" }}
-            {{ .Scratch.Set "link" .link }}
-            {{ if .Params.member_id }}
-              {{ .Scratch.Set "link" (print "https://www.eclipse.org/membership/showMember.php?member_id=" .member_id) }}
+            {{ $lnk:=.link }}
+            {{ if .member_id }}
+              {{ $lnk = (print "https://www.eclipse.org/membership/showMember.php?member_id=" .member_id) }}
             {{ end }}
             
             <div class="row clearfix padding-10 margin-bottom-10">
               <div class="col-md-6">
-                <a class="margin-left-15 margin-right-15" href="{{ .Scratch.Get "link" }}">
+                <a class="margin-left-15 margin-right-15" href="{{ $lnk }}">
                   <img style="max-width:125px;" class="img-responsive" src="{{ .image }}">
                 </a>
               </div>
               <div class="col-md-18">
-                <h4 class="h5 margin-top-0 fw-600"><a href="{{ .Scratch.Get "link" }}">{{ .title }}</a></h4>
+                <h4 class="h5 margin-top-0 fw-600"><a href="{{ $lnk }}">{{ .title }}</a></h4>
                 {{ if .summary }}
                 <p>{{ .summary }}</p>
                 {{ end }}
