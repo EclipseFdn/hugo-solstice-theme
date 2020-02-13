@@ -10,3 +10,36 @@
 
   SPDX-License-Identifier: EPL-2.0
 -->
+
+{{ if isset .Site.Menus "sidebar" }}
+  {{ $currentPage := . }}
+  {{ .Scratch.Set "currentSection" "home" }}
+
+  {{ if $currentPage.Section }}
+    {{ .Scratch.Set "currentSection" $currentPage.Section }}
+  {{ end }}
+  
+  {{$currentSection := .Scratch.Get "currentSection" }}
+
+  {{ range .Site.Menus.sidebar }}
+    {{$parentItem := . }}
+    
+      {{ if and (.HasChildren) (eq $currentSection $parentItem.Identifier) }}
+        <aside id="main-sidebar" class="subpage-sidebar">
+        <ul id="leftnav" class="ul-left-nav fa-ul hidden-print">
+        <li class="separator">
+          <a class="separator" href="{{ .URL }}">{{ $parentItem.Name }}</a>
+        </li>
+        {{ range .Children }}
+          {{ if or (eq $parentItem.Identifier $currentSection) (eq .Parent $currentSection) }}
+            <li{{if $currentPage.IsMenuCurrent "main" . }} class="active"{{end}}>
+              {{ .Pre }}
+              <a href="{{ .URL }}" target="_self">{{ .Name }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+        </ul>
+        </aside>
+      {{ end }}
+  {{ end }}
+{{ end }}
