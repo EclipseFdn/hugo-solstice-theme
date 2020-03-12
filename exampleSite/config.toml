@@ -285,6 +285,18 @@ googleAnalytics = ""
     url = "/components/tables/"
     weight = 3
     parent = "components"
+    
+[[languages.en.menu.main]]
+    name = "RSS Feed"
+    url = "/components/rss/"
+    weight = 3
+    parent = "components"
+    
+[[languages.en.menu.main]]
+    name = "RSS Feed"
+    url = "/components/rss/"
+    weight = 3
+    parent = "components"
 
     
 [[languages.en.menu.main]]
