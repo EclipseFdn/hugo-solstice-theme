@@ -11,6 +11,9 @@
     var rawStoryJSON = {{ .Site.Data.featuredstory.items | jsonify }};
     var sort = {{ .Site.Data.featuredstory.sort }};
     var json = JSON.parse(rawStoryJSON);
+    if (json == null) {
+    	return;
+    }
     // remove expired items
     json = json.filter(a => new Date(a['endDate']) > new Date())
       .filter(a => a['type'] === "both" || a['type'] === "footer" );
