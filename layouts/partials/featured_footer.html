@@ -9,62 +9,60 @@
   </div>
   <script>
     var rawStoryJSON = {{ .Site.Data.featuredstory.items | jsonify }};
-    var sort = {{ .Site.Data.featuredstory.sort }};
-    var json = JSON.parse(rawStoryJSON);
-    if (json == null) {
-    	return;
-    }
-    // remove expired items
-    json = json.filter(a => new Date(a['endDate']) > new Date())
-      .filter(a => a['type'] === "both" || a['type'] === "footer" );
-    
-    // shuffle the array so that a random available story is featured
-    if (json.length > 1) {
-      shuffleArray(json);
-    }
-    
-    // make sure we have a promotion to display
-    if (json.length > 0) {
-      var item = json[0];
-      var storyEl = document.querySelector("#featured-footer");
-      // if a banner img exists, set it
-      if (item['bgImgSrc'] !== undefined && item['bgImgSrc'] !== "") {
-        storyEl.style.backgroundImage = 'url(\'' + item['bgImgSrc'] + '\')';
-        storyEl.style.backgroundSize = 'cover';
-      }
-  
-      // override featured-footer classes
-      if (item['footer_classes'] !== undefined && item['footer_classes'] !== "") {
-        storyEl.className = item['footer_classes'];
+    if (json = JSON.parse(rawStoryJSON)) {
+   
+      // remove expired items
+      json = json.filter(a => new Date(a['endDate']) > new Date())
+        .filter(a => a['type'] === "both" || a['type'] === "footer" );
+      
+      // shuffle the array so that a random available story is featured
+      if (json.length > 1) {
+        shuffleArray(json);
       }
       
-      // set the title and link
-      var headingEl = document.createElement('h2');
-      headingEl.innerHTML =  item['title'];
-      
-      var linkEl = document.createElement('span');
-      linkEl.innerHTML =  item['link'];
-  
-      // if they exist, create and set the preamble + content
-      var preambleEl, contentEl = null;
-      if (item['preamble'] != undefined && item['premble'] != "") {
-        preambleEl = document.createElement('p');
-        preambleEl.innerHTML =  item['preamble'];
+      // make sure we have a promotion to display
+      if (json.length > 0) {
+        var item = json[0];
+        var storyEl = document.querySelector("#featured-footer");
+        // if a banner img exists, set it
+        if (item['bgImgSrc'] !== undefined && item['bgImgSrc'] !== "") {
+          storyEl.style.backgroundImage = 'url(\'' + item['bgImgSrc'] + '\')';
+          storyEl.style.backgroundSize = 'cover';
+        }
+    
+        // override featured-footer classes
+        if (item['footer_classes'] !== undefined && item['footer_classes'] !== "") {
+          storyEl.className = item['footer_classes'];
+        }
+        
+        // set the title and link
+        var headingEl = document.createElement('h2');
+        headingEl.innerHTML =  item['title'];
+        
+        var linkEl = document.createElement('span');
+        linkEl.innerHTML =  item['link'];
+    
+        // if they exist, create and set the preamble + content
+        var preambleEl, contentEl = null;
+        if (item['preamble'] != undefined && item['premble'] != "") {
+          preambleEl = document.createElement('p');
+          preambleEl.innerHTML =  item['preamble'];
+        }
+        if (item['content'] != undefined && item['content'] != "") {
+          contentEl = document.createElement('p');
+          contentEl.innerHTML =  item['content'];
+        }
+        // get the content container and append the content
+        var divEl = storyEl.querySelector(".row > div");
+        if (preambleEl != undefined) {
+          divEl.appendChild(preambleEl);
+        }
+        divEl.appendChild(headingEl);
+        if (contentEl != undefined) {
+          divEl.appendChild(contentEl);
+        }
+        divEl.appendChild(linkEl);
       }
-      if (item['content'] != undefined && item['content'] != "") {
-        contentEl = document.createElement('p');
-        contentEl.innerHTML =  item['content'];
-      }
-      // get the content container and append the content
-      var divEl = storyEl.querySelector(".row > div");
-      if (preambleEl != undefined) {
-        divEl.appendChild(preambleEl);
-      }
-      divEl.appendChild(headingEl);
-      if (contentEl != undefined) {
-        divEl.appendChild(contentEl);
-      }
-      divEl.appendChild(linkEl);
     }
     /**
      * Randomize array element order in-place.

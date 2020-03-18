@@ -49,6 +49,31 @@ items:
     values:
       - "true"
   - 
+    name: jumbotron_class
+    description:  Used in the jumbotron.html layout file. Allow you to change the default value of col-md-20 col-md-offset-2 col-sm-18 col-sm-offset-3. Can be set at the site or page level.
+    values:
+      - Any string value
+  - 
+    name: jumbotron_tagline_class
+    description:  Used in the jumbotron.html layout file. Allow you to change the default value of col-sm-18 col-sm-offset-3. Can be set at the site or page level.
+    values:
+      - Any string value
+  - 
+    name: jumbotron_btn_class
+    description:  Used in the jumbotron.html layout file. Allow you to change the default value of btn btn-primary. Can be set at the site or page level.
+    values:
+      - Any string value
+  - 
+    name: main_content_class
+    description:  Used in the main_prefix.html layout file. Allow you to change the default value of col-md-18 padding-bottom-30 is overriten. Can be set at the site or page level.
+    values:
+      - Any string value
+  - 
+    name: main_sidebar_class
+    description:  Used in the main_suffix.html layout file. Allow you to change the default value of col-md-6 padding-bottom-30. Can be set at the site or page level.
+    values:
+      - Any string value
+  - 
     name: header_wrapper_class
     description:  Used in the header.html layout file, being appended to the header-wrapper class to optionally change or add to the header classes used on the page. Only used if not set at the page level.
     values:
