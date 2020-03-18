@@ -13,7 +13,7 @@
 
     {{ if ne .Page.Params.hide_sidebar true }} 
       </div>
-        <div class="col-md-6  padding-bottom-30">
+        <div class="{{- .Params.main_sidebar_class | default .Site.Params.main_sidebar_class | default "col-md-6  padding-bottom-30"}}">
           {{ partial "sidebar.html" . }}
         </div>
       </div>
