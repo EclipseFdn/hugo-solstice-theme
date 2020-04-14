@@ -17,7 +17,14 @@ items:
   -
     title: The 2019 Jakarta EE<br> <strong>Developer Survey</strong><br> results are out!
     link: <a class="btn btn-primary btn-lg" href="/documents/insights/2019-jakarta-ee-developer-survey.pdf">See the report!</a>
+    content: Test content
+    post_content: Some post content
+    preamble: Preamble test
     bgImgSrc: https://www.eclipse.org/home/images/ece-2019-banner.jpg
+    content_class: sample-class
+    post_class: post-content-class
+    preamble_class: preamble-class
+    header_class: "header-class second-class"
     startDate: 2019-07-17
     endDate: 2099-07-30
     type: both
