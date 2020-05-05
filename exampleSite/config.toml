@@ -297,7 +297,42 @@ googleAnalytics = ""
     url = "/components/rss/"
     weight = 3
     parent = "components"
-
+    
+[[languages.en.menu.main]]
+    name = "Users Display"
+    url = "/components/user_display/"
+    weight = 3
+    parent = "components"
+    
+[[languages.fr.menu.main]]
+    name = "Users Display [fr]"
+    url = "/components/user_display/"
+    weight = 3
+    parent = "components"
+    
+[[languages.en.menu.main]]
+    name = "User Bios"
+    url = "/components/user_bios/"
+    weight = 3
+    parent = "components"
+    
+[[languages.fr.menu.main]]
+    name = "User Bios [fr]"
+    url = "/components/user_bios/"
+    weight = 3
+    parent = "components"
+    
+[[languages.en.menu.main]]
+    name = "Registration"
+    url = "/components/registration/"
+    weight = 3
+    parent = "components"
+    
+[[languages.fr.menu.main]]
+    name = "Registration [fr]"
+    url = "/components/registration/"
+    weight = 3
+    parent = "components"
     
 [[languages.en.menu.main]]
     name = "Agenda"

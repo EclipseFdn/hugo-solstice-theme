@@ -324,3 +324,12 @@ other = "Session slides for session {{ .name }}"
 
 [agenda-session-slides]
 other = "Slides"
+
+[committee-carousel-title]
+other = "Meet the Program Committee"
+
+[committee-carousel-button-text]
+other = "Learn more"
+
+[committee-twitter-follow-text]
+other = "Follow {{ .name }} on Twitter!"
