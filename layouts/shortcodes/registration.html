@@ -1,0 +1,59 @@
+<!-- 
+  Copyright (c) 2020 Eclipse Foundation, Inc.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v. 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0.
+
+  Contributors:
+    Martin Lowe <martin.lowe@eclipse-foundation.org>
+
+  SPDX-License-Identifier: EPL-2.0
+-->
+{{ $cont:=(.Page.Params.container | default .Site.Params.container | default "container")}}
+  
+{{ $currLang:=.Page.Lang }}
+{{ $event_id := .Get "event" | default "default" }}
+{{ $langBase := index .Site.Data $currLang }}
+{{ $registration := (index $langBase $event_id).registration }}
+
+{{ $useBanner := .Get "banner" | default "false" }}
+{{ $sectionId := .Get "sectionId" | default "registration" }}
+{{ $sectionClass := .Get "sectionClass" }}
+{{ $t := time $registration.end_date }}
+
+<section id="{{ $sectionId }}"{{- with $sectionClass }} class="{{ . }}"{{ end }}>  
+  {{ if and (eq $useBanner "true") (eq $cont "fluid-container") }} 
+  <div class="container">
+  {{ end }}
+  <div class="padding-bottom-40 padding-top-40">
+    <div class="row">
+      {{ if $registration.image }}
+      <div class="col-xs-24 col-md-6 match-height-item-by-row">
+        {{ $registration.image | safeHTML }}
+      </div>
+      {{ end }}
+      <div class="col-xs-24 text-middle text-center {{- if $registration.image }}col-md-18 match-height-item-by-row{{ end -}}"
+        data-end="{{ $t }}">
+        <h2>{{ .Get "title" | default $registration.title }}</h2>
+        <div class="pre-event{{ if $t.Before now }} hidden{{ end }}">
+          {{ .Inner | markdownify }}
+          {{- with $registration.links }}
+          <ul class="list-inline">
+            {{ range . }}
+            <li><a href="{{ .url }}" class="btn btn-primary"{{ if eq .external "true" }} target="_blank"{{ end }}>{{ .text }}</a></li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+        <div class="post-event{{ if $t.After now }} hidden{{ end }}">
+         <p>{{ $registration.end_text }}</p>
+        </div>
+        {{ $registration.custom_content | safeHTML }}
+      </div>
+    </div>
+  </div>
+  {{ if and (eq $useBanner "true") (eq $cont "container-fluid") }} 
+  </div>
+  {{ end }}
+</section>
