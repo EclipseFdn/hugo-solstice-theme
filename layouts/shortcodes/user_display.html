@@ -11,7 +11,13 @@
   SPDX-License-Identifier: EPL-2.0
 -->
 {{ $lang := .Page.Lang }}
-{{ $langBase:=index .Site.Data $lang }}
+{{ $year := .Get "year" }}
+{{ if $year }}
+  {{ .Scratch.Set "base" (index (index .Site.Data $lang) $year) }}
+{{ else }}
+  {{ .Scratch.Set "base" (index .Site.Data $lang) }}
+{{ end }}
+{{ $base := .Scratch.Get "base" }}
 {{ $event := .Get "event" | default "default" }}
 {{ $source := .Get "source" | default "user" }}
 
@@ -22,7 +28,11 @@
 {{ $subpage := .Get "subpage" }}
 {{ $subpageURL := "" }}
 {{ if $subpage }}
-  {{ if and $subpage (ne $event "default") }}
+  {{ if and $year $subpage (ne $event "default") }}
+    {{ $subpageURL = printf "/%s/%s/%s" $year $event $subpage }}
+  {{ else if and $year $subpage }}
+    {{ $subpageURL = printf "/%s/%s" $year $subpage }}
+  {{ else if and $subpage (ne $event "default") }}
     {{ $subpageURL = printf "/%s/%s" $event $subpage }}
   {{ else }}
     {{ $subpageURL = printf "/%s" $subpage }}
@@ -47,9 +57,9 @@
     </div>
     <div class="row">
       <div class="col-xs-24">
-        <div {{ if eq $useCarousel "true" }} class="owl-carousel owl-theme solstice-slider"{{ end }}>
+        <div {{ if eq $useCarousel "true" }} class="owl-carousel owl-theme solstice-slider" data-slider-lg-count="4"{{ end }}>
           <!-- Start: image Area -->
-          {{ range (index (index $langBase $event) $source).items }}
+          {{ range (index (index $base $event) $source).items }}
           {{ $anchor := urlize .anchor }}
           {{ if not $anchor }}
             {{ $anchor = urlize .name }}

@@ -11,13 +11,19 @@
   SPDX-License-Identifier: EPL-2.0
 -->
 {{ $lang := .Page.Lang}}
-{{ $langBase:=index .Site.Data $lang}}
+{{ $year := .Get "year" }}
+{{ if $year }}
+  {{ .Scratch.Set "base" (index (index .Site.Data $lang) $year) }}
+{{ else }}
+  {{ .Scratch.Set "base" (index .Site.Data $lang) }}
+{{ end }}
+{{ $base := .Scratch.Get "base" }}
 {{ $event := .Get "event" | default "default" }}
 {{ $source := .Get "source" | default "user" }}
 {{ $imageRoot := .Get "imgRoot" | default "/images/committee/" }}
 <div class="margin-bottom-30">
   <!-- Committee member -->
-  {{ range (index (index $langBase $event) $source).items }}
+  {{ range (index (index $base $event) $source).items }}
   {{ $anchor := urlize .anchor }}
   {{ if not $anchor }}
     {{ $anchor = urlize .name }}

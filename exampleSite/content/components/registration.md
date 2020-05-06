@@ -20,9 +20,25 @@ Register for this event!
 I have links too. Not very useful though.
 {{</ registration >}}
 
+## Default w/ year  
+
+{{< registration year="2020" >}}
+Register for this event!
+
+I have links too. Not very useful though.
+{{</ registration >}}
+
 ## Banner w/ background
 
 {{< registration banner="true" sectionClass="background-secondary">}}
+Register for this event!
+
+I have links too. Not very useful though.
+{{</ registration >}}
+
+## Year
+
+{{< registration year="2020" banner="true" sectionClass="background-secondary">}}
 Register for this event!
 
 I have links too. Not very useful though.
@@ -35,7 +51,12 @@ I have links too. Not very useful though.
 
 ## Event registration
 
-{{< registration event="2019" banner="true" sectionClass="background-secondary">}}
+{{< registration event="sample" banner="true" sectionClass="background-secondary">}}
+{{</ registration >}}
+
+## Event+year registration
+
+{{< registration event="sample" year="2020" banner="true" sectionClass="background-secondary">}}
 {{</ registration >}}
 
 ## Expired

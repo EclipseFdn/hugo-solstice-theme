@@ -12,19 +12,25 @@
 -->
 <!-- Base vars of data assuming basic requirements -->
 {{$currLang:=.Page.Lang }}
-{{$langBase:=index .Site.Data $currLang}}
-{{ .Scratch.Set "agenda" $langBase.agenda }}
+{{ $year := .Get "year" }}
+{{ if $year }}
+  {{ .Scratch.Set "base" (index (index .Site.Data $currLang) $year) }}
+{{ else }}
+  {{ .Scratch.Set "base" (index .Site.Data $currLang) }}
+{{ end }}
+{{ $base := .Scratch.Get "base" }}
+{{ .Scratch.Set "agenda" $base.agenda }}
 
 <!-- Allow for addition of event sub-site if set -->
-{{$event_id := .Get 0}}
+{{$event_id := .Get "event"}}
 {{ if and ($event_id) (ne $event_id "") }}
-	{{ .Scratch.Set "agenda" (index $langBase $event_id).agenda }}
+	{{ .Scratch.Set "agenda" (index $base $event_id).agenda }}
 {{ end }}
 {{$events := (.Scratch.Get "agenda").items}}
 {{$types := (.Scratch.Get "agenda").types}}
 {{$complete := (.Scratch.Get "agenda").complete }}
 <!-- Allow for adjusted titles -->
-{{$title_suffix := .Get 1 }}
+{{$title_suffix := .Get "title" }}
 <!-- Check for slide column -->
 {{ $has_slides:=false }}
 {{ range $events }}
