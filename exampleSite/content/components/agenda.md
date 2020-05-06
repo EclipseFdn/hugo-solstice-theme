@@ -60,7 +60,7 @@ Targets ./data/en/agenda.yaml:
 Targets ./data/en/2019/agenda.yaml:
 
 
-{{< agenda "2019">}}
+{{< agenda event="sample">}}
 
 ---
 
@@ -69,7 +69,7 @@ Targets ./data/en/2019/agenda.yaml:
 Targets ./data/en/no_types/agenda.yaml:
 
 
-{{< agenda "no_types">}}
+{{< agenda event="no_types">}}
 
 ---
 
@@ -78,7 +78,7 @@ Targets ./data/en/no_types/agenda.yaml:
 Targets ./data/en/active/agenda.yaml:
 
 
-{{< agenda "active">}}
+{{< agenda event="active">}}
 
 ---
 
@@ -87,4 +87,13 @@ Targets ./data/en/active/agenda.yaml:
 Targets ./data/en/slides/agenda.yaml:
 
 
-{{< agenda "slides">}}
+{{< agenda event="slides">}}
+
+---
+
+## Agenda w/ event+year
+
+Targets ./data/en/2020/sample/agenda.yaml:
+
+
+{{< agenda year="2020" event="sample">}}

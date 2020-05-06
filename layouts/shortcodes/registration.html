@@ -11,11 +11,17 @@
   SPDX-License-Identifier: EPL-2.0
 -->
 {{ $cont:=(.Page.Params.container | default .Site.Params.container | default "container")}}
-  
+
 {{ $currLang:=.Page.Lang }}
 {{ $event_id := .Get "event" | default "default" }}
-{{ $langBase := index .Site.Data $currLang }}
-{{ $registration := (index $langBase $event_id).registration }}
+{{ $year := .Get "year" }}
+{{ if $year }}
+  {{ .Scratch.Set "base" (index (index .Site.Data $currLang) $year) }}
+{{ else }}
+  {{ .Scratch.Set "base" (index .Site.Data $currLang) }}
+{{ end }}
+{{ $base := .Scratch.Get "base" }}
+{{ $registration := (index $base $event_id).registration }}
 
 {{ $useBanner := .Get "banner" | default "false" }}
 {{ $sectionId := .Get "sectionId" | default "registration" }}
