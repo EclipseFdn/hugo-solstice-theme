@@ -13,17 +13,17 @@
     </div>
   </div>
   <script>
-    var rawStoryJSON = {{ .Site.Data.featuredstory.items | jsonify }};
+    var rawStoryJSON = {{.Site.Data.featuredstory.items | jsonify}};
     if (json = JSON.parse(rawStoryJSON)) {
       // remove expired items
       json = json.filter(a => new Date(a['endDate']) > new Date())
-        .filter(a => a['type'] === "both" || a['type'] === "story" );
-    
+        .filter(a => a['type'] === "both" || a['type'] === "story");
+
       // shuffle the array so that a random available story is featured
       if (json.length > 1) {
         shuffleArray(json);
       }
-      
+
       // make sure we have a promotion to display
       if (json.length > 0) {
         var item = json[0];
@@ -33,51 +33,57 @@
           document.write("<style>.featured-story-block-content:before {background-image:url(" + item['bgImgSrc'] + ")}</style>");
           storyEl.style.backgroundSize = 'cover';
         }
-  
+
         // override featured-story classes
         if (item['story_classes'] !== undefined && item['story_classes'] !== "") {
           storyEl.className = item['story_classes'];
         }
-  
+
         // set the title and link
         var headingEl = document.createElement('h2');
         headingEl.classList.add("margin-top-30");
-        headingEl.innerHTML =  item['title'];
-        if (item['header_class'] != undefined) {
-        	var headerClasses = item['header_class'].split(' ');
-        	for (var headerClassIdx in headerClasses) {
-            	headingEl.classList.add(headerClasses[headerClassIdx]);
-        	}
+        headingEl.innerHTML = item['title'];
+        if (item['header_class']) {
+          var headerClasses = item['header_class'].split(' ');
+          for (var headerClassIdx in headerClasses) {
+            headingEl.classList.add(headerClasses[headerClassIdx]);
+          }
         }
-        
+
         var linkEl = document.createElement('span');
-        linkEl.innerHTML =  item['link'];
-    
+        linkEl.innerHTML = item['link'];
+
         // if they exist, create and set the preamble + content
         var preambleEl, contentEl, postContentEl = null;
-        if (item['preamble'] != undefined && item['premble'] != "") {
+        if (item['premble']) {
           preambleEl = document.createElement('p');
-          preambleEl.innerHTML =  item['preamble'];
-	      var preambleClasses = item['preamble_class'].split(' ');
-	      for (var preambleClassIdx in preambleClasses) {
-	        preambleEl.classList.add(preambleClasses[preambleClassIdx]);
-	      }
+          preambleEl.innerHTML = item['preamble'];
+          if (item['preamble_class']) {
+            var preambleClasses = item['preamble_class'].split(' ');
+            for (var preambleClassIdx in preambleClasses) {
+              preambleEl.classList.add(preambleClasses[preambleClassIdx]);
+            }
+          }
         }
-        if (item['content'] != undefined && item['content'] != "") {
+        if (item['content']) {
           contentEl = document.createElement('p');
-          contentEl.innerHTML =  item['content'];
-	      var contentClasses = item['content_class'].split(' ');
-	   	  for (var contentClassIdx in contentClasses) {
-	   		contentEl.classList.add(contentClasses[contentClassIdx]);
-	   	  }
+          contentEl.innerHTML = item['content'];
+          if (item['content_class']) {
+            var contentClasses = item['content_class'].split(' ');
+            for (var contentClassIdx in contentClasses) {
+              contentEl.classList.add(contentClasses[contentClassIdx]);
+            }
+          }
         }
-        if (item['post_content'] != undefined && item['post_content'] != "") {
+        if (item['post_content']) {
           postContentEl = document.createElement('p');
-          postContentEl.innerHTML =  item['post_content'];
-	      var postClasses = item['post_class'].split(' ');
-	   	  for (var postClassIdx in postClasses) {
-	   		postContentEl.classList.add(postClasses[postClassIdx]);
-	   	  }
+          postContentEl.innerHTML = item['post_content'];
+          if (item['post_class']) {
+            var postClasses = item['post_class'].split(' ');
+            for (var postClassIdx in postClasses) {
+              postContentEl.classList.add(postClasses[postClassIdx]);
+            }
+          }
         }
         // get the content container and append the content
         var divEl = storyEl.querySelector(".featured-story-block-content");
@@ -100,12 +106,12 @@
      * source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
      */
     function shuffleArray(array) {
-        for (var i = array.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
     }
   </script>
 {{ end }}
