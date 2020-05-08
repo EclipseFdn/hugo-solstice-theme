@@ -29,7 +29,7 @@
 {{ $t := time $registration.end_date }}
 
 <section id="{{ $sectionId }}"{{- with $sectionClass }} class="{{ . }}"{{ end }}>  
-  {{ if and (eq $useBanner "true") (eq $cont "fluid-container") }} 
+  {{ if and (eq $useBanner "true") (eq $cont "container-fluid") }} 
   <div class="container">
   {{ end }}
   <div class="padding-bottom-40 padding-top-40">

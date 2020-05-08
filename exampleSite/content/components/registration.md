@@ -8,7 +8,7 @@ slug: ""
 aliases: []
 toc: false
 draft: false
-container: "fluid-container"
+container: "container-fluid"
 hide_sidebar: true
 ---
 
