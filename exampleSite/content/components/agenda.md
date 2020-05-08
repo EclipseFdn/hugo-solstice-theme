@@ -1,5 +1,7 @@
 ---
 Title: Agenda
+container: "container-fluid"
+hide_sidebar: true
 ---
 
 Agendas can be added to the site through an `agenda.yaml` data file added in a subfolder of the data folder for the target locale (for localization, for default, create/use the "en" folder). An example of this path is as follows, `data/en/agenda.yaml`. The data should be similar to the following format: 
@@ -43,6 +45,34 @@ Types represent the different types of sessions being held at the event. Normall
 ```
 
 Items in these data files represent the actual sessions to be represented in the agenda.  
+
+---
+
+## Basic  
+
+Targets ./data/en/agenda.yaml:  
+
+
+{{< agenda >}}
+
+---
+
+## Section class  
+
+Targets ./data/en/agenda.yaml:  
+
+
+{{< agenda sectionClass="background-secondary alt">}}
+
+---
+
+
+## Container class  
+
+Targets ./data/en/agenda.yaml:  
+
+
+{{< agenda sectionClass="background-secondary alt" containerClass="container-fluid">}}
 
 ---
 

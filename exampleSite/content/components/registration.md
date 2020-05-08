@@ -28,9 +28,9 @@ Register for this event!
 I have links too. Not very useful though.
 {{</ registration >}}
 
-## Banner w/ background
+## Section class w/ background
 
-{{< registration banner="true" sectionClass="background-secondary">}}
+{{< registration sectionClass="background-secondary">}}
 Register for this event!
 
 I have links too. Not very useful though.
@@ -38,7 +38,7 @@ I have links too. Not very useful though.
 
 ## Year
 
-{{< registration year="2020" banner="true" sectionClass="background-secondary">}}
+{{< registration year="2020" sectionClass="background-secondary">}}
 Register for this event!
 
 I have links too. Not very useful though.
@@ -46,20 +46,20 @@ I have links too. Not very useful though.
 
 ## No content
 
-{{< registration banner="true" sectionClass="background-secondary">}}
+{{< registration sectionClass="background-secondary">}}
 {{</ registration >}}
 
 ## Event registration
 
-{{< registration event="sample" banner="true" sectionClass="background-secondary">}}
+{{< registration event="sample" sectionClass="background-secondary">}}
 {{</ registration >}}
 
 ## Event+year registration
 
-{{< registration event="sample" year="2020" banner="true" sectionClass="background-secondary">}}
+{{< registration event="sample" year="2020" sectionClass="background-secondary">}}
 {{</ registration >}}
 
 ## Expired
 
-{{< registration event="expired_event" banner="true" sectionClass="background-secondary">}}
+{{< registration event="expired_event" sectionClass="background-secondary">}}
 {{</ registration >}}
