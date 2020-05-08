@@ -100,7 +100,7 @@
                 {{ .name }} 
                 {{ if isset . "abstract" }} 
                 <a class="margin-left-10" href="#" title="{{ i18n " agenda-abstract-modal-alt" . }}" 
-                  data-toggle="modal" data-target="#eclipsefdn-modal" data-title="{{ .name }}" data-presenter="{{ .presenter }}" data-time="{{ .time }}"> 
+                  data-toggle="modal" data-target="#eclipsefdn-modal-event-session" data-title="{{ .name }}" data-presenter="{{ .presenter }}" data-time="{{ .time }}"> 
                   <i class="fa fa-external-link"> 
                     <span class="sr-only">
                       {{ i18n "agenda-abstract-modal-alt" . }}
@@ -141,3 +141,22 @@
   </div>
   {{ end }}
 </section>
+<!-- Modal for usage with agendas -->
+<div id="eclipsefdn-modal-event-session" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{ i18n "agenda-modal-close-alt" }}"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+        <div class="margin-top-10">
+          <p id="modal-presenter"></p>
+          <p id="modal-time"></p>
+        </div>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
