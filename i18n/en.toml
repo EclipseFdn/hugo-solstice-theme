@@ -333,3 +333,10 @@ other = "Learn more"
 
 [committee-twitter-follow-text]
 other = "Follow {{ .name }} on Twitter!"
+
+[events-sponsor-title]
+other = "Sponsors"
+
+[events-sponsor-image-alt]
+other = "{{ .Count }} logo"
+
