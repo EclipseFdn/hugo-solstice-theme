@@ -1,0 +1,13 @@
+items:
+  - title: Eclipse IDE (2020/sample)
+    url: https://www.eclipse.org
+    image: https://www.eclipse.org/artwork/images/v2/logo-800x188.png
+    width: 200px
+  - title: IoT (2020/sample)
+    url: https://www.iot.eclipse.org
+    image: https://www.eclipse.org/artwork/images/v2/new_iot_logo_clr.svg
+    width: 150px
+  - title: Eclipse Foundation (2020/sample)
+    url: https://www.eclipse.org
+    image: https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg
+    width: 200px
