@@ -23,14 +23,16 @@
 {{ $base := .Scratch.Get "base" }}
 {{ $registration := (index $base $event_id).registration }}
 
-{{ $useBanner := .Get "banner" | default "false" }}
+{{ $cont := (.Page.Params.container | default .Site.Params.container | default "container") }}
 {{ $sectionId := .Get "sectionId" | default "registration" }}
 {{ $sectionClass := .Get "sectionClass" }}
+{{ $containerClass := .Get "containerClass" | default "container" }}
 {{ $t := time $registration.end_date }}
 
-<section id="{{ $sectionId }}"{{- with $sectionClass }} class="{{ . }}"{{ end }}>  
-  {{ if and (eq $useBanner "true") (eq $cont "container-fluid") }} 
-  <div class="container">
+<section class="{{ if eq $cont "container-fluid" }}row {{ end }}{{ $sectionClass }}"
+  {{- with $sectionId}} id="{{.}}"{{ end -}}>
+  {{ if eq $cont "container-fluid" }} 
+  <div class="{{ $containerClass }}">
   {{ end }}
   <div class="padding-bottom-40 padding-top-40">
     <div class="row">
@@ -45,7 +47,7 @@
         <div class="pre-event{{ if $t.Before now }} hidden{{ end }}">
           {{ .Inner | markdownify }}
           {{- with $registration.links }}
-          <ul class="list-inline">
+          <ul class="list-inline cta-links">
             {{ range . }}
             <li><a href="{{ .url }}" class="btn btn-primary"{{ if eq .external "true" }} target="_blank"{{ end }}>{{ .text }}</a></li>
             {{ end }}
@@ -59,7 +61,7 @@
       </div>
     </div>
   </div>
-  {{ if and (eq $useBanner "true") (eq $cont "container-fluid") }} 
+  {{ if eq $cont "container-fluid" }} 
   </div>
   {{ end }}
 </section>

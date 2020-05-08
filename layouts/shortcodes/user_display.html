@@ -21,9 +21,12 @@
 {{ $event := .Get "event" | default "default" }}
 {{ $source := .Get "source" | default "user" }}
 
+{{ $cont := (.Page.Params.container | default .Site.Params.container | default "container") }}
 {{ $useCarousel:= .Get "useCarousel" | default "true" }}
 {{ $headerClass:= .Get "headerClass" | default "padding-bottom-20"}}
 {{ $sectionClass:= .Get "sectionClass" | default ""}}
+{{ $containerClass := .Get "containerClass" | default "container padding-bottom-40 padding-top-40" }}
+{{ $sectionId:= .Get "sectionId" }}
 {{ $title := .Get "title" | default (i18n "committee-carousel-title") }}
 {{ $subpage := .Get "subpage" }}
 {{ $subpageURL := "" }}
@@ -38,9 +41,12 @@
     {{ $subpageURL = printf "/%s" $subpage }}
   {{ end }}
 {{ end }}
-<section {{with $sectionClass}} class="{{ $sectionClass }}"{{ end }}>
+<section class="{{ if eq $cont "container-fluid" }}row {{ end }}{{ $sectionClass }}"
+  {{- with $sectionId}} id="{{.}}"{{ end -}}>
   <!-- Start: Users Area-->
-  <div class="container padding-bottom-40 padding-top-40">
+  {{ if eq $cont "container-fluid" }}
+  <div class="{{ $containerClass }}">
+  {{ end }}
     <div class="row"> 
       <div class="col-xs-24 {{ if $subpage }}col-sm-18 match-height-item-by-row{{ end }}">
         <h2 {{with $headerClass}} class="{{ $headerClass }}"{{ end }}>{{ $title }}</h2>
@@ -89,6 +95,8 @@
       </div>
     </div>
     <!-- Start: Users Body Area -->
+  {{ if eq $cont "container-fluid" }}
   </div>
+  {{ end }}
   <!-- End:  "container"-->
 </section>

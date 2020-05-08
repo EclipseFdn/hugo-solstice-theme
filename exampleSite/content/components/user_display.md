@@ -8,6 +8,8 @@ slug: ""
 aliases: []
 toc: false
 draft: false
+container: container-fluid
+hide_sidebar: true
 ---
 
 !!TODO
@@ -36,7 +38,7 @@ Sed quis tellus ligula. Mauris aliquam risus lectus, vitae pretium ex imperdiet 
 {{< user_display event="sample" headerClass="h3" useCarousel="false" />}}
 
 ## Section class
-{{< user_display event="sample" sectionClass="text-center" useCarousel="false" />}}
+{{< user_display event="sample" sectionClass="background-secondary alt" useCarousel="false" />}}
 
 ## Title
 {{< user_display event="sample" useCarousel="false" title="Some new title" />}}

@@ -39,88 +39,105 @@
   {{ end }}
 {{ end }}
 
+{{$cont:=(.Page.Params.container | default .Site.Params.container | default "container")}}
+{{ $sectionId := .Get "sectionId" | default "registration" }}
+{{ $sectionClass := .Get "sectionClass" }}
+{{ $containerClass := .Get "containerClass" | default "container" }}
 <style>
-{{ range $types}}
-{{if .color }} 
-.eclipsefdn-agenda span.legend-icon.legend-{{ urlize .id }}-icon::after { background-color: {{ .color }}; }
-{{end}}
+{{ range $types }}
+{{ if .color }}
+.eclipsefdn-agenda span.legend-icon.legend-{{ urlize .id }}-icon::after {
+  background-color: {{ .color }};
+}
+{{ end }}
 {{ end }}
 </style>
-<div class="eclipsefdn-agenda">
-  {{ if $types }}
-  <div class="row">
-  <h3>{{ i18n "agenda-legend" }}</h3>
-  <ul type="none">
-    {{ range $types }}
-      <li><span class="legend-{{ .id }}-icon legend-icon">&nbsp;</span> {{ .name }}</li>
-    {{ end }}
-  </ul>
+<section class="{{ if eq $cont "container-fluid" }}row {{ end }}{{ $sectionClass }}"
+  {{- with $sectionId}} id="{{.}}"{{ end -}}>
+  {{ if eq $cont "container-fluid" }}
+    <div class="{{ $containerClass }}">
+  {{ end }}
+    <div class="eclipsefdn-agenda">
+      {{ if $types }}
+      <div class="row">
+        <div class="col-xs-24">
+          <h3>{{ i18n "agenda-legend" }}</h3>
+          <ul type="none">
+            {{ range $types }}
+            <li><span class="legend-{{ .id }}-icon legend-icon">&nbsp;</span> {{ .name }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+      <div class="row">
+        <div class="col-xs-24">
+          <h3>{{ i18n "agenda-sessions" }}</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>{{ i18n "agenda-session-name" }}</th>
+                <th>{{ i18n "agenda-presenter-name" }}</th>
+                {{ if $complete }}
+                <th class="text-center">{{ i18n "agenda-session-recording" }}</th>
+                {{ else }}
+                <th>{{ i18n "agenda-session-schedule" }}</th>
+                {{ end }} 
+                {{ if $has_slides }}
+                <th class="text-center">{{ i18n "agenda-session-slides" }}</th>
+                {{ end }}
+              </tr>
+            </thead>
+            <tbody>
+              {{ range $events }}
+              <tr>
+                <td>
+                {{ if $types }} 
+                <span class="legend-{{ .type }}-icon legend-icon"> 
+                  <span class="sr-only"> {{ range first 1 (where $types "id" .type) }} {{ .name }} {{ end}} </span>
+                </span> 
+                {{ end }} 
+                {{ .name }} 
+                {{ if isset . "abstract" }} 
+                <a class="margin-left-10" href="#" title="{{ i18n " agenda-abstract-modal-alt" . }}" 
+                  data-toggle="modal" data-target="#eclipsefdn-modal" data-title="{{ .name }}" data-presenter="{{ .presenter }}" data-time="{{ .time }}"> 
+                  <i class="fa fa-external-link"> 
+                    <span class="sr-only">
+                      {{ i18n "agenda-abstract-modal-alt" . }}
+                    </span>
+                    <div class="modal-content hidden">{{ .abstract | safeHTML }}</div>
+                  </i>
+                </a> 
+                {{ end }}
+                </td>
+                <td>{{ .presenter }}</td>
+                {{ if $complete }}
+                <td class="text-center">
+                  <a class="btn btn-primary btn-wide" href="{{ .vod }}" title="{{ i18n "agenda-session-recording-button-alt" . }}">
+                    <i class="fa fa-play"></i><span class="sr-only">{{ i18n "agenda-session-recording-button-alt" . }}</span>
+                  </a>
+                </td>
+                {{ else }}
+                <td>{{ .time }}</td>
+                {{ end }}
+                <!-- Write the slide column if it has been set -->
+                {{ if $has_slides }}
+                <td class="text-center">
+                  {{ if (isset . "slides") }} 
+                    <a class="btn btn-primary btn-wide" href="{{ .slides }}" title="{{ i18n "agenda-session-slides-button-alt" . }}"> 
+                      <i class="fa fa-file"></i> <span class="sr-only">{{ i18n "agenda-session-slides-button-alt" . }}</span>
+                    </a>
+                  {{ end }}
+                </td>
+                {{ end }}
+              </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  {{ if and (ne (.Get "checkContainer") "false") (eq $cont "container-fluid") }}
   </div>
   {{ end }}
-  <div class="row">
-  <h3>{{ i18n "agenda-sessions" }}</h3>
-	<table class="table">
-	  <thead>
-	    <tr>
-	      <th>{{ i18n "agenda-session-name" }}</th>
-	      <th>{{ i18n "agenda-presenter-name" }}</th>
-	      {{ if $complete }}
-	      <th class="text-center">{{ i18n "agenda-session-recording" }}</th>
-	      {{ else }}
-	      <th>{{ i18n "agenda-session-schedule" }}</th>
-	      {{ end }}
-	      {{ if $has_slides }}
-	      <th class="text-center">{{ i18n "agenda-session-slides" }}</th>
-	      {{ end }}
-	    </tr>
-	  </thead>
-	  <tbody>
-	    {{ range $events }}
-	    <tr>
-	      <td>
-            {{ if $types }}
-	        <span class="legend-{{ .type }}-icon legend-icon">
-	          <span class="sr-only">
-	          {{ range first 1 (where $types "id" .type) }} 
-	          {{ .name }} 
-	          {{ end}}
-	          </span>
-	        </span> 
-            {{ end }}
-            {{ .name }}
-            {{ if isset . "abstract" }}
-            <a class="margin-left-10" href="#" title="{{ i18n "agenda-abstract-modal-alt" . }}" data-toggle="modal" data-target="#eclipsefdn-modal" 
-            	data-title="{{ .name }}" data-presenter="{{ .presenter }}" data-time="{{ .time }}">
-	            <i class="fa fa-external-link">
-	            	<span class="sr-only">{{ i18n "agenda-abstract-modal-alt" . }}</span>
-	            	<div class="modal-content hidden">{{ .abstract | safeHTML }}</div>
-	            </i>
-            </a>
-            {{ end }}
-	      </td>
-	      <td>{{ .presenter }}</td>
-	      
-	      {{ if $complete }}
-	      <td class="text-center">
-	      <a class="btn btn-primary btn-wide" href="{{ .vod }}" title="{{ i18n "agenda-session-recording-button-alt" . }}">
-	        <i class="fa fa-play"></i> <span class="sr-only">{{ i18n "agenda-session-recording-button-alt" . }}</span>
-	      </a></td>
-	      {{ else }}
-	      <td>{{ .time }}</td>
-	      {{ end }}
-	      <!-- Write the slide column if it has been set -->
-	      {{ if $has_slides }}
-	      <td class="text-center">
-	        {{ if (isset . "slides") }}
-	        <a class="btn btn-primary btn-wide" href="{{ .slides }}" title="{{ i18n "agenda-session-slides-button-alt" . }}">
-	          <i class="fa fa-file"></i> <span class="sr-only">{{ i18n "agenda-session-slides-button-alt" . }}</span>
-	        </a>
-	        {{ end }}
-	      </td>
-	      {{ end }}
-	    </tr>
-	    {{ end }}
-	  </tbody>
-	</table>
-  </div>
-</div>
+</section>
