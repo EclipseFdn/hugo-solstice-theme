@@ -14,24 +14,24 @@ draft: false
 
 ## Default State  
 
-{{< user_bios >}}
+{{< events/user_bios >}}
 
 ## Default State w/ year  
 
-{{< user_bios year="2020" >}}
+{{< events/user_bios year="2020" >}}
 
 ## Event bios 
 
-{{< user_bios event="sample" >}}
+{{< events/user_bios event="sample" >}}
 
 ## Event bios w/ year
 
-{{< user_bios event="sample" year="2020">}}
+{{< events/user_bios event="sample" year="2020">}}
 
 ## Event user group bios  
 
-{{< user_bios event="sample" source="speakers">}}
+{{< events/user_bios event="sample" source="speakers">}}
 
 ## Event user group bios w/ year
 
-{{< user_bios event="sample" source="speakers" year="2020" >}}
+{{< events/user_bios event="sample" source="speakers" year="2020" >}}

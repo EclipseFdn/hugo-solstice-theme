@@ -53,35 +53,7 @@ Items in these data files represent the actual sessions to be represented in the
 Targets ./data/en/agenda.yaml:  
 
 
-{{< agenda >}}
-
----
-
-## Section class  
-
-Targets ./data/en/agenda.yaml:  
-
-
-{{< agenda sectionClass="background-secondary alt">}}
-
----
-
-
-## Container class  
-
-Targets ./data/en/agenda.yaml:  
-
-
-{{< agenda sectionClass="background-secondary alt" containerClass="container-fluid">}}
-
----
-
-## Basic  
-
-Targets ./data/en/agenda.yaml:  
-
-
-{{< agenda >}}
+{{< events/agenda >}}
 
 ---
 
@@ -90,7 +62,7 @@ Targets ./data/en/agenda.yaml:
 Targets ./data/en/2019/agenda.yaml:
 
 
-{{< agenda event="sample">}}
+{{< events/agenda event="sample">}}
 
 ---
 
@@ -99,7 +71,7 @@ Targets ./data/en/2019/agenda.yaml:
 Targets ./data/en/no_types/agenda.yaml:
 
 
-{{< agenda event="no_types">}}
+{{< events/agenda event="no_types">}}
 
 ---
 
@@ -108,7 +80,7 @@ Targets ./data/en/no_types/agenda.yaml:
 Targets ./data/en/active/agenda.yaml:
 
 
-{{< agenda event="active">}}
+{{< events/agenda event="active">}}
 
 ---
 
@@ -117,7 +89,7 @@ Targets ./data/en/active/agenda.yaml:
 Targets ./data/en/slides/agenda.yaml:
 
 
-{{< agenda event="slides">}}
+{{< events/agenda event="slides">}}
 
 ---
 
@@ -126,4 +98,4 @@ Targets ./data/en/slides/agenda.yaml:
 Targets ./data/en/2020/sample/agenda.yaml:
 
 
-{{< agenda year="2020" event="sample">}}
+{{< events/agenda year="2020" event="sample">}}

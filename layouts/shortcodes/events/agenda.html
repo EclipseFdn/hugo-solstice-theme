@@ -1,0 +1,147 @@
+<!-- 
+  Copyright (c) 2020 Eclipse Foundation, Inc.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v. 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0.
+
+  Contributors:
+    Martin Lowe <martin.lowe@eclipse-foundation.org>
+       
+  SPDX-License-Identifier: EPL-2.0
+-->
+<!-- Base vars of data assuming basic requirements -->
+{{$currLang:=.Page.Lang }}
+{{ $year := .Get "year" }}
+{{ if $year }}
+  {{ .Scratch.Set "base" (index (index .Site.Data $currLang) $year) }}
+{{ else }}
+  {{ .Scratch.Set "base" (index .Site.Data $currLang) }}
+{{ end }}
+{{ $base := .Scratch.Get "base" }}
+{{ .Scratch.Set "agenda" $base.agenda }}
+
+<!-- Allow for addition of event sub-site if set -->
+{{$event_id := .Get "event"}}
+{{ if and ($event_id) (ne $event_id "") }}
+	{{ .Scratch.Set "agenda" (index $base $event_id).agenda }}
+{{ end }}
+{{$events := (.Scratch.Get "agenda").items}}
+{{$types := (.Scratch.Get "agenda").types}}
+{{$complete := (.Scratch.Get "agenda").complete }}
+<!-- Allow for adjusted titles -->
+{{$title_suffix := .Get "title" }}
+<!-- Check for slide column -->
+{{ $has_slides:=false }}
+{{ range $events }}
+  {{ if isset . "slides" }}
+    {{ $has_slides = true }}
+  {{ end }}
+{{ end }}
+
+<style>
+{{ range $types }}
+{{ if .color }}
+.eclipsefdn-agenda span.legend-icon.legend-{{ urlize .id }}-icon::after {
+  background-color: {{ .color }};
+}
+{{ end }}
+{{ end }}
+</style>
+
+<div class="eclipsefdn-agenda">
+    <div class="col-xs-24">
+      <h2>{{ i18n "agenda-sessions" }}</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>{{ i18n "agenda-session-name" }}</th>
+            <th>{{ i18n "agenda-presenter-name" }}</th>
+            {{ if $complete }}
+            <th class="text-center">{{ i18n "agenda-session-recording" }}</th>
+            {{ else }}
+            <th>{{ i18n "agenda-session-schedule" }}</th>
+            {{ end }} 
+            {{ if $has_slides }}
+            <th class="text-center">{{ i18n "agenda-session-slides" }}</th>
+            {{ end }}
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $events }}
+          <tr>
+            <td>
+            {{ if $types }} 
+            <span class="legend-{{ .type }}-icon legend-icon"> 
+              <span class="sr-only"> {{ range first 1 (where $types "id" .type) }} {{ .name }} {{ end}} </span>
+            </span> 
+            {{ end }} 
+            {{ .name }} 
+            {{ if isset . "abstract" }} 
+            <a class="margin-left-10" href="#" title="{{ i18n " agenda-abstract-modal-alt" . }}" 
+              data-toggle="modal" data-target="#eclipsefdn-modal-event-session" data-title="{{ .name }}" data-presenter="{{ .presenter }}" data-time="{{ .time }}"> 
+              <i class="fa fa-external-link"> 
+                <span class="sr-only">
+                  {{ i18n "agenda-abstract-modal-alt" . }}
+                </span>
+                <div class="modal-content hidden">{{ .abstract | safeHTML }}</div>
+              </i>
+            </a> 
+            {{ end }}
+            </td>
+            <td>{{ .presenter }}</td>
+            {{ if $complete }}
+            <td class="text-center">
+              <a class="btn btn-primary btn-wide" href="{{ .vod }}" title="{{ i18n "agenda-session-recording-button-alt" . }}">
+                <i class="fa fa-play"></i><span class="sr-only">{{ i18n "agenda-session-recording-button-alt" . }}</span>
+              </a>
+            </td>
+            {{ else }}
+            <td>{{ .time }}</td>
+            {{ end }}
+            <!-- Write the slide column if it has been set -->
+            {{ if $has_slides }}
+            <td class="text-center">
+              {{ if (isset . "slides") }} 
+                <a class="btn btn-primary btn-wide" href="{{ .slides }}" title="{{ i18n "agenda-session-slides-button-alt" . }}"> 
+                  <i class="fa fa-file"></i> <span class="sr-only">{{ i18n "agenda-session-slides-button-alt" . }}</span>
+                </a>
+              {{ end }}
+            </td>
+            {{ end }}
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  {{ if $types }}
+    <div class="col-xs-24">
+      <h4>{{ i18n "agenda-legend" }}</h4>
+      <ul type="none">
+        {{ range $types }}
+        <li><span class="legend-{{ .id }}-icon legend-icon">&nbsp;</span> {{ .name }}</li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+</div>
+
+<!-- Modal for usage with agendas -->
+<div id="eclipsefdn-modal-event-session" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{ i18n "agenda-modal-close-alt" }}"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+        <div class="margin-top-10">
+          <p id="modal-presenter"></p>
+          <p id="modal-time"></p>
+        </div>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
