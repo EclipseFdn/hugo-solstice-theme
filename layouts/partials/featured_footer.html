@@ -12,7 +12,7 @@
     if (json = JSON.parse(rawStoryJSON)) {
 
       // remove expired items
-      json = json.filter(a => new Date(a['endDate']) > new Date())
+      json = json.filter(a => new Date(a['endDate']) > new Date() && (a['startDate'] == undefined || new Date(a['startDate']) < new Date()))
         .filter(a => a['type'] === "both" || a['type'] === "footer");
 
       // shuffle the array so that a random available story is featured
