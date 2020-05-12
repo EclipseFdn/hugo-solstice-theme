@@ -14,52 +14,44 @@ hide_sidebar: true
 
 ## Default  
 
-{{< registration >}}
+{{< events/registration >}}
 Register for this event!
 
 I have links too. Not very useful though.
-{{</ registration >}}
+{{</ events/registration >}}
 
 ## Default w/ year  
 
-{{< registration year="2020" >}}
+{{< events/registration year="2020" >}}
 Register for this event!
 
 I have links too. Not very useful though.
-{{</ registration >}}
-
-## Section class w/ background
-
-{{< registration sectionClass="background-secondary">}}
-Register for this event!
-
-I have links too. Not very useful though.
-{{</ registration >}}
+{{</ events/registration >}}
 
 ## Year
 
-{{< registration year="2020" sectionClass="background-secondary">}}
+{{< events/registration year="2020">}}
 Register for this event!
 
 I have links too. Not very useful though.
-{{</ registration >}}
+{{</ events/registration >}}
 
 ## No content
 
-{{< registration sectionClass="background-secondary">}}
-{{</ registration >}}
+{{< events/registration >}}
+{{</ events/registration >}}
 
 ## Event registration
 
-{{< registration event="sample" sectionClass="background-secondary">}}
-{{</ registration >}}
+{{< events/registration event="sample" >}}
+{{</ events/registration >}}
 
 ## Event+year registration
 
-{{< registration event="sample" year="2020" sectionClass="background-secondary">}}
-{{</ registration >}}
+{{< events/registration event="sample" year="2020">}}
+{{</ events/registration >}}
 
 ## Expired
 
-{{< registration event="expired_event" sectionClass="background-secondary">}}
-{{</ registration >}}
+{{< events/registration event="expired_event">}}
+{{</ events/registration >}}

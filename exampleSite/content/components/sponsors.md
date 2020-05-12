@@ -17,22 +17,22 @@ container: "fluid-container"
 ** Note: fluid-container used to show full width components with banner background simulation
 
 ## Default
-{{< sponsors >}}
+{{< events/sponsors >}}
 
 ## Event
-{{< sponsors event="sample" >}}
+{{< events/sponsors event="sample" >}}
 
 ## Year
-{{< sponsors year="2020" >}}
+{{< events/sponsors year="2020" >}}
 
 ## Event + year
-{{< sponsors year="2020" event="sample" >}}
+{{< events/sponsors year="2020" event="sample" >}}
 
 ## Carousel
-{{< sponsors useCarousel="true">}}
+{{< events/sponsors useCarousel="true">}}
 
 ## Carousel w/ altered counts
-{{< sponsors 
+{{< events/sponsors 
   useCarousel="true"
   xsSliderCount="3"
   smSliderCount="4"
@@ -41,14 +41,12 @@ container: "fluid-container"
  >}}
 
 ## Title
-{{< sponsors title="Sample title">}}
+{{< events/sponsors title="Sample title">}}
 
-## Section class
-{{< sponsors sectionClass="background-secondary">}}
 
 ## Header class
-{{< sponsors headerClass="text-center heading-underline">}}
+{{< events/sponsors headerClass="text-center heading-underline">}}
 
 ## Item class
-{{< sponsors itemClass="padding-50">}}
+{{< events/sponsors itemClass="padding-50">}}
 

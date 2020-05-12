@@ -10,4 +10,4 @@ toc: false
 draft: false
 ---
 
-{{< user_bios >}}
+{{< events/user_bios >}}
