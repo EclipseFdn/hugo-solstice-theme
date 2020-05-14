@@ -30,31 +30,33 @@
 {{ $mdSliderCount := .Get "mdSliderCount" | default 4 }}
 {{ $lgSliderCount := .Get "lgSliderCount" | default 6 }}
 
-<div class="col-xs-24">
-<h2 {{with $headerClass}} class="{{ $headerClass }}"{{ end }}>{{ $title }}</h2>
-</div>
-<div class="text-center">
-  {{ if eq $useCarousel "true" }}
-  <div class="owl-carousel owl-theme solstice-slider vertical-align" 
-    data-slider-xs-count="{{ $xsSliderCount }}" 
-    data-slider-sm-count="{{ $smSliderCount }}" 
-    data-slider-md-count="{{ $mdSliderCount }}" 
-    data-slider-lg-count="{{ $lgSliderCount }}">
-  {{ end }}
-  {{ range (index (index $base $event) $source).items }}
-  <div class="item{{ if ne $useCarousel "true" }} col-xs-12 col-sm-6 {{ end }} {{ $itemClass }}">
-    {{ if .url }}
-    <a href="{{ .url }}" target="_blank" title="{{ printf "%s homepage" .title}}">
+<div class="eclipsefdn-sponsors">
+  <div class="eclipsefdn-sponsors-heading">
+    <h2 {{with $headerClass}} class="{{ $headerClass }}"{{ end }}>{{ $title }}</h2>
+  </div>
+  <div class="eclipsefdn-sponsors-content text-center">
+    {{ if eq $useCarousel "true" }}
+      <div class="owl-carousel owl-theme solstice-slider vertical-align" 
+        data-slider-xs-count="{{ $xsSliderCount }}" 
+        data-slider-sm-count="{{ $smSliderCount }}" 
+        data-slider-md-count="{{ $mdSliderCount }}" 
+        data-slider-lg-count="{{ $lgSliderCount }}">
     {{ end }}
-    <div class="vertical-align match-height-item-by-row">
-      <img src="{{ .image }}" alt="{{ i18n "events-sponsor-image-alt" .title}}" {{- with .width }} width="{{ . }}"{{ end -}}>
-    </div>
-    {{ if .url }}
-    </a>
+    {{ range (index (index $base $event) $source).items }}
+      <div class="item{{ if ne $useCarousel "true" }} col-xs-12 col-sm-6 {{ end }} {{ $itemClass }}">
+        {{ if .url }}
+          <a href="{{ .url }}" target="_blank" title="{{ printf "%s homepage" .title}}">
+        {{ end }}
+        <div class="vertical-align match-height-item-by-row">
+          <img src="{{ .image }}" alt="{{ i18n "events-sponsor-image-alt" .title}}" {{- with .width }} width="{{ . }}"{{ end -}}>
+        </div>
+        {{ if .url }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ if eq $useCarousel "true" }}
+      </div>
     {{ end }}
   </div>
-  {{ end }}
-  {{ if eq $useCarousel "true" }}
-  </div>
-  {{ end }}
 </div>

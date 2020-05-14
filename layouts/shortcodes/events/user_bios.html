@@ -21,15 +21,15 @@
 {{ $event := .Get "event" | default "default" }}
 {{ $source := .Get "source" | default "user" }}
 {{ $imageRoot := .Get "imgRoot" | default "/images/committee/" }}
-<div class="margin-bottom-30">
+<div class="eclipsefdn-user-bios">
   <!-- Committee member -->
   {{ range (index (index $base $event) $source).items }}
   {{ $anchor := urlize .anchor }}
   {{ if not $anchor }}
     {{ $anchor = urlize .name }}
   {{ end }}
-  <div class="row margin-top-30" id="{{ $anchor }}">
-    <div class="col-xs-24 col-sm-6">
+  <div class="row margin-top-30 margin-bottom-30" id="{{ $anchor }}">
+    <div class="eclipsefdn-user-bios-picture col-xs-24 col-sm-6">
       {{ if .img }}
       <img class="img-responsive" src="{{ $imageRoot }}{{ .img }}"
         title="{{ .name }}" />
@@ -40,7 +40,7 @@
       </div>
       {{ end }}
     </div>
-    <div class="col-xs-24 col-sm-18">
+    <div class="eclipsefdn-user-bios-info col-xs-24 col-sm-18">
       <h3>{{ .name }}</h3>
       {{ .bio | safeHTML }}
       {{- if .twitter_handle }}

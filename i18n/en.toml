@@ -340,3 +340,5 @@ other = "Sponsors"
 [events-sponsor-image-alt]
 other = "{{ .Count }} logo"
 
+[modal-close-alt]
+  other = "Close"
