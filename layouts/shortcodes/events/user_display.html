@@ -22,7 +22,6 @@
 {{ $source := .Get "source" | default "user" }}
 
 {{ $useCarousel:= .Get "useCarousel" | default "true" }}
-{{ $headerClass:= .Get "headerClass" | default "padding-bottom-20"}}
 {{ $title := .Get "title" | default (i18n "committee-carousel-title") }}
 {{ $subpage := .Get "subpage" }}
 {{ $subpageURL := "" }}
@@ -38,50 +37,51 @@
   {{ end }}
 {{ end }}
 
-
-<div class="col-xs-24 {{ if $subpage }}col-sm-18 match-height-item-by-row{{ end }}">
-  <h2 {{with $headerClass}} class="{{ $headerClass }}"{{ end }}>{{ $title }}</h2>
-  {{- with .Inner }}{{ . | markdownify }}{{ end -}}
-</div>
-{{ with $subpageURL }}
-<div class="col-xs-24 col-sm-6 match-height-item-by-row margin-bottom-30">
-  <div class="centered-container">
-    <a href="{{ . | relLangURL }}" class="btn btn-primary btn-wide">{{ i18n "committee-carousel-button-text" }}</a>
-  </div>
-</div>
-<div class="clearfix" />
-{{ end }}
-
-<div class="col-xs-24">
-  <div {{ if eq $useCarousel "true" }} class="owl-carousel owl-theme solstice-slider" data-slider-lg-count="4"{{ end }}>
-    <!-- Start: image Area -->
-    {{ range (index (index $base $event) $source).items }}
-    {{ $anchor := urlize .anchor }}
-    {{ if not $anchor }}
-      {{ $anchor = urlize .name }}
-    {{ end }}
-    <div class="item padding-20 {{ if ne $useCarousel "true" }} col-xs-12 col-sm-6 match-height-item-by-row{{ end }}">
-      {{ if .img }}
-      <img src="/images/committee/{{ .img }}" alt="{{ .name }}">
-      {{ else }}
-      <div class="icon-backdrop text-center">
-        <div class="ratio"></div>
-        <div class="icon-container"><i class="fa fa-user"></i></div>
+<div class="eclipsefdn-user-display">
+  <div class="row">
+    <div class="eclipsefdn-user-display-heading col-xs-24 {{ if $subpage }}col-sm-18 match-height-item-by-row{{ end }}">
+      <h2{{ with .Get "headerClass" }} class="{{ . }}"{{ end }}>{{ $title }}</h2>
+      {{- with .Inner }}{{ . | markdownify }}{{ end -}}
+    </div>
+    
+    {{ with $subpageURL }}
+    <div class="eclipsefdn-user-display-subpage col-xs-24 col-sm-6 match-height-item-by-row margin-bottom-30">
+      <div class="centered-container">
+        <a href="{{ . | relLangURL }}" class="btn btn-primary btn-wide">{{ i18n "committee-carousel-button-text" }}</a>
       </div>
-      
-      {{ end }}
-      <h3>
-        {{- if $subpageURL }}
-          <a href="{{ printf "%s/#%s" $subpageURL $anchor | relLangURL }}">{{ .name }}</a>
-        {{ else }}
-          {{ .name }}
-        {{ end -}}
-     	</h3>
-      <p>{{ .title }}</p>
     </div>
     {{ end }}
+    
+    <div class="eclipsefdn-user-display-content col-xs-24">
+      <div {{ if eq $useCarousel "true" }} class="owl-carousel owl-theme solstice-slider" data-slider-lg-count="4"{{ end }}>
+        <!-- Start: image Area -->
+        {{ range (index (index $base $event) $source).items }}
+        {{ $anchor := urlize .anchor }}
+        {{ if not $anchor }}
+          {{ $anchor = urlize .name }}
+        {{ end }}
+        <div class="item padding-40 {{ if ne $useCarousel "true" }} col-xs-12 col-sm-6 match-height-item-by-row{{ end }}">
+          {{ if .img }}
+          <img src="/images/committee/{{ .img }}" alt="{{ .name }}">
+          {{ else }}
+          <div class="icon-backdrop text-center">
+            <div class="ratio"></div>
+            <div class="icon-container"><i class="fa fa-user"></i></div>
+          </div>
+          
+          {{ end }}
+          <h3>
+            {{- if $subpageURL }}
+              <a href="{{ printf "%s/#%s" $subpageURL $anchor | relLangURL }}">{{ .name }}</a>
+            {{ else }}
+              {{ .name }}
+            {{ end -}}
+           </h3>
+          <p>{{ .title }}</p>
+        </div>
+        {{ end }}
+      </div>
+      <!-- End: "image" Area -->
+    </div>
   </div>
-  <!-- End: "image" Area -->
 </div>
-
-

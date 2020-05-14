@@ -39,7 +39,7 @@ items:
 Types represent the different types of sessions being held at the event. Normally creating the CSS for these types will be created automatically on render based on the `color` passed in the data file. If no color is set, no CSS would be generated for the type. Additionally, a new CSS rule may be added via custom code. This rule should resemble the following, replacing `<id>` with the `id` value set in the type and `<color>` with a hex color code:  
 
 ```
-.eclipsefdn-agenda span.legend-icon.legend-<id>-icon::after {
+.eclipsefdn-agenda-legend-icon-<id>::after {
     background-color: <color>;
 }
 ```
