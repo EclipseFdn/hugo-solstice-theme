@@ -302,7 +302,7 @@ other = "Plan of the Day"
 other = "Legend"
 
 [agenda-sessions]
-other = "Sessions"
+other = "Agenda"
 
 [agenda-session-name]
 other = "Session Name"
