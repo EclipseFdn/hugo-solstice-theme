@@ -30,7 +30,7 @@
         {{ $registration.image | safeHTML }}
       </div>
     {{ end }}
-    <div class="eclipsefdn-registration-content col-xs-24 text-middle text-center {{- if $registration.image }}col-md-18 match-height-item-by-row{{ end -}}"
+    <div class="eclipsefdn-registration-content col-xs-24 text-middle text-center {{ if $registration.image }}col-md-18 match-height-item-by-row{{ end }}"
       data-end="{{ $t }}">
       <h2>{{ .Get "title" | default $registration.title }}</h2>
       <div class="eclipsefdn-registration-body">

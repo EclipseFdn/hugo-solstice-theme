@@ -19,16 +19,10 @@
   {{ .Scratch.Set "base" (index .Site.Data $currLang) }}
 {{ end }}
 {{ $base := .Scratch.Get "base" }}
-{{ .Scratch.Set "agenda" $base.agenda }}
-
-<!-- Allow for addition of event sub-site if set -->
-{{$event_id := .Get "event"}}
-{{ if and ($event_id) (ne $event_id "") }}
-  {{ .Scratch.Set "agenda" (index $base $event_id).agenda }}
-{{ end }}
-{{$events := (.Scratch.Get "agenda").items}}
-{{$types := (.Scratch.Get "agenda").types}}
-{{$complete := (.Scratch.Get "agenda").complete }}
+{{ $event_id := .Get "event" | default "default" }}
+{{$events := (index $base $event_id).agenda.items}}
+{{$types := (index $base $event_id).agenda.types}}
+{{$complete := (index $base $event_id).agenda.complete }}
 <!-- Allow for adjusted titles -->
 {{$title_suffix := .Get "title" }}
 <!-- Check for slide column -->
