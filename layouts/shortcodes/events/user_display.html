@@ -23,6 +23,7 @@
 
 {{ $useCarousel:= .Get "useCarousel" | default "true" }}
 {{ $title := .Get "title" | default (i18n "committee-carousel-title") }}
+{{ $imageRoot := .Get "imageRoot" | default "/images/committee/" }}
 {{ $subpage := .Get "subpage" }}
 {{ $subpageURL := "" }}
 {{ if $subpage }}
@@ -41,7 +42,7 @@
   <div class="row">
     <div class="eclipsefdn-user-display-heading col-xs-24 {{ if $subpage }}col-sm-18 match-height-item-by-row{{ end }}">
       <h2{{ with .Get "headerClass" }} class="{{ . }}"{{ end }}>{{ $title }}</h2>
-      {{- with .Inner }}{{ . | markdownify }}{{ end -}}
+      {{ with .Inner }}{{ . | markdownify }}{{ end }}
     </div>
     
     {{ with $subpageURL }}
@@ -62,7 +63,7 @@
         {{ end }}
         <div class="item padding-40 {{ if ne $useCarousel "true" }} col-xs-12 col-sm-6 match-height-item-by-row{{ end }}">
           {{ if .img }}
-          <img src="/images/committee/{{ .img }}" alt="{{ .name }}">
+          <img class="img img-responsive" src="{{ $imageRoot }}{{ .img }}" alt="{{ .name }}">
           {{ else }}
           <div class="icon-backdrop text-center">
             <div class="ratio"></div>
