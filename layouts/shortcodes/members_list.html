@@ -36,7 +36,7 @@
         {{ range $index, $level := $.Site.Taxonomies.participation_levels }}
           <div class="tab-pane active" id="tab-{{$index}}">
           <h3 class="block-heading">{{ humanize $index }}</h3>
-          {{ range .Pages}}
+          {{ range sort .Pages "Title"}}
             {{ .Scratch.Set "link" .RelPermalink }}
     
             {{ if .Params.link }}
