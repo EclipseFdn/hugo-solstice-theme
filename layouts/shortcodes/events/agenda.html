@@ -93,7 +93,17 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
           </a> 
           {{ end }}
           </td>
-          <td>{{ .presenter }}</td>
+          <td>
+            {{ if and (isset . "presenters") }}
+              <ul>
+              {{ range .presenters }}
+                  <li>{{ . }}</li>
+              {{ end }}
+              </ul>
+            {{ else }}
+              {{ .presenter }}
+            {{ end }}
+          </td>
           {{ if $complete }}
           <td class="text-center">
             <a class="btn btn-primary btn-wide" href="{{ .vod }}" title="{{ i18n "agenda-session-recording-button-alt" . }}">
