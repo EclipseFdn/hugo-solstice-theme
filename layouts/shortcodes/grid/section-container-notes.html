@@ -1,0 +1,10 @@
+{{ $sectionNotesClass := .Get "class" | default "featured-section-container-notes" }}
+{{ $is_markdown := .Get "isMarkdown" | default "false" }}
+<div class="{{- $sectionNotesClass -}}">
+  <hr>
+  {{ if eq $is_markdown "true" }}
+   {{ .Inner | markdownify }}
+  {{ else }}
+    {{ .Inner }}
+ {{ end }}
+</div>
