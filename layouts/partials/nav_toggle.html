@@ -11,7 +11,7 @@
   SPDX-License-Identifier: EPL-2.0
 -->
 <div class="navbar-header">
-  {{ if (ne .Site.Menus.main nil) and (ne (first .Site.Menus.main) nil) }}
+  {{ with .Site.Menus.main }}
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main-menu">
       <span class="sr-only">{{ i18n "navigation-mobile-menu-toggle" }}</span>
       <span class="icon-bar"></span>
