@@ -31,7 +31,7 @@ items:
   -
     preamble: Now available
     title: <strong>Eclipse IDE 2019-06</strong>
-    content: Get the latest version of the Eclipse IDE.
+    content: Get the latest version of the Eclipse IDE story.
     link: |
           <ul class="list-inline">
             <li><a class="btn btn-primary btn-lg" href="/go/PROMO_ECLIPSEIDE_FOOTER@FEATURED_STORY?utm_source=eclipse_foundation&amp;utm_medium=featured_story&amp;utm_campaign=eclipse_ide_2019_06">Download</a></li>
@@ -39,12 +39,12 @@ items:
           </ul>
     bgImgSrc: https://www.eclipse.org/home/images/2019-06-bg.jpg
     startDate: 2019-07-20
-    endDate: 2020-07-30
+    endDate: 2029-07-30
     type: story
   -
     preamble: Now available
     title: <strong>Eclipse IDE 2019-06</strong>
-    content: Get the latest version of the Eclipse IDE.
+    content: Get the latest version of the Eclipse IDE footer.
     link: |
           <ul class="list-inline">
             <li><a class="btn btn-primary btn-lg" href="/go/PROMO_ECLIPSEIDE_FOOTER@FEATURED_STORY?utm_source=eclipse_foundation&amp;utm_medium=featured_story&amp;utm_campaign=eclipse_ide_2019_06">Download</a></li>
@@ -52,12 +52,12 @@ items:
           </ul>
     bgImgSrc: https://www.eclipse.org/home/images/2019-06-bg.jpg
     startDate: 2019-07-18
-    endDate: 2019-07-30
+    endDate: 2029-07-30
     type: footer
   -
     preamble: Now available
     title: <strong>Eclipse IDE 2019-06</strong>
-    content: Get the latest version of the Eclipse IDE.
+    content: Get the latest version of the Eclipse IDE story.
     link: |
           <ul class="list-inline">
             <li><a class="btn btn-primary btn-lg" href="/go/PROMO_ECLIPSEIDE_FOOTER@FEATURED_STORY?utm_source=eclipse_foundation&amp;utm_medium=featured_story&amp;utm_campaign=eclipse_ide_2019_06">Download</a></li>
