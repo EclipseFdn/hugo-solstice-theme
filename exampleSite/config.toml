@@ -345,6 +345,30 @@ googleAnalytics = ""
     url = "/components/agenda/"
     weight = 3
     parent = "components"
+    
+[[languages.en.menu.main]]
+    name = "Newsroom News"
+    url = "/components/newsroom/news/"
+    weight = 3
+    parent = "components"
+    
+[[languages.fr.menu.main]]
+    name = "Newsroom News"
+    url = "/components/agenda/"
+    weight = 3
+    parent = "components"
+    
+[[languages.en.menu.main]]
+    name = "Newsroom Events"
+    url = "/components/newsroom/events/"
+    weight = 3
+    parent = "components"
+    
+[[languages.fr.menu.main]]
+    name = "Newsroom Events"
+    url = "/components/agenda/"
+    weight = 3
+    parent = "components"
 
 [[languages.en.menu.sidebar]]
     name = "Hugo Solstice Theme"
