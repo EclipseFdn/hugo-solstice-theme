@@ -24,6 +24,7 @@
 {{ $useCarousel:= .Get "useCarousel" | default "true" }}
 {{ $title := .Get "title" | default (i18n "committee-carousel-title") }}
 {{ $imageRoot := .Get "imageRoot" | default "/images/committee/" }}
+{{ $displayLearnMore := .Get "displayLearnMore" | default "true" }}
 {{ $subpage := .Get "subpage" }}
 {{ $subpageURL := "" }}
 {{ if $subpage }}
@@ -36,19 +37,22 @@
   {{ else }}
     {{ $subpageURL = printf "/%s" $subpage }}
   {{ end }}
+{{ else }}
+  {{ $displayLearnMore = "false" }}
 {{ end }}
+
 
 <div class="eclipsefdn-user-display">
   <div class="row">
-    <div class="eclipsefdn-user-display-heading col-xs-24 {{ if $subpage }}col-sm-18 match-height-item-by-row{{ end }}">
+    <div class="eclipsefdn-user-display-heading col-xs-24 {{ if eq $displayLearnMore "true" }}col-sm-18 match-height-item-by-row{{ end }}">
       <h2{{ with .Get "headerClass" }} class="{{ . }}"{{ end }}>{{ $title }}</h2>
       {{ with .Inner }}{{ . | markdownify }}{{ end }}
     </div>
     
-    {{ with $subpageURL }}
+    {{ if and (ne $subpageURL "") (eq $displayLearnMore "true") }}
     <div class="eclipsefdn-user-display-subpage col-xs-24 col-sm-6 match-height-item-by-row margin-bottom-30">
       <div class="centered-container">
-        <a href="{{ . | relLangURL }}" class="btn btn-primary btn-wide">{{ i18n "committee-carousel-button-text" }}</a>
+        <a href="{{ $subpageURL | relLangURL }}" class="btn btn-primary btn-wide">{{ i18n "committee-carousel-button-text" }}</a>
       </div>
     </div>
     {{ end }}
