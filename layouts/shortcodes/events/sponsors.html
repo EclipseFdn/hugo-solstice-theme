@@ -24,6 +24,7 @@
 {{ $useCarousel:= .Get "useCarousel" | default "false" }}
 {{ $headerClass:= .Get "headerClass" | default "padding-bottom-20"}}
 {{ $itemClass:= .Get "itemClass" | default "padding-20" }}
+{{ $displayBecomeSponsor := .Get "displayBecomeSponsor" | default "true" }}
 {{ $title := .Get "title" | default (i18n "events-sponsor-title") }}
 {{ $useMaxWidth := .Get "useMax" | default "true" }}
 {{ $xsSliderCount := .Get "xsSliderCount" | default 2 }}
@@ -68,6 +69,9 @@
         {{ end }}
       </li>
     {{ end }}
+    {{ end }}
+    {{ if eq $displayBecomeSponsor "true" }}
+      <p class="text-center"><a class="btn btn-primary" href="https://outreach.eclipse.foundation/event_sponsor">Become a Sponsor</a></p>
     {{ end }}
   </div>
 </div>
