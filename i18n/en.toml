@@ -15,9 +15,15 @@
   
 [footer-foundation-donate-text]
   other = "Donate"
+
+[footer-foundation-members-text]
+  other = "Members"
   
 [footer-foundation-governance-text]
   other = "Governance"
+  
+[footer-foundation-code-of-conduct-text]
+  other = "Code of Conduct"
   
 [footer-foundation-logo-artwork-text]
   other = "Logo and Artwork"
@@ -71,7 +77,7 @@
   other = "IDE and Tools"
   
 [footer-other-community-projects-text]
-  other = "Community of Projects"
+  other = "Projects"
   
 [footer-other-working-groups-text]
   other = "Working Groups"
