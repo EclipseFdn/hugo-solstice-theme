@@ -135,240 +135,296 @@ googleAnalytics = ""
     url = "/components/"
     weight = 3
     identifier = "components"
-    
+
 [[languages.fr.menu.main]]
     name = "Composantes"
     url = "/components/"
     weight = 3
     identifier = "components"
- 
+
 [[languages.en.menu.main]]
-    name = "News"
-    url = "/components/news/"
-    weight = 2
+    name = "Solstice Additions"
+    url = "/components/#solstice"
+    weight = 1
     parent = "components"
-    
+    identifier = "solstice"
+
 [[languages.fr.menu.main]]
-    name = "Nouvelles"
-    url = "/components/news/"
+    name = "Solstice Additions"
+    url = "/components/#solstice"
+    weight = 1
+    parent = "components"
+    identifier = "solstice"
+
+[[languages.en.menu.main]]
+    name = "Events Framework"
+    url = "/components/#events-framework"
     weight = 2
     parent = "components"
-    
+    identifier = "events"
+
+[[languages.fr.menu.main]]
+    name = "Events Framework"
+    url = "/components/#events-framework"
+    weight = 2
+    parent = "components"
+    identifier = "events"
+
+[[languages.en.menu.main]]
+    name = "Dynamic Content"
+    url = "/components/#dynamic"
+    weight = 3
+    parent = "components"
+    identifier = "dynamic"
+
+[[languages.fr.menu.main]]
+    name = "Dynamic Content"
+    url = "/components/#dynamic"
+    weight = 3
+    parent = "components"
+    identifier = "dynamic"
+
+[[languages.en.menu.main]]
+    name = "Deprecated"
+    url = "/components/#deprecated"
+    weight = 4
+    parent = "components"
+    identifier = "deprecated"
+
+[[languages.fr.menu.main]]
+    name = "Deprecated"
+    url = "/components/#deprecated"
+    weight = 4
+    parent = "components"
+    identifier = "deprecated"
+
 [[languages.en.menu.main]]
     name = "Membership"
     url = "/components/members/"
     weight = 3
-    parent = "components"
+    parent = "solstice"    
     
 [[languages.fr.menu.main]]
     name = "Membres"
     url = "/components/members/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.en.menu.main]]
     name = "Taxonomy list"
     url = "/components/taxonomy_list/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.fr.menu.main]]
     name = "Liste de taxonomie"
     url = "/components/taxonomy_list/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.en.menu.main]]
     name = "Testimonials"
     url = "/components/testimonials/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.fr.menu.main]]
     name = "Témoignages"
     url = "/components/testimonials/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.en.menu.main]]
     name = "YouTube videos"
     url = "/components/youtube/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.fr.menu.main]]
     name = "Vidéos Youtube"
     url = "/components/youtube/"
     weight = 3
-    parent = "components"
-    
-[[languages.en.menu.main]]
-    name = "Events"
-    url = "/components/events/"
-    weight = 3
-    parent = "components"
-    
-[[languages.fr.menu.main]]
-    name = "Événements"
-    url = "/components/events/"
-    weight = 3
-    parent = "components"
+    parent = "solstice"
 
 [[languages.en.menu.main]]
     name = "FAQ"
     url = "/components/faq/"
     weight = 4
-    parent = "components"
+    parent = "solstice"
     
 [[languages.fr.menu.main]]
     name = "FAQ"
     url = "/components/faq/"
     weight = 4
-    parent = "components"
+    parent = "solstice"
 
 [[languages.en.menu.main]]
     name = "Featured Footer"
     url = "/components/featured_footer/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.fr.menu.main]]
     name = "Pied de page en vedette"
     url = "/components/featured_footer/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.en.menu.main]]
     name = "Featured Story"
     url = "/components/featured_story/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.fr.menu.main]]
     name = "Article en vedette"
     url = "/components/featured_story/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.en.menu.main]]
     name = "Project list"
     url = "/components/project_list/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.fr.menu.main]]
     name = "Liste de projects"
     url = "/components/project_list/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.en.menu.main]]
     name = "EclipseFdn Project list"
     url = "/components/eclipsefdn_projects/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.fr.menu.main]]
     name = "Liste de projects d'EclipseFdn"
     url = "/components/eclipsefdn_projects/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.en.menu.main]]
     name = "HTML Tables"
     url = "/components/tables/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
-[[languages.en.menu.main]]
+[[languages.fr.menu.main]]
     name = "Tableaux HTML"
     url = "/components/tables/"
     weight = 3
-    parent = "components"
+    parent = "solstice"
     
 [[languages.en.menu.main]]
     name = "RSS Feed"
     url = "/components/rss/"
     weight = 3
-    parent = "components"
+    parent = "dynamic"
     
 [[languages.en.menu.main]]
     name = "RSS Feed"
     url = "/components/rss/"
     weight = 3
-    parent = "components"
+    parent = "dynamic"
     
 [[languages.en.menu.main]]
     name = "Users Display"
     url = "/components/user_display/"
     weight = 3
-    parent = "components"
+    parent = "events"
     
 [[languages.fr.menu.main]]
     name = "Users Display [fr]"
     url = "/components/user_display/"
     weight = 3
-    parent = "components"
+    parent = "events"
     
 [[languages.en.menu.main]]
     name = "User Bios"
     url = "/components/user_bios/"
     weight = 3
-    parent = "components"
+    parent = "events"
     
 [[languages.fr.menu.main]]
     name = "User Bios [fr]"
     url = "/components/user_bios/"
     weight = 3
-    parent = "components"
+    parent = "events"
     
 [[languages.en.menu.main]]
     name = "Registration"
     url = "/components/registration/"
     weight = 3
-    parent = "components"
+    parent = "events"
     
 [[languages.fr.menu.main]]
     name = "Registration [fr]"
     url = "/components/registration/"
     weight = 3
-    parent = "components"
+    parent = "events"
     
 [[languages.en.menu.main]]
     name = "Agenda"
     url = "/components/agenda/"
     weight = 3
-    parent = "components"
+    parent = "events"
     
 [[languages.fr.menu.main]]
     name = "Ordre du jour"
     url = "/components/agenda/"
     weight = 3
-    parent = "components"
+    parent = "events"
     
 [[languages.en.menu.main]]
     name = "Newsroom News"
     url = "/components/newsroom/news/"
     weight = 3
-    parent = "components"
+    parent = "dynamic"
     
 [[languages.fr.menu.main]]
     name = "Newsroom News"
     url = "/components/agenda/"
     weight = 3
-    parent = "components"
+    parent = "dynamic"
     
 [[languages.en.menu.main]]
     name = "Newsroom Events"
     url = "/components/newsroom/events/"
     weight = 3
-    parent = "components"
+    parent = "dynamic"
     
 [[languages.fr.menu.main]]
     name = "Newsroom Events"
     url = "/components/agenda/"
     weight = 3
-    parent = "components"
+    parent = "dynamic"
+
+[[languages.en.menu.main]]
+    name = "News"
+    url = "/components/news/"
+    weight = 2
+    parent = "deprecated"
+
+[[languages.fr.menu.main]]
+    name = "Nouvelles"
+    url = "/components/news/"
+    weight = 2
+    parent = "deprecated"
+
+[[languages.en.menu.main]]
+    name = "Events"
+    url = "/components/events/"
+    weight = 3
+    parent = "deprecated"
+    
+[[languages.fr.menu.main]]
+    name = "Événements"
+    url = "/components/events/"
+    weight = 3
+    parent = "deprecated"
 
 [[languages.en.menu.sidebar]]
     name = "Hugo Solstice Theme"
