@@ -117,3 +117,12 @@ Targets ./data/en/2020/sample/agenda.yaml:
 
 
 {{< events/agenda year="2020" event="sample">}}
+
+---
+
+## Agenda w/ multiple streams
+
+Targets ./data/en/2020/sample/agenda.yaml:
+
+
+{{< events/agenda event="multistream">}}
