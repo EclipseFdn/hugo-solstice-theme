@@ -50,16 +50,25 @@ Items in these data files represent the actual sessions to be represented in the
 
 ## Basic  
 
-Targets ./data/en/agenda.yaml:  
+Targets ./data/en/default/agenda.yaml:  
 
 
 {{< events/agenda >}}
 
 ---
 
+## Different file name  
+
+Targets ./data/en/default/day_2.yaml:  
+
+
+{{< events/agenda src="day_2">}}
+
+---
+
 ## Sub-site version  
 
-Targets ./data/en/2019/agenda.yaml:
+Targets ./data/en/sample/agenda.yaml:
 
 
 {{< events/agenda event="sample">}}
