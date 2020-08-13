@@ -20,9 +20,10 @@
 {{ end }}
 {{ $base := .Scratch.Get "base" }}
 {{ $event_id := .Get "event" | default "default" }}
-{{$events := (index $base $event_id).agenda.items}}
-{{$types := (index $base $event_id).agenda.types}}
-{{$complete := (index $base $event_id).agenda.complete }}
+{{ $src := .Get "src" | default "agenda" }}
+{{$events := (index (index $base $event_id) $src).items}}
+{{$types := (index (index $base $event_id) $src).types}}
+{{$complete := (index (index $base $event_id) $src).complete }}
 <!-- Allow for adjusted titles -->
 {{$title_suffix := .Get "title" }}
 <!-- Check for slide column -->
