@@ -21,16 +21,17 @@
 {{ $base := .Scratch.Get "base" }}
 {{ $event_id := .Get "event" | default "default" }}
 {{ $src := .Get "src" | default "agenda" }}
-{{$events := (index (index $base $event_id) $src).items}}
-{{$types := (index (index $base $event_id) $src).types}}
-{{$complete := (index (index $base $event_id) $src).complete }}
+{{ $agendabase := (index (index $base $event_id) $src) }}
+{{ $types := $agendabase.types }}
+{{ $complete := $agendabase.complete }}
 <!-- Allow for adjusted titles -->
 {{$title_suffix := .Get "title" }}
-<!-- Check for slide column -->
-{{ $has_slides:=false }}
-{{ range $events }}
-  {{ if isset . "slides" }}
-    {{ $has_slides = true }}
+{{ $multiSet := false }}
+<!-- Check if multiple session sets  -->
+{{ if isset $agendabase "sets" }}
+  <!-- Separate checks needed as hugo isn't failfast  -->
+  {{ if gt (len $agendabase.sets) 1 }}
+    {{ $multiSet = true }}
   {{ end }}
 {{ end }}
 
@@ -55,7 +56,55 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
         {{ end }}
       </ul>
     {{ end }}
-  </div>  
+  </div>
+  {{ $agendaItemsBase := slice $agendabase }}
+  {{ if $multiSet }}
+    {{ $agendaItemsBase = $agendabase.sets }}
+  
+  <div class="row content-nav-tab-toggle margin-top-0">
+    <div class="visible-xs">
+      <div class="vertical-align">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-agenda">
+          <p class="nav-label"><strong>{{ .Get "navLabel" | default "Session tracks" }}</strong></p>
+          <div class="hamburger-wrapper">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="navbar-collapse collapse" id="navbar-agenda">
+      <ul class="nav nav-tabs solstice-tabs content-nav-tab" role="tablist">
+      {{ range $index,$set := $agendabase.sets }}
+        <li role="presentation" {{- if eq $index 0 }}class="active"{{ end -}}>
+          <a href="#agenda-sessions-{{ $index }}" data-toggle="tab" aria-controls="agenda-sessions-{{ $index }}" role="tab">
+            {{ .name }}
+          </a>
+        </li>
+      {{ end }}
+      </ul>
+    </div>
+  </div>
+  <div class="content-nav-tab-body tab-content padding-40 margin-bottom-30" id="tabs-content">
+  {{ end }}
+  {{ range $index, $set := $agendaItemsBase }}
+    <!-- Check for slide column -->
+    {{ $has_slides := false }}
+    {{ range $set.items }}
+      {{ if isset . "slides" }}
+        {{ $has_slides = true }}
+      {{ end }}
+    {{ end }}
+    
+    <!-- Check if multiple session sets  -->
+    {{ if $multiSet }}
+      <div role="tabpanel" class="tab-pane tab-pane{{ if eq $index 0}} active{{ end }}" id="agenda-sessions-{{ $index }}">
+    {{ end }}
   <div class="eclipsefdn-agenda-schedule">
     <table class="table">
       <thead>
@@ -73,7 +122,7 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
         </tr>
       </thead>
       <tbody>
-        {{ range $events }}
+        {{ range $set.items }}
         <tr>
           <td>
           {{ if $types }} 
@@ -129,4 +178,16 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
       </tbody>
     </table>
   </div>
+  
+    <!-- Check if multiple session sets  -->
+    {{ if $multiSet }}
+      <!-- Close tab panel -->
+      </div>
+    {{ end }}
+  {{ end }}
+  <!-- Check if multiple session sets  -->
+  {{ if $multiSet }}
+    <!-- Close tab content section -->
+    </div>
+  {{ end }}
 </div>
