@@ -45,7 +45,7 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
 </style>
 
 <div class="eclipsefdn-agenda">
-  <h2>{{ i18n "agenda-sessions" }}</h2>
+  <h2>{{ .Get "title" | default (i18n "agenda-sessions") }}</h2>
   <div class="eclipsefdn-agenda-legend">
     {{ if $types }}
       <h4>{{ i18n "agenda-legend" }}</h4>

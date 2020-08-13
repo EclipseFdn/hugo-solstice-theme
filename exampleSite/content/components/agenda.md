@@ -64,6 +64,15 @@ Targets ./data/en/default/day_2.yaml:
 
 {{< events/agenda src="day_2">}}
 
+---  
+
+## Custom Title
+
+Targets ./data/en/default/day_2.yaml:  
+
+
+{{< events/agenda title="Day 2 Agenda">}}
+
 ---
 
 ## Sub-site version  
