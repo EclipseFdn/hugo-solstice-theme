@@ -329,4 +329,4 @@ other = "赞助商"
 other = "{{ .Count }} 徽标"
 
 [modal-close-alt]
-  other = "关闭"
+other = "关闭"
