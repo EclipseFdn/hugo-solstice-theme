@@ -147,11 +147,11 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
             {{ if and (isset . "presenters") }}
               <ul>
               {{ range .presenters }}
-                  <li>{{ . }}</li>
+                  <li>{{ . | safeHTML }}</li>
               {{ end }}
               </ul>
             {{ else }}
-              {{ .presenter }}
+              {{ .presenter | safeHTML }}
             {{ end }}
           </td>
           {{ if $complete }}
