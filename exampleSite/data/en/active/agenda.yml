@@ -7,7 +7,7 @@ types:
       color: "#e44"
 items:
     - name: How best to apologize, a workshop
-      presenter: Ken Canadian
+      presenter: <strong>Ken Canadian</strong>
       time: 15:00-18:00
       type: demo
       vod: "#1"
