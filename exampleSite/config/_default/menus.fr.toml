@@ -1,0 +1,210 @@
+
+[[main]]
+    name = "Exemples"
+    url = "#"
+    weight = 2
+    identifier = "examples"
+    
+[[main]]
+    name = "Page seule"
+    url = "/single_page/"
+    weight = 1
+    parent = "examples"
+    
+[[main]]
+    name = "Exemples de nouvelles"
+    url = "/news/"
+    weight = 2
+    parent = "examples"
+    
+[[main]]
+    name = "Exemples de Membres"
+    url = "/membership/"
+    weight = 3
+    parent = "examples"
+    
+[[main]]
+    name = "Exemples d'événements"
+    url = "/events/"
+    weight = 3
+    parent = "examples"
+
+[[main]]
+    name = "Composantes"
+    url = "/components/"
+    weight = 3
+    identifier = "components"
+
+[[main]]
+    name = "Solstice Additions"
+    url = "/components/#solstice"
+    weight = 1
+    parent = "components"
+    identifier = "solstice"
+
+[[main]]
+    name = "Events Framework"
+    url = "/components/#events-framework"
+    weight = 2
+    parent = "components"
+    identifier = "events"
+
+[[main]]
+    name = "Dynamic Content"
+    url = "/components/#dynamic"
+    weight = 3
+    parent = "components"
+    identifier = "dynamic"
+
+[[main]]
+    name = "Deprecated"
+    url = "/components/#deprecated"
+    weight = 4
+    parent = "components"
+    identifier = "deprecated"
+
+[[main]]
+    name = "Membres"
+    url = "/components/members/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
+    name = "Liste de taxonomie"
+    url = "/components/taxonomy_list/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
+    name = "Témoignages"
+    url = "/components/testimonials/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
+    name = "Vidéos Youtube"
+    url = "/components/youtube/"
+    weight = 3
+    parent = "solstice"
+
+[[main]]
+    name = "FAQ"
+    url = "/components/faq/"
+    weight = 4
+    parent = "solstice"
+
+[[main]]
+    name = "Pied de page en vedette"
+    url = "/components/featured_footer/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
+    name = "Article en vedette"
+    url = "/components/featured_story/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
+    name = "Liste de projects"
+    url = "/components/project_list/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
+    name = "Liste de projects d'EclipseFdn"
+    url = "/components/eclipsefdn_projects/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
+    name = "Tableaux HTML"
+    url = "/components/tables/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
+    name = "Users Display [fr]"
+    url = "/components/user_display/"
+    weight = 3
+    parent = "events"
+    
+[[main]]
+    name = "User Bios [fr]"
+    url = "/components/user_bios/"
+    weight = 3
+    parent = "events"
+    
+[[main]]
+    name = "Registration [fr]"
+    url = "/components/registration/"
+    weight = 3
+    parent = "events"
+    
+[[main]]
+    name = "Ordre du jour"
+    url = "/components/agenda/"
+    weight = 3
+    parent = "events"
+    
+[[main]]
+    name = "Newsroom News"
+    url = "/components/agenda/"
+    weight = 3
+    parent = "dynamic"
+    
+[[main]]
+    name = "Newsroom Events"
+    url = "/components/agenda/"
+    weight = 3
+    parent = "dynamic"
+
+[[main]]
+    name = "Nouvelles"
+    url = "/components/news/"
+    weight = 2
+    parent = "deprecated"
+
+[[main]]
+    name = "Événements"
+    url = "/components/events/"
+    weight = 3
+    parent = "deprecated"
+
+[[sidebar]]
+    name = "Thème Solstice d'Hugo"
+    url = "#"
+    weight = 2
+    identifier = "home"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    
+[[sidebar]]
+    name = "Liste des composantes"
+    url = "/components"
+    weight = 1
+    parent = "home"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+
+    
+[[sidebar]]
+    name = "Page GitHub"
+    url = "https://github.com/EclipseFdn/hugo-solstice-theme"
+    weight = 2
+    parent = "home"
+    pre = "<i class=\"fa fa-github fa-fw\"></i>"
+    
+[[sidebar]]
+    name = "Premier article"
+    url = "#"
+    weight = 1
+    parent = "membership"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+
+    
+[[sidebar]]
+    name = "Deuxième article"
+    url = "#"
+    weight = 2
+    parent = "membership"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    
