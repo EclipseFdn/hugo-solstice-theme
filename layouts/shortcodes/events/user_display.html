@@ -40,7 +40,7 @@
 {{ else }}
   {{ $displayLearnMore = "false" }}
 {{ end }}
-
+{{ $itemClass := .Get "itemClass" | default "col-xs-12 col-sm-6 match-height-item-by-row" }}
 
 <div class="eclipsefdn-user-display">
   <div class="row">
@@ -65,7 +65,7 @@
         {{ if not $anchor }}
           {{ $anchor = urlize .name }}
         {{ end }}
-        <div class="item padding-40 {{ if ne $useCarousel "true" }} col-xs-12 col-sm-6 match-height-item-by-row{{ end }}">
+        <div class="item padding-40 {{ if ne $useCarousel "true" }}{{ $itemClass }}{{ end }}">
           {{ if .img }}
           <img class="img img-responsive" src="{{ $imageRoot }}{{ .img }}" alt="{{ .name }}">
           {{ else }}
