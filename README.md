@@ -22,7 +22,7 @@ Have a bug or a feature request? Please search for existing and closed issues. I
 
     Or
   
-  - run the following command (https://github.com/laggingreflex/win-node-env)
+  - Run the following command (https://github.com/laggingreflex/win-node-env)
   ```bash
   npm install -g win-node-env
   npm install
