@@ -19,10 +19,13 @@ Have a bug or a feature request? Please search for existing and closed issues. I
   ```
   "scripts": { "start": "set NODE_ENV=production && node app" }
   ```
-
+  and run 
+  ```bash
+  npm install
+  ```
     Or
   
-  - run the following command (https://github.com/laggingreflex/win-node-env)
+  - Run the following command (https://github.com/laggingreflex/win-node-env)
   ```bash
   npm install -g win-node-env
   npm install
