@@ -15,11 +15,11 @@ Have a bug or a feature request? Please search for existing and closed issues. I
 - Versions of Hugo 0.60 and beyond do not support raw HTML in markdown files by default. To enable this feature, unsafe HTML rendering can be enabled in the Goldmark engine in the site configuration. This is not recommended as it exposes rendered content vulnerable to injected content on the site.
 
 - Getting started For Windows:
-  - Run the following command:
+  - Run the following command in CMD:
   ```
   set NODE_ENV=production&&npm install
   ```
-  
+
     Or
   
   - Run the following command (https://github.com/laggingreflex/win-node-env)
