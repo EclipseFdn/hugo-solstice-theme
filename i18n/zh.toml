@@ -19,6 +19,30 @@
 [jakartaone-website]
   other = "JakartaOne 官网网站"  
 
+[footer-foundation-about-us-text]
+  other = "关于我们"
+  
+[footer-foundation-contact-us-text]
+  other = "联系我们"
+  
+[footer-foundation-donate-text]
+  other = "捐赠"
+
+[footer-foundation-members-text]
+  other = "成员"
+  
+[footer-foundation-governance-text]
+  other = "治理"
+  
+[footer-foundation-code-of-conduct-text]
+  other = "行为准则"
+  
+[footer-foundation-logo-artwork-text]
+  other = "徽标和设计元素"
+  
+[footer-foundation-board-of-directors-text]
+  other = "董事会"
+
 [footer-legal-section-text]
   other = "法律条款"
   
@@ -48,15 +72,48 @@
   
 [footer-useful-links-minutes]
   other = "会议纪要"
+
+[footer-useful-links-report-bug-text]
+  other = "报告Bug"
+  
+[footer-useful-links-documentation-text]
+  other = "文档"
+  
+[footer-useful-links-contribute-text]
+  other = "如何做出贡献"
   
 [footer-useful-links-mailing-list-text]
   other = "邮件列表"
+  
+[footer-useful-links-forums-text]
+  other = "论坛"
+  
+[footer-useful-links-marketplace-text]
+  other = "市场"
   
 [footer-useful-links-googledrive]
   other = "Jakarta EE 社区文件夹"
   
 [footer-other-section-text]
   other = "其他"
+  
+[footer-other-tools-text]
+  other = "IDE和工具"
+  
+[footer-other-community-projects-text]
+  other = "项目"
+  
+[footer-other-working-groups-text]
+  other = "工作组"
+  
+[footer-other-research-text]
+  other = "研究@Eclipse"
+  
+[footer-other-report-vulnerability-text]
+  other = "报告漏洞"
+  
+[footer-other-status-text]
+  other = "服务状态"
   
 [footer-other-codeofconduct]
   other = "社区公约"
