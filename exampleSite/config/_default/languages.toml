@@ -13,3 +13,6 @@
 [jp]
   languageName = "日本語"
   weight =  5
+[zh]
+  languageName = "简体中文"
+  weight =  6
