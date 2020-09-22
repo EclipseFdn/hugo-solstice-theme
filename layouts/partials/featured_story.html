@@ -16,8 +16,12 @@
     var rawStoryJSON = {{.Site.Data.featuredstory.items | jsonify}};
     if (json = JSON.parse(rawStoryJSON)) {
       // remove expired items
-      json = json.filter(a => new Date(a['endDate']) > new Date() && (a['startDate'] == undefined || new Date(a['startDate']) < new Date()))
-        .filter(a => a['type'] === "both" || a['type'] === "story");
+      json = json.filter(function(a, idx) { 
+          return new Date(a['endDate']) > new Date() && (a['startDate'] == undefined || new Date(a['startDate']) < new Date());
+        })
+        .filter(function(a, idx) { 
+            return a['type'] === "both" || a['type'] === "story";
+        });
 
       // shuffle the array so that a random available story is featured
       if (json.length > 1) {
