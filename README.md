@@ -21,7 +21,7 @@ set NODE_ENV=production && npm install
 
 #### Alternative Solution
   
-Install [win-node-en](https://github.com/laggingreflex/win-node-env) globally:
+Install [win-node-en](https://github.com/laggingreflex/win-node-env) globally and then install our dependencies by following the steps from our [Getting Started](https://github.com/EclipseFdn/hugo-solstice-theme#getting-started) section.
 
 ```bash
 npm install -g win-node-env
