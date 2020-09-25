@@ -13,7 +13,7 @@ hugo server --source=exampleSite --themesDir="../../"
 
 ### Getting Started (Windows)
 
-To install our dependecies on Windows, replace the previous `npm install`  with this one:
+To install our dependencies on Windows, replace the previous `npm install`  with this one:
   
 ```bash
 set NODE_ENV=production && npm install
