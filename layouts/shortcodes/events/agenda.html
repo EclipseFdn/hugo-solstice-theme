@@ -95,9 +95,13 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
   {{ range $index, $set := $agendaItemsBase }}
     <!-- Check for slide column -->
     {{ $has_slides := false }}
+    {{ $has_vod := false }}
     {{ range $set.items }}
       {{ if isset . "slides" }}
         {{ $has_slides = true }}
+      {{ end }}
+      {{ if isset . "vod" }}
+        {{ $has_vod = true }}
       {{ end }}
     {{ end }}
     
@@ -156,9 +160,11 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
           </td>
           {{ if $complete }}
           <td class="text-center">
-            <a class="btn btn-primary btn-wide" href="{{ .vod }}" title="{{ i18n "agenda-session-recording-button-alt" . }}">
-              <i class="fa fa-play"></i><span class="sr-only">{{ i18n "agenda-session-recording-button-alt" . }}</span>
-            </a>
+            {{ if and ($has_vod) (isset . "vod") }}
+              <a class="btn btn-primary btn-wide" href="{{ .vod }}" title="{{ i18n "agenda-session-recording-button-alt" . }}">
+                <i class="fa fa-play"></i><span class="sr-only">{{ i18n "agenda-session-recording-button-alt" . }}</span>
+              </a>
+            {{ end }}
           </td>
           {{ else }}
           <td>{{ .time }}</td>

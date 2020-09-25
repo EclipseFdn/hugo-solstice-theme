@@ -19,6 +19,11 @@ Have a bug or a feature request? Please search for existing and closed issues. I
   ```
   set NODE_ENV=production&&npm install
   ```
+  and run
+  ```
+  hugo server --source=exampleSite --themesDir="../../"
+  ```
+  to start the example site
 
     Or
   
@@ -27,6 +32,11 @@ Have a bug or a feature request? Please search for existing and closed issues. I
   npm install -g win-node-env
   npm install
   ```
+  and run
+  ```
+  hugo server --source=exampleSite --themesDir="../../"
+  ```
+  to start the example site
 
 ## Author
 
