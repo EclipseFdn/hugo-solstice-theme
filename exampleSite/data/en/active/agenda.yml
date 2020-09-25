@@ -21,4 +21,7 @@ items:
       time: 19:00-20:00
       type: keynote
       vod: "#3"
+    - name: Lunch Break
+      time: 12:00-13:00
+      type: break
       

@@ -24,4 +24,7 @@ items:
       type: keynote
       vod: "#3"
       slides: "#slide-3"
+    - name: Dinner Break
+      time: 20:00-20:30
+      type: break
       
