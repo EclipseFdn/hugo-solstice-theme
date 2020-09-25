@@ -2,6 +2,34 @@
 
 [![Build Status](https://travis-ci.org/EclipseFdn/hugo-solstice-theme.svg?branch=master)](https://travis-ci.org/EclipseFdn/hugo-solstice-theme)
 
+## Getting started
+
+Install dependencies, build assets and start a webserver:
+
+```bash
+npm install 
+hugo server --source=exampleSite --themesDir="../../" 
+```
+
+### Known issues
+
+- Versions of Hugo 0.60 and beyond do not support raw HTML in markdown files by default. To enable this feature, unsafe HTML rendering can be enabled in the Goldmark engine in the site configuration. This is not recommended as it exposes rendered content vulnerable to injected content on the site.
+
+- Getting started For Windows:
+  - Run the following command in CMD:
+  
+```bash
+set NODE_ENV=production && npm install
+```
+
+#### Alternative Solution
+  
+Install [win-node-en](https://github.com/laggingreflex/win-node-env) globally:
+
+```bash
+npm install -g win-node-env
+```
+
 ## Documentation
 
 - <https://eclipsefdn-hugo-solstice-theme.netlify.com/>
@@ -9,34 +37,6 @@
 ## Bugs and feature requests
 
 Have a bug or a feature request? Please search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/eclipsefdn/hugo-solstice-theme/issues/new).
-
-## Known issues
-
-- Versions of Hugo 0.60 and beyond do not support raw HTML in markdown files by default. To enable this feature, unsafe HTML rendering can be enabled in the Goldmark engine in the site configuration. This is not recommended as it exposes rendered content vulnerable to injected content on the site.
-
-- Getting started For Windows:
-  - Run the following command in CMD:
-  ```
-  set NODE_ENV=production&&npm install
-  ```
-  and run
-  ```
-  hugo server --source=exampleSite --themesDir="../../"
-  ```
-  to start the example site
-
-    Or
-  
-  - Run the following command (https://github.com/laggingreflex/win-node-env)
-  ```bash
-  npm install -g win-node-env
-  npm install
-  ```
-  and run
-  ```
-  hugo server --source=exampleSite --themesDir="../../"
-  ```
-  to start the example site
 
 ## Author
 
