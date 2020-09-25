@@ -115,7 +115,7 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
         <tr>
           <th>{{ i18n "agenda-session-name" }}</th>
           <th>{{ i18n "agenda-presenter-name" }}</th>
-          {{ if $complete }}
+          {{ if and ($complete) ($has_vod) }}
           <th class="text-center">{{ i18n "agenda-session-recording" }}</th>
           {{ else }}
           <th>{{ i18n "agenda-session-schedule" }}</th>
@@ -158,9 +158,9 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
               {{ .presenter | safeHTML }}
             {{ end }}
           </td>
-          {{ if $complete }}
+          {{ if and ($complete) ($has_vod) }}
           <td class="text-center">
-            {{ if and ($has_vod) (isset . "vod") }}
+            {{ if (isset . "vod") }}
               <a class="btn btn-primary btn-wide" href="{{ .vod }}" title="{{ i18n "agenda-session-recording-button-alt" . }}">
                 <i class="fa fa-play"></i><span class="sr-only">{{ i18n "agenda-session-recording-button-alt" . }}</span>
               </a>
