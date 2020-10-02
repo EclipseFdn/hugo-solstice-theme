@@ -6,7 +6,7 @@ googleAnalytics = ""
 #disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [Params]
-  google_tag_manager = ""
+  google_tag_manager = "GTM-5WLCZXC"
   description = "Eclipse Foundation: Solstice theme for Hugo."
   subtitle = "Eclipse Foundation"
   seo_title_suffix = " | The Eclipse Foundation"
