@@ -10,6 +10,7 @@
 
   SPDX-License-Identifier: EPL-2.0
 -->
+{{- partial "google_tag_manager_no_script.html" . }}
 <a class="sr-only" href="#content">{{ i18n "navigation-content-skip" }}</a>
 <header class="header-wrapper{{- with .Params.header_wrapper_class | default .Site.Params.header_wrapper_class }} {{ . }}{{end}}" id="header-wrapper">
   {{ partial "navbar.html" . }}
