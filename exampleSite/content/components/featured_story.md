@@ -9,11 +9,16 @@ aliases: []
 toc: false
 draft: false
 show_featured_story: true
+show_featured_footer: false
 ---
 
-You can add a featured story to a markdown file using the page parameter: `show_featured_story: true`
+You can add a featured story to a markdown file using the page parameter: `show_featured_story: true`  
 
-To add featured stories, create a **featuredstory.yml** file in the data folder and add the code below:
+To add featured stories, a new entry can be submitted via the [Newsroom site](https://newsroom.eclipse.org/) using the [Add Featured Story](https://newsroom.eclipse.org/node/add/featured-story) page if you have access. To update what content is retrieved from the featured content API, a parameter of `featured_content_publish_target` can be set in the page or site parameters. This parameter would apply to both the featured footer and featured story content and would be the publish target for the given site (e.g. `eclipse_org`, `eclipse_iot`, `jakarta_ee`).
+
+If there are multiple valid stories at a single time to display, the component will randomly select one and display it on the page.
+
+The right side content, which can hold ad content or other static content such as links to newsletter mailing lists, are set up with raw HTML. This content is authored in the `featuredstory.yml` file in the `data` folder of the site. These sections are freeform and allows flexibility for this content.
 
 ~~~~
 defaultRight: |
@@ -31,49 +36,7 @@ defaultRight: |
             </div>
             <input type="submit" value="Subscribe" name="subscribe" class="button btn btn-primary">
           </form>
-items:
-  -
-    preamble: Now available
-    title: <strong>Eclipse IDE 2019-06</strong>
-    content: Get the latest version of the Eclipse IDE.
-    link: |
-          <ul class="list-inline">
-            <li><a class="btn btn-primary btn-lg" href="/go/PROMO_ECLIPSEIDE_FOOTER@FEATURED_STORY?utm_source=eclipse_foundation&amp;utm_medium=featured_story&amp;utm_campaign=eclipse_ide_2019_06">Download</a></li>
-            <li><a class="btn btn-default btn-lg" href="/eclipseide/">Learn More</a></li>
-          </ul>
-    bgImgSrc: https://www.eclipse.org/home/images/2019-06-bg.jpg
-    startDate: 2019-06-20
-    endDate: 2099-07-30
-    type: story
-  -
-    fullContent: |
-      <h2>Wow, my own custom content</h2>
-      <p>Things I could do with this space:</p>
-      <ol>
-        <li>Arbitrary lists!
-        <li>Bombastic text!
-        <li>Custom content!
-      </ol>
-    bgImgSrc: https://www.eclipse.org/home/images/ece-2019-banner.jpg
-    startDate: 2019-06-17
-    endDate: 2099-07-30
-    type: both
 ~~~~
-
-Required fields:  
-
-- defaultRight  
-- startDate  
-- endDate  
-- type  
-
-The default look and feel is achieved by using a mix of the preamble, title, content, and link. The only field that is always printed is title, otherwise the other fields are optional and will not print if missing or empty.  
-
-Alternate functionality replacing the template content can be achieved using the fullContent property, which will allow free form HTML. This option comes with the caveat that custom content support is maintained for special cases, and it is encouraged to use the default look and feel defined above.
-
-If there are multiple valid stories at a single time to display, the component will randomly select one and display it on the page.
-
-The right side content, which can hold ad content. or other static content such as links to newsletter mailing lists, are set up with raw HTML. These sections are freeform and allows flexibility for this content.
 
 **Examples:**
 

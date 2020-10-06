@@ -104,5 +104,15 @@
       type: "newsItems"
     });
   {{ end }}
+  {{ if ne .Page.Params.show_featured_story false }}
+    $("{{ .Site.Params.featured_footer_selector | default "#featured-story" }}").eclipseFdnApi({
+      type: "featuredStory"
+    });
+  {{ end }}
+  {{ if ne .Page.Params.show_featured_footer false }}
+    $("{{ .Site.Params.featured_footer_selector | default "#featured-footer" }}").eclipseFdnApi({
+      type: "featuredFooter"
+    });
+  {{ end }}
 })(jQuery, document);
 </script>
