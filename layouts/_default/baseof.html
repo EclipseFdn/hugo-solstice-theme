@@ -24,8 +24,8 @@
   {{ block "main_prefix" . }}{{ partial "main_prefix.html" . }}{{ end }}
   {{ block "main" . }}{{ .Content }}{{ end }}
   {{ block "main_suffix" . }}{{ partial "main_suffix.html" . }}{{ end }}
-  {{ block "featured_footer" . }}{{ partial "featured_footer.html" . }}{{ end }}
   {{ block "footer-custom" . }}{{- partial "footer_custom.html" . }}{{ end }}
+  {{ block "featured_footer" . }}{{ partial "featured_footer.html" . }}{{ end }}
   {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
   {{ block "footer-suffix" . }}{{ partial "footer_suffix.html" . }}{{ end }}
 </body>
