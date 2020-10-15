@@ -18,4 +18,3 @@ This site contains information about the Hugo Solstice theme used on Eclipse Fou
 
 The Hugo Solstice theme project is available under the Eclipse Public License, version 2, on GitHub. Currently the project is maintained by the in-house web development team, but like other projects under the Eclipse Foundation umbrella is open to community input and development. 
 
-rebuild
