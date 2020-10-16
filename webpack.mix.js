@@ -18,7 +18,7 @@ mix.scripts([
     './node_modules/owl.carousel/dist/owl.carousel.min.js',
     './node_modules/eclipsefdn-solstice-assets/js/solstice.cookies.js',
     './node_modules/eclipsefdn-solstice-assets/js/solstice.js',
-    './node_modules/eclipsefdn-solstice-assets/js/solstice.modal.js'
+    './node_modules/eclipsefdn-solstice-assets/js/solstice.eventsmodal.js'
 ], './static/js/solstice.js');
 
 
