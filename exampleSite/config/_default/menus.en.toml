@@ -214,13 +214,14 @@
     url = "/"
     weight = 3
     identifier = "home"
-    
+      
 [[sidebar]]
     name = "Component list"
     url = "/components"
     weight = 1
     parent = "home"
     pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    identifier = "component-list"
     
 [[sidebar]]
     name = "GitHub repository" 
@@ -228,6 +229,21 @@
     weight = 2
     parent = "home"
     pre = "<i class=\"fa fa-github fa-fw\"></i>"
+
+[[sidebar]]
+    name = "Third parent"
+    url = "/third-parent"
+    weight = 2
+    parent = "home"
+    pre = "<i class=\"fa fa-github fa-fw\"></i>"
+    identifier = "third-parent"
+
+[[sidebar]]
+    name = "test children"
+    url = "/test"
+    weight = 1
+    parent = "third-parent"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     
 [[sidebar]]
     name = "Membership"
