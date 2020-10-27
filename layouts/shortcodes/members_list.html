@@ -22,7 +22,7 @@
             {{ range $index, $level := $.Site.Taxonomies.participation_levels }}
               <li class="<?php print $value['list_class'];?>">
                 <a class="text-uppercase text-center" href="#tab-{{ $index }}" data-toggle="tab">
-                  <strong>{{ i18n "members-list-members-label" (humanize $index) }}</strong>
+                  <strong> {{ humanize $index }} {{ i18n "members-list-members-label" }}</strong>
                 </a>
               </li>
             {{ end }}

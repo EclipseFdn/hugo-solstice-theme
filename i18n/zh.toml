@@ -260,7 +260,7 @@
   other = "日期"
 
 [members-list-members-label]
-  other = "{{ . }} 成员"
+  other = "成员"
 
 [members-list-all-members]
   other = "全部成员"
