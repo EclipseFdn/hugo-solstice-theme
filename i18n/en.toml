@@ -221,7 +221,7 @@
   other = "Date"
 
 [members-list-members-label]
-  other = "{{ .Count }} Members"
+  other = "{{ . }} Members"
 
 [members-list-all-members]
   other = "All members"
@@ -344,7 +344,7 @@ other = "Follow {{ .name }} on Twitter!"
 other = "Sponsors"
 
 [events-sponsor-image-alt]
-other = "{{ .Count }} logo"
+other = "{{ . }} logo"
 
 [modal-close-alt]
   other = "Close"

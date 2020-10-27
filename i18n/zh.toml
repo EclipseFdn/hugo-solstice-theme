@@ -260,7 +260,7 @@
   other = "日期"
 
 [members-list-members-label]
-  other = "{{ .Count }} 成员"
+  other = "{{ . }} 成员"
 
 [members-list-all-members]
   other = "全部成员"
@@ -383,7 +383,7 @@ other = "关注 {{ .name }} 的推特!"
 other = "赞助商"
 
 [events-sponsor-image-alt]
-other = "{{ .Count }} 徽标"
+other = "{{ . }} 徽标"
 
 [modal-close-alt]
 other = "关闭"
