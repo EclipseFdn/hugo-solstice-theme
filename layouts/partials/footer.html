@@ -14,7 +14,7 @@
   <a class="visible-xs" href="#top">{{ i18n "navigation-back-to-top" }}</a>
 </p>
 {{- with .Params.footer_class | default .Site.Params.footer_class | default "solstice-footer"}} 
-<footer class="{{ . }}">
+<footer class="{{ . }}" id="{{ . }}">
 {{ end }}
   <div class="container">
     <div class="row">
