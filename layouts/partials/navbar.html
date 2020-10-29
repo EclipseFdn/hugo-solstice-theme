@@ -42,9 +42,9 @@
     <div class="row" id="header-row">
       <div class="{{ $.Site.Params.header_left_classes | default "col-sm-5 col-md-4" }}" id="header-left">
         <div class="wrapper-logo-default">
-          {{- with .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
-            <a title="{{ $.Site.Title}}" href="{{ "" | absLangURL }}">
-              <img width="{{ $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ . | absURL }}" alt="{{ $.Site.Title}}" />
+          {{- with .Page.Params.logo | default .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
+            <a title="{{ $.Site.Title }}" href="{{ "" | absLangURL }}">
+              <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ . | absURL }}" alt="{{ $.Site.Title }}" />
             </a>
           {{ end }}
         </div>
