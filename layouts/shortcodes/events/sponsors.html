@@ -48,7 +48,7 @@
           <a href="{{ .url }}" target="_blank" title="{{ printf "%s homepage" .title}}">
         {{ end }}
         <div class="vertical-align match-height-item-by-row">
-          <img class="img img-responsive"  src="{{ .image }}" alt="{{ i18n "events-sponsor-image-alt" .title}}" {{- with .width }} width="{{ . }}"{{ end -}}>
+          <img class="img img-responsive"  src="{{ .image }}" alt="{{ .title }}-{{ i18n "events-sponsor-image-alt"}}" {{- with .width }} width="{{ . }}"{{ end -}}>
         </div>
         {{ if .url }}
           </a>
@@ -63,7 +63,7 @@
         {{ if .url }}
           <a href="{{ .url }}" target="_blank" title="{{ printf "%s homepage" .title}}">
         {{ end }}
-          <img class="img img-responsive"  src="{{ .image }}" alt="{{ i18n "events-sponsor-image-alt" .title}}" {{- with .width }} width="{{ . }}"{{ end -}}>
+          <img class="img img-responsive"  src="{{ .image }}" alt="{{ .title }}-{{ i18n "events-sponsor-image-alt"}}" {{- with .width }} width="{{ . }}"{{ end -}}>
         {{ if .url }}
           </a>
         {{ end }}

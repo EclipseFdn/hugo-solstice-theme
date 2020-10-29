@@ -5,7 +5,7 @@ other = "Próximos eventos"
 other = "Saiba mais"
 
 [upcoming-events-learn-more-title]
-other = "Aprenda mais sobre {{ .Count }}"
+other = "Aprenda mais sobre {{ . }}"
 
 [past-events-header]
 other = "Evento anteriores"
@@ -14,7 +14,7 @@ other = "Evento anteriores"
 other = "Saiba mais"
 
 [past-events-learn-more-title]
-other = "Aprenda mais sobre {{ .Count }}"
+other = "Aprenda mais sobre {{ . }}"
 
 [agenda-schedule]
 other = "Detalhes do evento"

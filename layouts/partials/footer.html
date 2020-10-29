@@ -13,7 +13,7 @@
 <p id="back-to-top">
   <a class="visible-xs" href="#top">{{ i18n "navigation-back-to-top" }}</a>
 </p>
-<footer id="solstice-footer">
+<footer id="{{- .Params.footer_id | default .Site.Params.footer_id | default "solstice-footer"}}" class="{{- .Params.footer_class | default .Site.Params.footer_class | default ""}}">
   <div class="container">
     <div class="row">
       <section class="col-sm-6 hidden-print" id="footer-eclipse-foundation">
