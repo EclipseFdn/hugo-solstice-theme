@@ -52,8 +52,8 @@
             <span class="sr-only">{{ i18n "project-list-dropdown-sr" }}</span>
           </button>
           <ul class="dropdown-menu">
-          	{{ if isset .url "website" }}
-            <li><a href="{{ .website }}" >{{ i18n "project-list-website" }}</a></li>
+            {{ with .website_url }}
+              <li><a href="{{ . }}" >{{ i18n "project-list-website" }}</a></li>
             {{ end }}
             <li><a href="{{ .url }}/developer" >{{ i18n "project-list-resources" }}</a></li>
             <li role="separator" class="divider"></li>
