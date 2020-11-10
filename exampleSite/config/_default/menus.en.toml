@@ -248,16 +248,9 @@
 [[sidebar]]
     name = "Membership"
     url = "#"
-    weight = 3
+    weight = 4
     identifier = "membership"
-    
-[[sidebar]]
-    name = "Sidebar Item 1"
-    url = "#"
-    weight = 1
-    parent = "membership"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
-    
+
 [[sidebar]]
     name = "Sidebar Item 1"
     url = "#"
