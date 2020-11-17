@@ -24,6 +24,9 @@
 <!-------------------- Dropdown Start --------------------------------------->
   {{ range .Site.Menus.sidebar }}
     {{$parentItem := . }}
+    {{/*  <div>Check here what is this . sidebar: {{ .Name }}</div>
+    <div>Check here currentSection: {{ $currentSection }}</div>
+    <div>Check here parentItem.Identifier: {{ $parentItem.Identifier }}</div>  */}}
     {{ if and (.HasChildren) (eq $currentSection $parentItem.Identifier) }}
     <div class="container">
       <div class="row">
@@ -63,7 +66,7 @@
           <div class="col-xs-6"><i class="fa fa-plus fa-fw"></i></div>
           <div class="col-xs-18 sidebar-text">Related Content</div>
         </a>
-      </div>
+      </div>  
       <div class="container collapse" id="sidebars-contents">
       {{ range .Children }}
         {{ if eq .HasChildren false }}
