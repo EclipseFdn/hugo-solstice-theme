@@ -13,7 +13,7 @@ types:
 items:
     - name: Open-source software
       presenter: Ken K.
-      abstract: "<p>Sample abstract</p>"
+      abstract: "<p>Sample abstract<a href='#'>Sample link</a></p>"
       type: 1
       vod: "#1"
     - name: How to 'how to'
