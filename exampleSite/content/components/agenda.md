@@ -49,6 +49,11 @@ Types represent the different types of sessions being held at the event. Normall
 
 Items in these data files represent the actual sessions to be represented in the agenda.  
 
+**Note:** a modal is required on the page if an abstract has been defined within the agenda:
+
+{{&lt; bootstrap/modal id="eclipsefdn-modal-event-session" &gt;}}
+  
+
 ---
 
 ## Basic  
@@ -129,3 +134,5 @@ Targets ./data/en/2020/sample/agenda.yaml:
 
 
 {{< events/agenda event="multistream">}}
+
+{{< bootstrap/modal id="eclipsefdn-modal-event-session" >}}

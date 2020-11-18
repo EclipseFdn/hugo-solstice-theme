@@ -142,9 +142,9 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
               <span class="sr-only">
                 {{ i18n "agenda-abstract-modal-alt" . }}
               </span>
-              <div class="modal-content hidden">{{ .abstract | safeHTML }}</div>
             </i>
           </a> 
+          <div class="modal-content hidden">{{ .abstract | safeHTML }}</div>
           {{ end }}
           </td>
           <td>
