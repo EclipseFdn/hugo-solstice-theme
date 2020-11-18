@@ -24,9 +24,6 @@
 <!-------------------- Dropdown Start --------------------------------------->
   {{ range .Site.Menus.sidebar }}
     {{$parentItem := . }}
-    {{/*  <div>Check here what is this . sidebar: {{ .Name }}</div>
-    <div>Check here currentSection: {{ $currentSection }}</div>
-    <div>Check here parentItem.Identifier: {{ $parentItem.Identifier }}</div>  */}}
     {{ if and (.HasChildren) (eq $currentSection $parentItem.Identifier) }}
     <div class="container">
       <div class="row">
