@@ -60,7 +60,7 @@
     <div id="mobile-sidebar" class="container hidden-lg hidden-md visible-sm visible-xs">
       <div class="container sidebar-item related-content">
         <a href="#sidebars-contents" data-toggle="collapse" aria-expanded="false" aria-controls="sidebars-contents">
-          <div class="col-xs-6"><i class="fa fa-plus fa-fw"></i></div>
+          <div class="col-xs-6"><i class="fa fa-plus fa-bars"></i></div>
           <div class="col-xs-18 sidebar-text">Related Content</div>
         </a>
       </div>  
@@ -69,8 +69,7 @@
         {{ if eq .HasChildren false }}
           <div class="row sidebar-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
             <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-              <div class="col-xs-6">{{ .Pre }}</div>
-              <div class="col-xs-18 sidebar-text">{{ .Name }}</div>
+              <div class="col-xs-18 col-xs-offset-6 sidebar-text">{{ .Name }}</div>
             </a>
           </div>
         {{ end }} <!-- if eq .HasChildren false end -->
@@ -85,8 +84,7 @@
             {{ range .Children }}
               <div class="row sidebar-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-                  <div class="col-xs-6">{{ .Pre }}</div>
-                  <div class="col-xs-18 sidebar-text">{{ .Name }}</div>
+                  <div class="col-xs-18 col-xs-offset-6 sidebar-text">{{ .Name }}</div>
                 </a>
               </div>
             {{ end }} <!--Children's Children end-->
