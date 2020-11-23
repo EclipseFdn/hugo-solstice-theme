@@ -19,7 +19,7 @@
 </head>
 <body>
   {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
-  {{ block "breadcrumbs" . }}{{ if ne .Page.Params.hide_breadcrumb true }}{{ partial "breadcrumbs.html" . }}{{end}}{{ end }}
+  {{ block "breadcrumbs" . }}{{ if and (ne .Page.Params.hide_breadcrumb true) (ne .Site.Params.hide_breadcrumb true) }}{{ partial "breadcrumbs.html" . }}{{end}}{{ end }}
   {{ block "featured_story" . }}{{ partial "featured_story.html" . }}{{ end }}
   {{ block "main_prefix" . }}{{ partial "main_prefix.html" . }}{{ end }}
   {{ block "main" . }}{{ .Content }}{{ end }}
