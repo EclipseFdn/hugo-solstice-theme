@@ -1,5 +1,6 @@
 {{ define "head-suffix" }}
-  {{ with .Site.Data.faq }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+  {{ with $data.faq }}
     <script type="application/ld+json">
     {{ . }}
     </script>
@@ -7,15 +8,16 @@
 {{ end }}
 {{ define "breadcrumbs"}}{{ partial "breadcrumbs.html" . }}{{end}}
 {{ define "main" }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
 <main>
   <h2>{{ i18n "faq-list-heading" }}</h2>
   <ul>
-    {{ range .Site.Data.faq.mainEntity }}
+    {{ range $data.faq.mainEntity }}
       <li><a href="#{{ replace .name " " "_" }}">{{ .name | safeHTML }}</a></li>
     {{ end }}
   </ul>
   <hr>
-  {{ range .Site.Data.faq.mainEntity }}
+  {{ range $data.faq.mainEntity }}
     <h2 class="h4" id="{{ replace .name " " "_" }}">{{ .name | safeHTML }}</h2>
     {{ .acceptedAnswer.text  | safeHTML }}
     <hr>
