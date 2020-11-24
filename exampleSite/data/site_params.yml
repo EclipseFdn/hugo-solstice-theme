@@ -134,3 +134,8 @@ items:
     description: URL to the YouTube page for the site. If there is no value set, will default to Eclispe Foundation page.
     values:
       - Absolute link to YouTube profile
+  - 
+    name: hide_breadcrumb
+    description: Hides the breadcrumb on all pages if set to true, otherwise ignored.
+    values:
+      - "true"
