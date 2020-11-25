@@ -1,0 +1,13 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+  <h2>{{ i18n "faq-list-heading" }}</h2>
+  <ul>
+    {{ range $data.faq.mainEntity }}
+      <li><a href="#{{ replace .name " " "_" }}">{{ .name | safeHTML }}</a></li>
+    {{ end }}
+  </ul>
+  <hr>
+  {{ range $data.faq.mainEntity }}
+    <h2 class="h4" id="{{ replace .name " " "_" }}">{{ .name | safeHTML }}</h2>
+    {{ .acceptedAnswer.text  | safeHTML }}
+    <hr>
+  {{ end }}
