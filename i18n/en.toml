@@ -269,7 +269,7 @@
   other = "Eclipse project downloads"
 
 [faq-list-heading]
-  other = "Table of content"
+  other = "Table of contents"
   
 [project-list-logo-alt]
   other = "{{ .name }} logo"
