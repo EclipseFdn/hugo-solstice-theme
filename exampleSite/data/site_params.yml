@@ -85,7 +85,7 @@ items:
       - "true"
   - 
     name: js
-    description: URL to the main javascript to be used on the site. This does not affect any scripts added in custom sctions of the site. Defaults to https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/main.min.js
+    description: URL to the main javascript to be used on the site. This does not affect any scripts added in custom sctions of the site. Defaults to <a href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/main.min.js">main.min.js</a>
     values:
       - Absolute link or fully qualified URL to a JS file
   - 
@@ -121,7 +121,7 @@ items:
       - "true"
   - 
     name: styles
-    description: URL to the stylesheet to be used on the site. This does not affect any stylesheets added in custom sctions of the site. Defaults to https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/quicksilver.min.css
+    description: URL to the stylesheet to be used on the site. This does not affect any stylesheets added in custom sctions of the site. Defaults to <a href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/quicksilver.min.css">quicksilver.min.css</a>
     values:
       - Absolute link or fully qualified URL to a CSS file
   - 

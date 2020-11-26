@@ -23,7 +23,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "axios": "^0.19.0",
-    "eclipsefdn-solstice-assets": "git+https://github.com/flora8984461/solstice-assets.git#1b7ef1e09a849a1aaa0889fa5727839ccacd20ee",
+    "eclipsefdn-solstice-assets": "git+https://github.com/flora8984461/solstice-assets.git#355d52dde4077c71055a9be30a5f02e9f6be0001",
     "json2yaml": "^1.1.0",
     "parse-link-header": "^1.0.1"
   }

@@ -25,7 +25,7 @@
 				<tr>
 					<td>{{ .name }}</td>
 					<td>
-						<p>{{ .description }}</p>
+						<p>{{ .description | safeHTML }}</p>
 						{{ if isset .values 0 }}
 							<p><em>Accepted values:</em></p>
 							<ul>
