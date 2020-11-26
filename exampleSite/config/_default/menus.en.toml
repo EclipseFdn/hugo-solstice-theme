@@ -34,7 +34,7 @@
     url = "/faq/"
     weight = 4
     parent = "examples"
-    
+
 [[main]]
     name = "Hide Call For Action"
     url = "/hide_call_for_action/"
@@ -45,6 +45,12 @@
     name = "Without Breadcrumb"
     url = "/without_breadcrumb/"
     weight = 6
+    parent = "examples"
+
+[[main]]
+    name = "multi-children mobile sidebar sample"
+    url = "/third-parent/"
+    weight = 7
     parent = "examples"
 
 [[main]]

@@ -14,7 +14,7 @@
 {{ if isset .Site.Menus "sidebar" }}
 
 {{ $currentPage := . }}
-{{ if ne $currentPage.Params.hide_sidebar true }}
+{{ if or (eq $currentPage.Params.show_mobile_sidebar true) (eq .Site.Params.show_mobile_sidebar true) }}
 {{ .Scratch.Set "currentSection" "home" }}
 {{ if $currentPage.Section }}
   {{ .Scratch.Set "currentSection" $currentPage.Section }}
@@ -65,5 +65,5 @@
   </div> <!-- div id="mobile-sidebar" end -->
   <!-------------------- Collapisible end ----------------------------------------->
 
-  {{ end }} <!-- if ne $currentPage.Params.hide_sidebar true end-->
+  {{ end }} <!-- if or (eq $currentPage.Params.show_mobile_sidebar true) (eq .Site.Params.show_mobile_sidebar true) end-->
 {{ end }} <!-- if isset .Site.Menus "sidebar" end -->
