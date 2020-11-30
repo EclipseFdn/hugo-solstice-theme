@@ -11,6 +11,7 @@
   SPDX-License-Identifier: EPL-2.0
 -->
 
+{{ partial "collapsible-menu.html" . }}
 <main>
   <div class="{{- .Params.container | default .Site.Params.container | default "container"}}">
     {{ if ne .Page.Params.hide_sidebar true }}
@@ -21,5 +22,3 @@
     {{ if ne .Page.Params.hide_page_title true }}
       <h1>{{ .Title | safeHTML | title }}</h1>
     {{ end }}
-
-    {{ partial "collapsible-menu.html" . }}
