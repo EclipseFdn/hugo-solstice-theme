@@ -14,7 +14,7 @@
 {{ if isset .Site.Menus "sidebar" }}
 
 {{ $currentPage := . }}
-{{ if or (eq $currentPage.Params.show_mobile_sidebar true) (eq .Site.Params.show_mobile_sidebar true) }}
+{{ if or (eq $currentPage.Params.show_collapsible_menu true) (eq .Site.Params.show_collapsible_menu true) }}
 {{ .Scratch.Set "currentSection" "home" }}
 {{ if $currentPage.Section }}
   {{ .Scratch.Set "currentSection" $currentPage.Section }}
@@ -25,34 +25,34 @@
   {{ range .Site.Menus.sidebar }}
     {{$parentItem := . }}
     {{ if and (.HasChildren) (eq $currentSection $parentItem.Identifier) }}
-    <div class="mobile-sidebar container hidden-lg hidden-md visible-sm visible-xs">
-      <div class="container sidebar-item related-content">
+    <div class="collapsible-menu container hidden-lg hidden-md visible-sm visible-xs">
+      <div class="container collapsible-menu-item related-content">
         <a href="#sidebars-contents" data-toggle="collapse" aria-expanded="false" aria-controls="sidebars-contents">
           <div class="col-xs-6"><i class="fa fa-plus fa-bars"></i></div>
-          <div class="col-xs-18 sidebar-text">Related Content</div>
+          <div class="col-xs-18 collapsible-menu-text">Related Content</div>
         </a>
       </div>  
       <div class="container collapse" id="sidebars-contents">
       {{ range .Children }}
         {{ if eq .HasChildren false }}
-          <div class="row sidebar-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
+          <div class="row collapsible-menu-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
             <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-              <div class="col-xs-18 col-xs-offset-6 sidebar-text">{{ .Name }}</div>
+              <div class="col-xs-18 col-xs-offset-6 collapsible-menu-text">{{ .Name }}</div>
             </a>
           </div>
         {{ end }} <!-- if eq .HasChildren false end -->
         {{ if .HasChildren }}
-          <div class="row sidebar-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
+          <div class="row collapsible-menu-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
             <a href="#sub-children-{{ .Identifier }}" data-toggle="collapse" aria-expanded="false" aria-controls="sub-children{{ .Identifier }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
               <div class="col-xs-6">{{ .Pre }}</div>
-              <div class="col-xs-18 sidebar-text">{{ .Name }}</div>
+              <div class="col-xs-18 collapsible-menu-text">{{ .Name }}</div>
             </a>
           </div>
-          <div class="row sidebar-sub-items collapse" id="sub-children-{{ .Identifier }}">
+          <div class="row collapsible-menu-sub-item collapse" id="sub-children-{{ .Identifier }}">
             {{ range .Children }}
               <div class="row sidebar-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-                  <div class="col-xs-18 col-xs-offset-6 sidebar-text">{{ .Name }}</div>
+                  <div class="col-xs-18 col-xs-offset-6 collapsible-menu-text">{{ .Name }}</div>
                 </a>
               </div>
             {{ end }} <!--Children's Children end-->
@@ -62,8 +62,8 @@
       </div>
     {{ end }}  <!-- if .HasChildren end -->
   {{ end }}  <!-- range .Site.Menus.sidebar end -->
-  </div> <!-- div id="mobile-sidebar" end -->
+  </div> <!-- div id="collapsible-menu" end -->
   <!-------------------- Collapisible end ----------------------------------------->
 
-  {{ end }} <!-- if or (eq $currentPage.Params.show_mobile_sidebar true) (eq .Site.Params.show_mobile_sidebar true) end-->
+  {{ end }} <!-- if or (eq $currentPage.Params.show_collapsible_menu true) (eq .Site.Params.show_collapsible_menu true) end-->
 {{ end }} <!-- if isset .Site.Menus "sidebar" end -->

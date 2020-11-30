@@ -140,7 +140,7 @@ items:
     values:
       - "true"
   - 
-    name: show_mobile_sidebar
-    description: Show mobile sidebar on all pages if set to true, otherwise is ignored. 
+    name: show_collapsible_menu
+    description: Show collapsible menu for mobile view on all pages if set to true, otherwise is ignored. 
     values:
       - "true"

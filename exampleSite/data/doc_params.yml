@@ -103,7 +103,7 @@ items:
     values:
       - Any string value
   - 
-    name: show_mobile_sidebar
-    description: Show mobile sidebar on this page if set to true, otherwise is ignored. 
+    name: show_collapsible_menu
+    description: Show collapsible menu for mobile view on this page if set to true, otherwise is ignored. 
     values:
       - "true"
