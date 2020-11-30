@@ -48,9 +48,9 @@
               <div class="col-xs-18 collapsible-menu-text">{{ .Name }}</div>
             </a>
           </div>
-          <div class="row collapsible-menu-sub-item collapse" id="sub-children-{{ .Identifier }}">
+          <div class="row collapsible-menu-sub-items collapse" id="sub-children-{{ .Identifier }}">
             {{ range .Children }}
-              <div class="row sidebar-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
+              <div class="row collapsible-menu-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
                   <div class="col-xs-18 col-xs-offset-6 collapsible-menu-text">{{ .Name }}</div>
                 </a>
