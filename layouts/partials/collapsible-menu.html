@@ -1,0 +1,69 @@
+<!-- 
+  Copyright (c) 2018 Eclipse Foundation, Inc.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v. 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0.
+
+  Contributors:
+    Christopher Guindon <chris.guindon@eclipse-foundation.org>
+
+  SPDX-License-Identifier: EPL-2.0
+-->
+
+{{ if isset .Site.Menus "sidebar" }}
+
+{{ $currentPage := . }}
+{{ if or (eq $currentPage.Params.show_collapsible_menu true) (eq .Site.Params.show_collapsible_menu true) }}
+{{ .Scratch.Set "currentSection" "home" }}
+{{ if $currentPage.Section }}
+  {{ .Scratch.Set "currentSection" $currentPage.Section }}
+{{ end }}
+{{$currentSection := .Scratch.Get "currentSection" }}
+
+<!----------------------- Collapisible start ------------------------------------>
+  {{ range .Site.Menus.sidebar }}
+    {{$parentItem := . }}
+    {{ if and (.HasChildren) (eq $currentSection $parentItem.Identifier) }}
+    <div class="collapsible-menu container hidden-lg hidden-md visible-sm visible-xs">
+      <div class="container collapsible-menu-item related-content">
+        <a href="#sidebars-contents" data-toggle="collapse" aria-expanded="false" aria-controls="sidebars-contents">
+          <div class="col-xs-6"><i class="fa fa-plus fa-bars"></i></div>
+          <div class="col-xs-18 collapsible-menu-text">Related Content</div>
+        </a>
+      </div>  
+      <div class="container collapse" id="sidebars-contents">
+      {{ range .Children }}
+        {{ if eq .HasChildren false }}
+          <div class="row collapsible-menu-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
+            <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
+              <div class="col-xs-18 col-xs-offset-6 collapsible-menu-text">{{ .Name }}</div>
+            </a>
+          </div>
+        {{ end }} <!-- if eq .HasChildren false end -->
+        {{ if .HasChildren }}
+          <div class="row collapsible-menu-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
+            <a href="#sub-children-{{ .Identifier }}" data-toggle="collapse" aria-expanded="false" aria-controls="sub-children{{ .Identifier }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
+              <div class="col-xs-6">{{ .Pre }}</div>
+              <div class="col-xs-18 collapsible-menu-text">{{ .Name }}</div>
+            </a>
+          </div>
+          <div class="row collapsible-menu-sub-items collapse" id="sub-children-{{ .Identifier }}">
+            {{ range .Children }}
+              <div class="row collapsible-menu-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
+                <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
+                  <div class="col-xs-18 col-xs-offset-6 collapsible-menu-text">{{ .Name }}</div>
+                </a>
+              </div>
+            {{ end }} <!--Children's Children end-->
+          </div>
+        {{ end }}  <!-- if .HasChildren (subchildren) end -->
+      {{ end }}  <!-- range Children end -->
+      </div>
+    {{ end }}  <!-- if .HasChildren end -->
+  {{ end }}  <!-- range .Site.Menus.sidebar end -->
+  </div> <!-- div id="collapsible-menu" end -->
+  <!-------------------- Collapisible end ----------------------------------------->
+
+  {{ end }} <!-- if or (eq $currentPage.Params.show_collapsible_menu true) (eq .Site.Params.show_collapsible_menu true) end-->
+{{ end }} <!-- if isset .Site.Menus "sidebar" end -->

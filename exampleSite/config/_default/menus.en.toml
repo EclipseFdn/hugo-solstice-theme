@@ -34,7 +34,7 @@
     url = "/faq/"
     weight = 4
     parent = "examples"
-    
+
 [[main]]
     name = "Hide Call For Action"
     url = "/hide_call_for_action/"
@@ -45,6 +45,12 @@
     name = "Without Breadcrumb"
     url = "/without_breadcrumb/"
     weight = 6
+    parent = "examples"
+
+[[main]]
+    name = "multi-children mobile sidebar sample"
+    url = "/third-parent/"
+    weight = 7
     parent = "examples"
 
 [[main]]
@@ -214,13 +220,14 @@
     url = "/"
     weight = 3
     identifier = "home"
-    
+      
 [[sidebar]]
     name = "Component list"
     url = "/components"
     weight = 1
     parent = "home"
     pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    identifier = "component-list"
     
 [[sidebar]]
     name = "GitHub repository" 
@@ -228,20 +235,50 @@
     weight = 2
     parent = "home"
     pre = "<i class=\"fa fa-github fa-fw\"></i>"
+
+[[sidebar]]
+    name = "Third parent"
+    url = "/third-parent"
+    weight = 2
+    pre = "<i class=\"fa fa-github fa-fw\"></i>"
+    identifier = "third-parent"
+
+[[sidebar]]
+    name = "test children"
+    url = "/third-parent/test-children"
+    weight = 1
+    parent = "third-parent"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    identifier = "test-children"
+
+[[sidebar]]
+    name = "test children 2"
+    url = "/third-parent/test-children-2"
+    weight = 1
+    parent = "third-parent"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    identifier = "test-children-2"
+
+[[sidebar]]
+    name = "test children's children-1"
+    url = "/third-parent/test-children/test-children-children"
+    weight = 1
+    parent = "test-children"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+
+[[sidebar]]
+    name = "test children's children-2"
+    url = "/third-parent/test-children/test-children-children-2"
+    weight = 2
+    parent = "test-children"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     
 [[sidebar]]
     name = "Membership"
     url = "#"
-    weight = 3
+    weight = 4
     identifier = "membership"
-    
-[[sidebar]]
-    name = "Sidebar Item 1"
-    url = "#"
-    weight = 1
-    parent = "membership"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
-    
+
 [[sidebar]]
     name = "Sidebar Item 1"
     url = "#"

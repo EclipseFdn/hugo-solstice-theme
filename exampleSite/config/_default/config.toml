@@ -23,6 +23,7 @@ googleAnalytics = ""
   show_events = true
   table_classes = "table table-bordered"
   hide_cfa_same_page = true
+  show_collapsible_menu = true
 
 [Author]
   name = "Christopher Guindon"

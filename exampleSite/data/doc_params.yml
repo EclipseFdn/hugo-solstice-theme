@@ -102,3 +102,8 @@ items:
     description: Optional tagline that will be inserted after the subtitle parameter in the jumbotron as the tagline under the titles for the page. 
     values:
       - Any string value
+  - 
+    name: show_collapsible_menu
+    description: Show collapsible menu for mobile view on this page if set to true, otherwise is ignored. 
+    values:
+      - "true"
