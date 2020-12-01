@@ -130,9 +130,11 @@ Targets ./data/en/2020/sample/agenda.yaml:
 
 ## Agenda w/ multiple streams
 
-Targets ./data/en/2020/sample/agenda.yaml:
+Targets ./data/en/multistream/agenda.yaml:
 
 
 {{< events/agenda event="multistream">}}
 
+
 {{< bootstrap/modal id="eclipsefdn-modal-event-session" >}}
+
