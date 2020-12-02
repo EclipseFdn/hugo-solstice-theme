@@ -25,3 +25,7 @@ mix.scripts([
 mix.scripts([
     './node_modules/eclipsefdn-solstice-assets/js/solstice.tables.js'
 ], './static/js/solstice.hugo.js');
+
+mix.scripts([
+    './js/eclipsefdn.adopters.js',
+], './static/assets/js/eclipsefdn.adopters.js');
