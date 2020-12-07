@@ -10,7 +10,7 @@
 --> 
 {{ $container_id := .Get "container_id" | default "" }}
 {{ $class := .Get "class" | default "eclipsefdn-adopters" }}
-{{ $working_group := .Get "working_group" | default .Site.Params.working_group | default .Page.Params.working_group }}
+{{ $working_group := .Get "working_group" | default "" }}
 {{ $ul_classes := .Get "ul_classes" | default "text-center list-inline" }}
 
   <div id="{{ $container_id }}" class="{{ $class }}"></div>

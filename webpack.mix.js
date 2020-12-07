@@ -18,14 +18,11 @@ mix.scripts([
     './node_modules/owl.carousel/dist/owl.carousel.min.js',
     './node_modules/eclipsefdn-solstice-assets/js/solstice.cookies.js',
     './node_modules/eclipsefdn-solstice-assets/js/solstice.js',
-    './node_modules/eclipsefdn-solstice-assets/js/solstice.eventsmodal.js'
+    './node_modules/eclipsefdn-solstice-assets/js/solstice.eventsmodal.js',
+    './node_modules/eclipsefdn-solstice-assets/js/eclipsefdn.adopters.js'
 ], './static/js/solstice.js');
 
 
 mix.scripts([
     './node_modules/eclipsefdn-solstice-assets/js/solstice.tables.js'
 ], './static/js/solstice.hugo.js');
-
-mix.scripts([
-    './js/eclipsefdn.adopters.js',
-], './static/assets/js/eclipsefdn.adopters.js');
