@@ -5,4 +5,4 @@ working_group: cloud-development-tools
 hide_sidebar: true
 ---
 
-{{< page-adopters >}}
+{{< eclipsefdn_adopters >}}

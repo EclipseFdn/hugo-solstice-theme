@@ -5,4 +5,4 @@ working_group: internet-things-iot
 hide_sidebar: true
 ---
 
-{{< page-adopters >}}
+{{< eclipsefdn_adopters >}}
