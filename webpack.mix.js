@@ -7,6 +7,10 @@ mix.setResourceRoot('../');
 mix.less('./node_modules/eclipsefdn-solstice-assets/less/quicksilver/styles.less', 'static/css/styles.css');
 
 mix.scripts([
+    './node_modules/eclipsefdn-solstice-assets/js/eclipsefdn.adopters.js'
+], './static/js/eclipsefdn.adopters.js');
+
+mix.scripts([
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/cookieconsent/src/cookieconsent.js',
@@ -18,8 +22,7 @@ mix.scripts([
     './node_modules/owl.carousel/dist/owl.carousel.min.js',
     './node_modules/eclipsefdn-solstice-assets/js/solstice.cookies.js',
     './node_modules/eclipsefdn-solstice-assets/js/solstice.js',
-    './node_modules/eclipsefdn-solstice-assets/js/solstice.eventsmodal.js',
-    './node_modules/eclipsefdn-solstice-assets/js/eclipsefdn.adopters.js'
+    './node_modules/eclipsefdn-solstice-assets/js/solstice.eventsmodal.js'
 ], './static/js/solstice.js');
 
 
