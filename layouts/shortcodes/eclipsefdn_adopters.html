@@ -13,17 +13,8 @@
 {{ $working_group := .Get "working_group" | default "" }}
 {{ $ul_classes := .Get "ul_classes" | default "text-center list-inline" }}
 
-  <div id="{{ $container_id }}" class="{{ $class }}"></div>
-  <script src="{{ "js/eclipsefdn.adopters.js" | absURL}}"></script>
-  <script>
+<div id="{{ $container_id }}" class="{{ $class }}"></div>
+<script src="{{ "js/eclipsefdn.adopters.js" | absURL}}"></script>
+<script>
   eclipseFdnAdopters.getWGList({src_root: "https://api.eclipse.org/adopters", working_group: "{{ $working_group }}", ul_classes: "{{ $ul_classes }}"})
-
-//Function to scroll
-if (location.hash) {
-  setTimeout(() => {
-    var projectId = location.hash.replace('#', '');
-    var element = document.getElementById(`${projectId}`);
-    element.scrollIntoView();
-  }, 500)
-}
 </script>
