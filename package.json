@@ -13,17 +13,17 @@
     "url": "git://github.com/eclipsefdn/hugo-solstice-theme.git"
   },
   "scripts": {
-    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "NODE_ENV=development webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development webpack --watch --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
     "fetch_project": "NODE_ENV=production node bin/projects/index.js -l exampleSite/data",
     "prepare_release": "rm -rf node_modules && rm package-lock.json && npm install && npm run production && git add . && git commit -m \"prepare new release\" -s"
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "axios": "^0.19.0",
-    "eclipsefdn-solstice-assets": "0.0.135",
+    "axios": "^0.21.1",
+    "eclipsefdn-solstice-assets": "0.0.136",
     "json2yaml": "^1.1.0",
     "parse-link-header": "^1.0.1"
   }
