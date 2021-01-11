@@ -1,0 +1,11 @@
+items:
+  -
+    page_url: '/components'
+    logo: '/images/jakarta_ee_logo_schooner_color_horizontal_default.png'
+    logo_url: '/components'
+    logo_title: 'Components'
+  -
+    page_url: '/third-parent'
+    logo: '/images/jakartaone_livestream_test_white_logo.svg'
+    logo_url: '/third-parent'
+    logo_title: 'Third Parent'

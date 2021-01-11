@@ -42,10 +42,32 @@
     <div class="row" id="header-row">
       <div class="{{ $.Site.Params.header_left_classes | default "col-sm-5 col-md-4" }}" id="header-left">
         <div class="wrapper-logo-default">
-          {{- with .Page.Params.logo | default .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
-            <a title="{{ $.Site.Title }}" href="{{ "" | absLangURL }}">
-              <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ . | absURL }}" alt="{{ $.Site.Title }}" />
+
+          {{ $flag := false }}
+          {{ $currentPageLogo := '1' }}
+          {{ $currentPageLogoTitle := '2' }}
+          {{ $currentPageLogoLink := '3' }}
+          {{ range $.Site.Data.subsites_custom_logo.items }}
+
+            {{ $section := $.Site.GetPage (.page_url) }}
+            {{ if or (eq ($.Section) ($section)) ( $.Page.IsDescendant $section ) }}
+              {{ $flag = true }}
+              {{ $currentPageLogo = .logo }}
+              {{ $currentPageLogoTitle = .logo_title }}
+              {{ $currentPageLogoLink = .logo_url }}
+            {{ end }}
+          {{ end }}
+
+          {{ if eq ($flag) (true) }}
+            <a title="{{ $currentPageLogoTitle }}" href="{{ $currentPageLogoLink | absLangURL }}">
+              <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ $currentPageLogo | absURL }}" alt="{{ $currentPageLogoTitle }}" />
             </a>
+          {{ else }}
+            {{- with .Page.Params.logo | default .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
+              <a title="{{ $.Site.Title }}" href="{{ "" | absLangURL }}">
+                <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ . | absURL }}" alt="{{ $.Site.Title }}" />
+              </a>
+            {{ end }}
           {{ end }}
         </div>
       </div>
