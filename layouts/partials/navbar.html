@@ -44,9 +44,9 @@
         <div class="wrapper-logo-default">
 
           {{ $flag := false }}
-          {{ $currentPageLogo := '1' }}
-          {{ $currentPageLogoTitle := '2' }}
-          {{ $currentPageLogoLink := '3' }}
+          {{ $currentPageLogo := '0' }}
+          {{ $currentPageLogoTitle := '0' }}
+          {{ $currentPageLogoLink := '0' }}
           {{ range $.Site.Data.subsites_custom_logo.items }}
 
             {{ $section := $.Site.GetPage (.page_url) }}
@@ -58,7 +58,7 @@
             {{ end }}
           {{ end }}
 
-          {{ if eq ($flag) (true) }}
+          {{ if and (eq $flag true) (ne $currentPageLogo '0') }}
             <a title="{{ $currentPageLogoTitle }}" href="{{ $currentPageLogoLink | absLangURL }}">
               <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ $currentPageLogo | absURL }}" alt="{{ $currentPageLogoTitle }}" />
             </a>

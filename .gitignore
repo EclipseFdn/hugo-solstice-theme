@@ -1,6 +1,9 @@
 /node_modules/
 /static/*
 !/static/js/
+!/static/images/
+/static/images/vendor/
+!/static/images/fake_logo/
 /static/js/solstice.js
 /exampleSite/public
 /exampleSite/layouts/robots.txt
