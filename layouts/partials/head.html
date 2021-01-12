@@ -24,7 +24,7 @@
 <meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url={{ .Page.Params.redirect_url }}" />
 {{ end }}
-{{- with .Page.Params.description | default .Page.Params.summary  | default .Site.Params.description }}
+{{- with .Params.description | default .Params.Summary  | default .Site.Params.description }}
 <meta name="description" content="{{ . }}">
 <meta property="og:description" content="{{ . }}">
 <meta name="twitter:description" content="{{ . | truncate 200 }}">
