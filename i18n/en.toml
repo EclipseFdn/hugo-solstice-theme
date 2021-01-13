@@ -182,7 +182,7 @@
   other = "Newcomer Forum"
 
 [footer-copyright-text]
-  other = "Copyright &copy; Eclipse Foundation, Inc. All Rights Reserved."
+  other = "Copyright &copy; Eclipse Foundation. All Rights Reserved."
   
 [search-section-label]
   other = "Search"
