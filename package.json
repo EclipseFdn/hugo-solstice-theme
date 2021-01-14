@@ -22,9 +22,14 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-syntax-class-properties": "^7.12.1",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
     "axios": "^0.21.1",
+    "babel-preset-env": "^1.7.0",
     "eclipsefdn-solstice-assets": "0.0.136",
     "json2yaml": "^1.1.0",
     "parse-link-header": "^1.0.1"
-  }
+  },
+  "browserslist": "> 0.25%, not dead"
 }
