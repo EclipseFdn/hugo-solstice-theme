@@ -22,12 +22,8 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-syntax-class-properties": "^7.12.1",
-    "@babel/preset-es2015": "^7.0.0-beta.53",
     "axios": "^0.21.1",
-    "babel-preset-env": "^1.7.0",
-    "eclipsefdn-solstice-assets": "https://github.com/flora8984461/solstice-assets.git#edd5274ae0dd9bbd1d43f565cb0d21346f7b1e2c",
+    "eclipsefdn-solstice-assets": "https://github.com/flora8984461/solstice-assets.git#8bd841b1e644c8c1109cd647bf4f0de721a4f9b6",
     "json2yaml": "^1.1.0",
     "parse-link-header": "^1.0.1"
   },
