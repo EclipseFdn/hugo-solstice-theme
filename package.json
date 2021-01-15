@@ -27,5 +27,5 @@
     "json2yaml": "^1.1.0",
     "parse-link-header": "^1.0.1"
   },
-  "browserslist": "> 0.25%, not dead"
+  "browserslist": "last 5 version, > 0.2%, not dead, IE 11"
 }
