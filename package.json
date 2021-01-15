@@ -23,8 +23,9 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "axios": "^0.21.1",
-    "eclipsefdn-solstice-assets": "0.0.136",
+    "eclipsefdn-solstice-assets": "0.0.137",
     "json2yaml": "^1.1.0",
     "parse-link-header": "^1.0.1"
-  }
+  },
+  "browserslist": "last 5 version, > 0.2%, not dead, IE 11"
 }
