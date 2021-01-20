@@ -21,33 +21,23 @@
     </button>
   {{ end }}
   <div class="wrapper-logo-mobile">
+    {{- with .Page.Params.logo | default .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
+      {{ $currentPageLogo := . }}
+      {{ $currentPageLogoTitle := $.Site.Title }}
+      {{ $currentPageLogoLink := "" | absLangURL }}
 
-    {{ $flag := false }}
-    {{ $currentPageLogo := '0' }}
-    {{ $currentPageLogoTitle := '0' }}
-    {{ $currentPageLogoLink := '0' }}
-    {{ range $.Site.Data.subsites_custom_logo.items }}
+        {{ range $.Site.Data.subsites_custom_logo.items }}
+          {{ $section := $.Site.GetPage (.page_url) }}
+          {{ if or (eq ($.Section) ($section)) ( $.Page.IsDescendant $section ) }}
+            {{ $currentPageLogo = .logo }}
+            {{ $currentPageLogoTitle = .logo_title }}
+            {{ $currentPageLogoLink = .logo_url }}
+          {{ end }}
+        {{ end }}
 
-      {{ $section := $.Site.GetPage (.page_url) }}
-      {{ if or (eq ($.Section) ($section)) ( $.Page.IsDescendant $section ) }}
-        {{ $flag = true }}
-        {{ $currentPageLogo = .logo }}
-        {{ $currentPageLogoTitle = .logo_title }}
-        {{ $currentPageLogoLink = .logo_url }}
-      {{ end }}
-    {{ end }}
-
-    {{ if and (eq $flag true) (ne $currentPageLogo '0') }}
       <a class="navbar-brand visible-xs" title="{{ $currentPageLogoTitle }}" href="{{ $currentPageLogoLink | absLangURL }}">
         <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default-mobile img-responsive" src="{{ $currentPageLogo | absURL }}" alt="{{ $currentPageLogoTitle }}" />
       </a>
-
-    {{ else }}
-      {{- with .Page.Params.logo | default .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
-        <a class="navbar-brand visible-xs" title="{{ $.Site.Title }}" href="{{ "" | absLangURL }}">
-          <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default-mobile img-responsive" src="{{ . | absURL }}" alt="{{ $.Site.Title }}" />
-        </a>
-      {{ end }}
     {{ end }}
   </div>
 </div>
