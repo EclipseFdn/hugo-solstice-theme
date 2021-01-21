@@ -24,7 +24,7 @@
     {{- with .Page.Params.logo | default .Site.Params.logo | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg" }}
       {{ $currentPageLogo := . }}
       {{ $currentPageLogoTitle := $.Site.Title }}
-      {{ $currentPageLogoLink := "" | absLangURL }}
+      {{ $currentPageLogoLink := "" }}
 
         {{ range $.Site.Data.subsites_custom_logo.items }}
           {{ $section := $.Site.GetPage (.page_url) }}

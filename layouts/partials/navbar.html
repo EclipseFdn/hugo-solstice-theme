@@ -47,7 +47,7 @@
 
             {{ $currentPageLogo := . }}
             {{ $currentPageLogoTitle := $.Site.Title }}
-            {{ $currentPageLogoLink := "" | absLangURL }}
+            {{ $currentPageLogoLink := "" }}
 
             {{ range $.Site.Data.subsites_custom_logo.items }}
               {{ $section := $.Site.GetPage (.page_url) }}
