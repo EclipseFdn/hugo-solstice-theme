@@ -232,7 +232,7 @@
     url = "/components"
     weight = 1
     parent = "home"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
     identifier = "component-list"
     
 [[sidebar]]
@@ -240,7 +240,7 @@
     url = "https://github.com/EclipseFdn/hugo-solstice-theme"
     weight = 2
     parent = "home"
-    pre = "<i class=\"fa fa-github fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"github\"></i>"
 
 [[sidebar]]
     name = "Translation Guide" 
@@ -252,7 +252,7 @@
     name = "Third parent"
     url = "/third-parent"
     weight = 2
-    pre = "<i class=\"fa fa-github fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"github\"></i>"
     identifier = "third-parent"
 
 [[sidebar]]
@@ -260,7 +260,7 @@
     url = "/third-parent/test-children"
     weight = 1
     parent = "third-parent"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
     identifier = "test-children"
 
 [[sidebar]]
@@ -268,22 +268,22 @@
     url = "/third-parent/test-children-2"
     weight = 1
     parent = "third-parent"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
     identifier = "test-children-2"
 
 [[sidebar]]
-    name = "test children's children-1"
+    name = "Test Children Children 1"
     url = "/third-parent/test-children/test-children-children"
     weight = 1
     parent = "test-children"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
 
 [[sidebar]]
-    name = "test children's children-2"
+    name = "Test Children Children 2"
     url = "/third-parent/test-children/test-children-children-2"
     weight = 2
     parent = "test-children"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
     
 [[sidebar]]
     name = "Membership"
@@ -296,4 +296,4 @@
     url = "#"
     weight = 2
     parent = "membership"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"

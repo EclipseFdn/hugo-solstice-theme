@@ -14,31 +14,41 @@
 {{ if isset .Site.Menus "sidebar" }}
   {{ $currentPage := . }}
   {{ .Scratch.Set "currentSection" "home" }}
-
   {{ if $currentPage.Section }}
     {{ .Scratch.Set "currentSection" $currentPage.Section }}
   {{ end }}
-  
   {{$currentSection := .Scratch.Get "currentSection" }}
-
   {{ range .Site.Menus.sidebar }}
     {{$parentItem := . }}
-    
       {{ if and (.HasChildren) (eq $currentSection $parentItem.Identifier) }}
-        <aside id="main-sidebar" class="subpage-sidebar">
-        <ul id="leftnav" class="ul-left-nav fa-ul hidden-print">
-        <li class="separator">
-          <a class="separator" href="{{ .URL }}">{{ $parentItem.Name }}</a>
-        </li>
+        <aside id="sidebar-menu">
         {{ range .Children }}
-          {{ if or (eq $parentItem.Identifier $currentSection) (eq .Parent $currentSection) }}
-            <li{{if $currentPage.IsMenuCurrent "main" . }} class="active"{{end}}>
-              {{ .Pre }}
-              <a href="{{ .URL }}" target="_self">{{ .Name }}</a>
-            </li>
+          {{ if .HasChildren }}
+            <div class="row sidebar-menu-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
+              <a href="{{ .URL }}" {{ if eq (lower $currentPage.Title) (lower .Name) }}class="active"{{ end }}>
+                <div class="col-xs-6">{{ .Pre }}</div>
+                <div class="col-xs-18 sidebar-menu-text">{{ .Name }}</div>
+              </a>
+            </div>
+            <div class="row sidebar-menu-sub-items">
+              {{ range .Children }}
+                <div class="row sidebar-menu-sub-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
+                  <a href="{{ .URL }}" {{ if eq (lower $currentPage.Title) (lower .Name) }}class="active"{{ end }}>
+                    <div class="col-xs-6"></div>
+                    <div class="col-xs-18 sidebar-menu-text">{{ .Name }}</div>
+                  </a>
+                </div>
+              {{ end }}
+            </div>
+          {{ else if or (eq $parentItem.Identifier $currentSection) (eq .Parent $currentSection) }}
+            <div class="row sidebar-menu-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
+              <a href="{{ .URL }}" {{ if eq (lower $currentPage.Title) (lower .Name) }}class="active"{{ end }}>
+                <div class="col-xs-6">{{ .Pre }}</div>
+                <div class="col-xs-18 sidebar-menu-text">{{ .Name }}</div>
+              </a>
+            </div>
           {{ end }}
         {{ end }}
-        </ul>
         </aside>
       {{ end }}
   {{ end }}
