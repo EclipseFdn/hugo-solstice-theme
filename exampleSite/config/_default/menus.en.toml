@@ -237,6 +237,12 @@
     pre = "<i class=\"fa fa-github fa-fw\"></i>"
 
 [[sidebar]]
+    name = "Translation Guide" 
+    url = "/translations"
+    weight = 3
+    parent = "home"
+
+[[sidebar]]
     name = "Third parent"
     url = "/third-parent"
     weight = 2
