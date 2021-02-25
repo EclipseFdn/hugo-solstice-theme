@@ -247,6 +247,20 @@
     url = "/translations"
     weight = 3
     parent = "home"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"star\"></i>"
+    identifier = "translation-guide"
+    
+[[sidebar]]
+    name = "Translation Guide 1" 
+    url = "/translations"
+    weight = 1
+    parent = "translation-guide"
+    
+[[sidebar]]
+    name = "Translation Guide 2" 
+    url = "/translations"
+    weight = 1
+    parent = "translation-guide"
 
 [[sidebar]]
     name = "Third parent"
