@@ -232,7 +232,7 @@
     url = "/components"
     weight = 1
     parent = "home"
-    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     identifier = "component-list"
     
 [[sidebar]]
@@ -240,14 +240,14 @@
     url = "https://github.com/EclipseFdn/hugo-solstice-theme"
     weight = 2
     parent = "home"
-    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"github\"></i>"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
 
 [[sidebar]]
     name = "Translation Guide" 
     url = "/translations"
     weight = 3
     parent = "home"
-    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"star\"></i>"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     identifier = "translation-guide"
     
 [[sidebar]]
