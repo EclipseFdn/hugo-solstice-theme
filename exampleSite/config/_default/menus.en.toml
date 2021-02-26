@@ -270,19 +270,19 @@
     identifier = "third-parent"
 
 [[sidebar]]
-    name = "test children"
+    name = "Test Children"
     url = "/third-parent/test-children"
     weight = 1
     parent = "third-parent"
-    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     identifier = "test-children"
 
 [[sidebar]]
-    name = "test children 2"
+    name = "Test Children 2"
     url = "/third-parent/test-children-2"
     weight = 1
     parent = "third-parent"
-    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     identifier = "test-children-2"
 
 [[sidebar]]
@@ -290,14 +290,14 @@
     url = "/third-parent/test-children/test-children-children"
     weight = 1
     parent = "test-children"
-    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
 
 [[sidebar]]
     name = "Test Children Children 2"
     url = "/third-parent/test-children/test-children-children-2"
     weight = 2
     parent = "test-children"
-    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     
 [[sidebar]]
     name = "Membership"
@@ -310,4 +310,4 @@
     url = "#"
     weight = 2
     parent = "membership"
-    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"chevron-right\"></i>"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"

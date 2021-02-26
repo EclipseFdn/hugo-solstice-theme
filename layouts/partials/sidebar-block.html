@@ -21,7 +21,7 @@
   {{ range .Site.Menus.sidebar }}
     {{$parentItem := . }}
       {{ if and (.HasChildren) (eq $currentSection $parentItem.Identifier) }}
-        <aside id="sidebar-block">
+        <aside class="sidebar-block">
         {{ range .Children }}
           {{ if .HasChildren }}
             <div class="row sidebar-block-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
