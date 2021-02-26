@@ -53,7 +53,8 @@
         {{ if eq .HasChildren false }}
           <div class="row {{ $classname }}-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
             <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-              <div class="col-xs-18 col-xs-offset-6 {{ $classname }}-text">{{ .Name }}</div>
+              <div class="col-xs-6">{{ .Pre }}</div>
+              <div class="col-xs-18 {{ $classname }}-text">{{ .Name }}</div>
             </a>
           </div>
         {{ end }} <!-- if eq .HasChildren false end -->
@@ -68,14 +69,16 @@
             {{ if .URL }}
               <div class="row {{ $classname }}-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-                  <div class="col-xs-18 col-xs-offset-6 {{ $classname }}-text">{{ .Name }} Home</div>
+                  <div class="col-xs-6">{{ .Pre }}</div>
+                  <div class="col-xs-18 {{ $classname }}-text">{{ .Name }} Home</div>
                 </a>
               </div>
             {{ end }}
             {{ range .Children }}
               <div class="row {{ $classname }}-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-                  <div class="col-xs-18 col-xs-offset-6 {{ $classname }}-text">{{ .Name }}</div>
+                  <div class="col-xs-6">{{ .Pre }}</div>
+                  <div class="col-xs-18 {{ $classname }}-text">{{ .Name }}</div>
                 </a>
               </div>
             {{ end }} <!--Children's Children end-->
