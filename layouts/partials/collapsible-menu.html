@@ -22,20 +22,8 @@
 {{$currentSection := .Scratch.Get "currentSection" }}
 
 <!--- Sidebar layout --->
-{{ .Scratch.Set "sidebarLayout" "default" }}
-{{ if isset .Site.Params "sidebar_layout" }}
-  {{ .Scratch.Set "sidebarLayout" .Site.Params.sidebar_layout }}
-{{ end }}
-{{ if isset .Page.Params "sidebar_layout" }}
-  {{ .Scratch.Set "sidebarLayout" .Page.Params.sidebar_layout }}
-{{ end }}
-
-{{ $sidebarLayout := .Scratch.Get "sidebarLayout" }}
-
-{{ $classname := "collapsible-menu" }}
-{{ if eq $sidebarLayout "sidebar_block" }}
-  {{ $classname = "sidebar-block" }}
-{{ end }}
+{{ $sidebarLayout := .Page.Params.sidebar_layout | default .Site.Params.sidebar_layout | default "default" }}
+{{ $classname := cond (eq $sidebarLayout "sidebar_block") "sidebar-block" "collapsible-menu" }}
 
 <!----------------------- Collapisible start ------------------------------------>
   {{ range .Site.Menus.sidebar }}
@@ -49,7 +37,9 @@
         </a>
       </div>
       <div class="container collapse {{ if eq $classname "sidebar-block" }} padding-left-0 padding-right-0 {{ end }}" id="sidebars-contents">
+
       {{ range .Children }}
+
         {{ if eq .HasChildren false }}
           <div class="row {{ $classname }}-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
             <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
@@ -58,6 +48,7 @@
             </a>
           </div>
         {{ end }} <!-- if eq .HasChildren false end -->
+
         {{ if .HasChildren }}
           <div class="row {{ $classname }}-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
             <a href="#sub-children-{{ .Identifier }}" data-toggle="collapse" aria-expanded="false" aria-controls="sub-children{{ .Identifier }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
@@ -65,7 +56,8 @@
               <div class="col-xs-18 {{ $classname }}-text">{{ .Name }}</div>
             </a>
           </div>
-          <div class="row {{ $classname }}-sub-items collapse" id="sub-children-{{ .Identifier }}">
+          <div class="row {{ $classname }}-sub-items {{ if eq $classname "sidebar-block" }} margin-bottom-20 {{ end }} collapse" id="sub-children-{{ .Identifier }}">
+            <!-- Check if current parent menu has children and has own url, we should add an entry to goto this parent -->
             {{ if .URL }}
               <div class="row {{ $classname }}-sub-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq (lower $currentPage.Title) (lower .Name) }}class="active"{{ end }}>
@@ -73,6 +65,7 @@
                 </a>
               </div>
             {{ end }}
+
             {{ range .Children }}
               <div class="row {{ $classname }}-sub-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq (lower $currentPage.Title) (lower .Name) }}class="active"{{ end }}>

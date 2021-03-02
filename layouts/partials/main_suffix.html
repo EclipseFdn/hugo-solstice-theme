@@ -12,16 +12,7 @@
 -->
 
     {{ if ne .Page.Params.hide_sidebar true }} 
-    
-      {{ .Scratch.Set "sidebarLayout" "default" }}
-      {{ if isset .Site.Params "sidebar_layout" }}
-        {{ .Scratch.Set "sidebarLayout" .Site.Params.sidebar_layout }}
-      {{ end }}
-      {{ if isset .Page.Params "sidebar_layout" }}
-        {{ .Scratch.Set "sidebarLayout" .Page.Params.sidebar_layout }}
-      {{ end }}
-      
-      {{ $sidebarLayout := .Scratch.Get "sidebarLayout" }}
+      {{ $sidebarLayout := .Page.Params.sidebar_layout | default .Site.Params.sidebar_layout | default "default" }}
       </div>
         <div class="{{- .Params.main_sidebar_class | default .Site.Params.main_sidebar_class | default "col-md-6  padding-bottom-30"}}">
           {{ if eq $sidebarLayout "default" }}
