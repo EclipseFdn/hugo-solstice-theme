@@ -41,7 +41,7 @@
       {{ range .Children }}
 
         {{ if eq .HasChildren false }}
-          <div class="row {{ $classname }}-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
+          <div class="row {{ $classname }}-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
             <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
               <div class="col-xs-6">{{ .Pre }}</div>
               <div class="col-xs-18 {{ $classname }}-text">{{ .Name }}</div>
@@ -50,7 +50,7 @@
         {{ end }} <!-- if eq .HasChildren false end -->
 
         {{ if .HasChildren }}
-          <div class="row {{ $classname }}-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
+          <div class="row {{ $classname }}-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
             <a href="#sub-children-{{ .Identifier }}" data-toggle="collapse" aria-expanded="false" aria-controls="sub-children{{ .Identifier }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
               <div class="col-xs-6">{{ .Pre }}</div>
               <div class="col-xs-18 {{ $classname }}-text">{{ .Name }}</div>
@@ -59,16 +59,16 @@
           <div class="row {{ $classname }}-sub-items {{ if eq $classname "sidebar-block" }} margin-bottom-20 {{ end }} collapse" id="sub-children-{{ .Identifier }}">
             <!-- Check if current parent menu has children and has own url, we should add an entry to goto this parent -->
             {{ if .URL }}
-              <div class="row {{ $classname }}-sub-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
-                <a href="{{ .URL }}" {{ if eq (lower $currentPage.Title) (lower .Name) }}class="active"{{ end }}>
+              <div class="row {{ $classname }}-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
+                <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
                   <div class="col-xs-18 col-xs-offset-6 {{ $classname }}-text">{{ .Name }} Home</div>
                 </a>
               </div>
             {{ end }}
 
             {{ range .Children }}
-              <div class="row {{ $classname }}-sub-item{{ if eq (lower $currentPage.Title) (lower .Name) }} active{{ end }}">
-                <a href="{{ .URL }}" {{ if eq (lower $currentPage.Title) (lower .Name) }}class="active"{{ end }}>
+              <div class="row {{ $classname }}-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
+                <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
                   <div class="col-xs-18 col-xs-offset-6 {{ $classname }}-text">{{ .Name }}</div>
                 </a>
               </div>
