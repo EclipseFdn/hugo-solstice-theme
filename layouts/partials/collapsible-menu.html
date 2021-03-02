@@ -69,7 +69,7 @@
             {{ if .URL }}
               <div class="row {{ $classname }}-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-                  <div class="col-xs-6">{{ .Pre }}</div>
+                  <div class="col-xs-6"></div>
                   <div class="col-xs-18 {{ $classname }}-text">{{ .Name }} Home</div>
                 </a>
               </div>
