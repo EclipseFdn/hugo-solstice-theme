@@ -154,6 +154,12 @@
     parent = "solstice"
     
 [[main]]
+    name = "Text Target"
+    url = "/components/text_target/"
+    weight = 3
+    parent = "solstice"
+    
+[[main]]
     name = "RSS Feed"
     url = "/components/rss/"
     weight = 3
