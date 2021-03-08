@@ -29,7 +29,7 @@
   {{ range .Site.Menus.sidebar }}
     {{$parentItem := . }}
     {{ if and (.HasChildren) (eq $currentSection $parentItem.Identifier) }}
-    <div class="{{ $classname }} margin-top-10 container hidden-lg hidden-md visible-sm visible-xs">
+    <div class="{{ $classname }} margin-top-20 container hidden-lg hidden-md visible-sm visible-xs">
       <div class="container padding-left-0 padding-right-0 {{ $classname }}-item related-content">
         <a href="#sidebars-contents" data-toggle="collapse" aria-expanded="false" aria-controls="sidebars-contents">
           <div class="col-xs-6"><i class="fa fa-plus fa-bars"></i></div>
@@ -61,7 +61,7 @@
             {{ if .URL }}
               <div class="row {{ $classname }}-sub-item{{ if eq $currentPage.Title .Name }} active{{ end }}">
                 <a href="{{ .URL }}" {{ if eq $currentPage.Title .Name }}class="active"{{ end }}>
-                  <div class="col-xs-18 col-xs-offset-6 {{ $classname }}-text">{{ .Name }} Home</div>
+                  <div class="col-xs-18 col-xs-offset-6 {{ $classname }}-text">{{ .Name }}</div>
                 </a>
               </div>
             {{ end }}
