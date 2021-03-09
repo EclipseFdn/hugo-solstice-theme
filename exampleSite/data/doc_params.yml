@@ -107,3 +107,8 @@ items:
     description: Show collapsible menu for mobile view on this page if set to true, otherwise is ignored. 
     values:
       - "true"
+  - 
+    name: custom_jumbotron
+    description: Optional custom_jumbotron that will be inserted to replace the default Headlines, subtitles and taglines.
+    values:
+      - Any string value
