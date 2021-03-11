@@ -1,6 +1,8 @@
 ---
 title: "Custom Jumbotron"
-custom_jumbotron: "<h1>Custom Jumbotron 2021</h1><h2>An Custom Jumbotron Summit Event</h2><h2>Guiding the Future of IDE Development</h2><p>May 19, 2021 8AM-11AM PST (5PM-8PM CET)</p>"
+headline: "Custom Jumbotron 2021"
+subtitle: "An Custom Jumbotron Summit Event"
+custom_jumbotron: "<h2 class=\"margin-top-10\">Guiding the Future of IDE Development</h2><p class=\"margin-top-20\">May 19, 2021 8AM-11AM PST (5PM-8PM CET)</p>"
 date: 2021-03-07T08:00:00-24:00
 hide_breadcrumb: true
 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet tortor id rhoncus pulvinar. Suspendisse nec aliquam ante. Sed vel convallis ex, ac elementum nisi."

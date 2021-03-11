@@ -28,25 +28,14 @@
           </div>
         </div>
         {{end}} 
-        {{ if isset .Page.Params "links" }}
-        {{- with .Params.jumbotron_btn_class | default .Site.Params.jumbotron_btn_class | default "btn btn-primary"}}{{ $.Scratch.Set "jumbotron_btn" . }}{{end}}
-        <ul class="list-inline">
-          {{range $key,$val := index .Page.Params.links}}
-            <li><a class="{{ $.Scratch.Get "jumbotron_btn" }}" href="{{ (index $val 0).href}}">{{ (index $val 1).text}}</a></li>
-          {{end}} 
-        </ul>
-         {{end}} 
-      </div>
-    </div>
-  </div>
-</div>
 
-{{ else if isset .Page.Params "custom_jumbotron" }}
-<div class="jumbotron featured-jumbotron margin-bottom-0">
-  <div class="container">
-    <div class="row">
-      <div class="{{- .Params.jumbotron_class | default .Site.Params.jumbotron_class | default "col-md-20 col-md-offset-2 col-sm-18 col-sm-offset-3"}}">
-        {{ .Page.Params.custom_jumbotron | safeHTML }}
+         {{ if isset .Page.Params "custom_jumbotron" }}
+        <div class="row">
+          <div class="{{- .Params.custom_jumbotron_class | default .Site.Params.custom_jumbotron_class | default "col-sm-18 col-sm-offset-3"}}">
+            {{ .Page.Params.custom_jumbotron | safeHTML }}
+          </div>
+        </div>
+        {{end}} 
 
         {{ if isset .Page.Params "links" }}
         {{- with .Params.jumbotron_btn_class | default .Site.Params.jumbotron_btn_class | default "btn btn-primary"}}{{ $.Scratch.Set "jumbotron_btn" . }}{{end}}

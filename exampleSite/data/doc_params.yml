@@ -109,6 +109,11 @@ items:
       - "true"
   - 
     name: custom_jumbotron
-    description: Optional custom_jumbotron that will be inserted to replace the default Headlines, subtitles and taglines.
+    description: Optional custom_jumbotron that will be inserted after taglines, can include html tags. We recommend to not use taglines and custom_jumbotron at the same time.
+    values:
+      - Any string value
+  - 
+    name: custom_jumbotron_class
+    description: Optional custom_jumbotron_class that will be used for custom_jumbotron.
     values:
       - Any string value
