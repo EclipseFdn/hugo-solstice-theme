@@ -54,6 +54,12 @@
     parent = "examples"
 
 [[main]]
+    name = "Custom Jumbotron"
+    url = "/custom-jumbotron/"
+    weight = 8
+    parent = "examples"
+
+[[main]]
     name = "Exemples de FAQ"
     url = "/faq/"
     weight = 4
