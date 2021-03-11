@@ -10,6 +10,7 @@
 
   SPDX-License-Identifier: EPL-2.0
 -->
+
 {{ if isset .Page.Params "headline" }}
 <div class="jumbotron featured-jumbotron margin-bottom-0">
   <div class="container">
@@ -27,6 +28,15 @@
           </div>
         </div>
         {{end}} 
+
+         {{ if isset .Page.Params "custom_jumbotron" }}
+        <div class="row">
+          <div class="{{- .Params.custom_jumbotron_class | default .Site.Params.custom_jumbotron_class | default "col-sm-18 col-sm-offset-3"}}">
+            {{ .Page.Params.custom_jumbotron | safeHTML }}
+          </div>
+        </div>
+        {{end}} 
+
         {{ if isset .Page.Params "links" }}
         {{- with .Params.jumbotron_btn_class | default .Site.Params.jumbotron_btn_class | default "btn btn-primary"}}{{ $.Scratch.Set "jumbotron_btn" . }}{{end}}
         <ul class="list-inline">
