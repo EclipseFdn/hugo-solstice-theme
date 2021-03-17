@@ -60,6 +60,12 @@
     parent = "examples"
 
 [[main]]
+    name = "Custom Jumbotron"
+    url = "/custom-jumbotron/"
+    weight = 8
+    parent = "examples"
+
+[[main]]
     name = "Exemples de FAQ"
     url = "/faq/"
     weight = 4
@@ -253,16 +259,29 @@
     url = "/translations"
     weight = 3
     parent = "home"
+    identifier = "translation-guide"
+    
+[[sidebar]]
+    name = "Translation Guide 1" 
+    url = "/translations"
+    weight = 1
+    parent = "translation-guide"
+    
+[[sidebar]]
+    name = "Translation Guide 2" 
+    url = "/translations"
+    weight = 1
+    parent = "translation-guide"
 
 [[sidebar]]
     name = "Third parent"
     url = "/third-parent"
     weight = 2
-    pre = "<i class=\"fa fa-github fa-fw\"></i>"
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"github\"></i>"
     identifier = "third-parent"
 
 [[sidebar]]
-    name = "test children"
+    name = "Test Children"
     url = "/third-parent/test-children"
     weight = 1
     parent = "third-parent"
@@ -270,7 +289,7 @@
     identifier = "test-children"
 
 [[sidebar]]
-    name = "test children 2"
+    name = "Test Children 2"
     url = "/third-parent/test-children-2"
     weight = 1
     parent = "third-parent"
@@ -278,18 +297,16 @@
     identifier = "test-children-2"
 
 [[sidebar]]
-    name = "test children's children-1"
+    name = "Test Children Children 1"
     url = "/third-parent/test-children/test-children-children"
     weight = 1
     parent = "test-children"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
 
 [[sidebar]]
-    name = "test children's children-2"
+    name = "Test Children Children 2"
     url = "/third-parent/test-children/test-children-children-2"
     weight = 2
     parent = "test-children"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     
 [[sidebar]]
     name = "Membership"

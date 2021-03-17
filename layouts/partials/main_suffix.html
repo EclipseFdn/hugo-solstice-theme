@@ -12,9 +12,14 @@
 -->
 
     {{ if ne .Page.Params.hide_sidebar true }} 
+      {{ $sidebarLayout := .Page.Params.sidebar_layout | default .Site.Params.sidebar_layout | default "default" }}
       </div>
         <div class="{{- .Params.main_sidebar_class | default .Site.Params.main_sidebar_class | default "col-md-6  padding-bottom-30"}}">
-          {{ partial "sidebar.html" . }}
+          {{ if eq $sidebarLayout "default" }}
+            {{ partial "sidebar.html" . }}
+          {{ else if eq $sidebarLayout "sidebar_block" }}
+            {{ partial "sidebar-block.html" . }}
+          {{ end }}
         </div>
       </div>
     {{ end }}

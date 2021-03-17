@@ -4,7 +4,7 @@
   "main": "webpack.min.js",
   "author": "Christopher Guindon",
   "license": "EPL-2.0",
-  "version": "0.0.115",
+  "version": "0.0.116",
   "bugs": {
     "url": "https://github.com/EclipseFdn/hugo-solstice-theme/issues"
   },
@@ -23,7 +23,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "axios": "^0.21.1",
-    "eclipsefdn-solstice-assets": "0.0.148",
+    "eclipsefdn-solstice-assets": "0.0.149",
     "json2yaml": "^1.1.0",
     "parse-link-header": "^1.0.1"
   },

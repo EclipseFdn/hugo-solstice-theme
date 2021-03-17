@@ -144,3 +144,8 @@ items:
     description: Show collapsible menu for mobile view on all pages if set to true, otherwise is ignored. 
     values:
       - "true"
+  - 
+    name: custom_jumbotron_class
+    description: Optional custom_jumbotron_class that will be used for custom_jumbotron.
+    values:
+      - Any string value
