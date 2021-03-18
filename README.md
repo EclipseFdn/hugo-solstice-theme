@@ -7,7 +7,8 @@
 Install dependencies, build assets and start a webserver:
 
 ```bash
-npm install 
+npm install
+npm run build
 hugo server --source=exampleSite --themesDir="../../" 
 ```
 
