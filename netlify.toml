@@ -1,5 +1,5 @@
 [build]
-  command = "npm run production && npm run fetch_project && hugo --gc --minify -b $URL --themesDir ../../ --source exampleSite"
+  command = "npm run build && hugo --gc --minify -b $URL --themesDir ../../ --source exampleSite"
   publish = "exampleSite/public"
 
 [build.environment]
@@ -12,7 +12,7 @@
   HUGO_ENV = "production"
 
 [context.deploy-preview]
-  command = "npm run production && npm run fetch_project && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL --themesDir ../../ --source exampleSite"
+  command = "npm run build && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL --themesDir ../../ --source exampleSite"
 
 [context.branch-deploy]
-  command = "npm run production && npm run fetch_project && hugo --gc --minify -b $DEPLOY_PRIME_URL --themesDir ../../ --source exampleSite"
+  command = "npm run build && hugo --gc --minify -b $DEPLOY_PRIME_URL --themesDir ../../ --source exampleSite"
