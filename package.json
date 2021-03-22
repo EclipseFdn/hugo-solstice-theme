@@ -24,7 +24,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "axios": "^0.21.1",
-    "eclipsefdn-solstice-assets": "0.0.149",
+    "eclipsefdn-solstice-assets": "0.0.151",
     "json2yaml": "^1.1.0",
     "parse-link-header": "^1.0.1"
   },
