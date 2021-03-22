@@ -1,6 +1,6 @@
 items:
   -
-    text: Text of the testimonial 1 (loc data/testimonials.yml)
+    text: Text of the testimonial 1(localized no fallback, fr)
     title: Name of the person
   -
     text: Text of the testimonial 2
