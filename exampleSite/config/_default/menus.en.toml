@@ -54,6 +54,12 @@
     parent = "examples"
 
 [[main]]
+    name = "Subsite Custom Logo"
+    url = "/subsite-1/"
+    weight = 8
+    parent = "examples"
+
+[[main]]
     name = "Custom Jumbotron"
     url = "/custom-jumbotron/"
     weight = 8
