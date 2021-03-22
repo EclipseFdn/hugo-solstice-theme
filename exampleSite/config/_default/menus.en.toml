@@ -60,12 +60,6 @@
     parent = "examples"
 
 [[main]]
-    name = "Exemples de FAQ"
-    url = "/faq/"
-    weight = 4
-    parent = "examples"
-
-[[main]]
     name = "Components"
     url = "/components/"
     weight = 3
@@ -170,13 +164,7 @@
     url = "/components/rss/"
     weight = 3
     parent = "dynamic"
-    
-[[main]]
-    name = "RSS Feed"
-    url = "/components/rss/"
-    weight = 3
-    parent = "dynamic"
-    
+
 [[main]]
     name = "Users Display"
     url = "/components/user_display/"
@@ -189,13 +177,11 @@
     weight = 3
     parent = "events"
     
-    
 [[main]]
     name = "Registration"
     url = "/components/registration/"
     weight = 3
     parent = "events"
-    
     
 [[main]]
     name = "Agenda"

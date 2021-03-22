@@ -34,11 +34,29 @@
     url = "/faq/"
     weight = 4
     parent = "examples"
-    
+
 [[main]]
-    name = "Exemples de FAQ"
-    url = "/faq/"
-    weight = 4
+    name = "Hide Call For Action"
+    url = "/hide_call_for_action/"
+    weight = 5
+    parent = "examples"
+
+[[main]]
+    name = "Without Breadcrumb"
+    url = "/without_breadcrumb/"
+    weight = 6
+    parent = "examples"
+
+[[main]]
+    name = "multi-children mobile sidebar sample"
+    url = "/third-parent/"
+    weight = 7
+    parent = "examples"
+
+[[main]]
+    name = "Custom Jumbotron"
+    url = "/custom-jumbotron/"
+    weight = 8
     parent = "examples"
 
 [[main]]
@@ -136,17 +154,17 @@
     parent = "solstice"
     
 [[main]]
-    name = "RSS Feed"
-    url = "/components/rss/"
+    name = "Text Target"
+    url = "/components/text_target/"
     weight = 3
-    parent = "dynamic"
+    parent = "solstice"
     
 [[main]]
     name = "RSS Feed"
     url = "/components/rss/"
     weight = 3
     parent = "dynamic"
-    
+
 [[main]]
     name = "Users Display"
     url = "/components/user_display/"
@@ -159,13 +177,11 @@
     weight = 3
     parent = "events"
     
-    
 [[main]]
     name = "Registration"
     url = "/components/registration/"
     weight = 3
     parent = "events"
-    
     
 [[main]]
     name = "Agenda"
@@ -202,13 +218,14 @@
     url = "/"
     weight = 3
     identifier = "home"
-    
+      
 [[sidebar]]
     name = "Component list"
     url = "/components"
     weight = 1
     parent = "home"
     pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    identifier = "component-list"
     
 [[sidebar]]
     name = "GitHub repository" 
@@ -222,20 +239,61 @@
     url = "/translations"
     weight = 3
     parent = "home"
+    identifier = "translation-guide"
+    
+[[sidebar]]
+    name = "Translation Guide 1" 
+    url = "/translations"
+    weight = 1
+    parent = "translation-guide"
+    
+[[sidebar]]
+    name = "Translation Guide 2" 
+    url = "/translations"
+    weight = 1
+    parent = "translation-guide"
+
+[[sidebar]]
+    name = "Third parent"
+    url = "/third-parent"
+    weight = 2
+    pre = "<i class=\"sidebar-menu-icon\" data-feather=\"github\"></i>"
+    identifier = "third-parent"
+
+[[sidebar]]
+    name = "Test Children"
+    url = "/third-parent/test-children"
+    weight = 1
+    parent = "third-parent"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    identifier = "test-children"
+
+[[sidebar]]
+    name = "Test Children 2"
+    url = "/third-parent/test-children-2"
+    weight = 1
+    parent = "third-parent"
+    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
+    identifier = "test-children-2"
+
+[[sidebar]]
+    name = "Test Children Children 1"
+    url = "/third-parent/test-children/test-children-children"
+    weight = 1
+    parent = "test-children"
+
+[[sidebar]]
+    name = "Test Children Children 2"
+    url = "/third-parent/test-children/test-children-children-2"
+    weight = 2
+    parent = "test-children"
     
 [[sidebar]]
     name = "Membership"
     url = "#"
-    weight = 3
+    weight = 4
     identifier = "membership"
-    
-[[sidebar]]
-    name = "Sidebar Item 1"
-    url = "#"
-    weight = 1
-    parent = "membership"
-    pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
-    
+
 [[sidebar]]
     name = "Sidebar Item 1"
     url = "#"
