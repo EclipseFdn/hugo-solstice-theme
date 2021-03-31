@@ -59,7 +59,7 @@
             {{ end }}
         
             <a title="{{ $currentPageLogoTitle }}" href="{{ $currentPageLogoLink | absLangURL }}">
-              <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ $currentPageLogo | absURL }}" alt="{{ $currentPageLogoTitle }}" />
+              <img width="{{ $.Page.Params.logo_width | default $.Site.Params.logo_width | default "140"}}" class="logo-eclipse-default img-responsive hidden-xs" src="{{ $currentPageLogo | relURL }}" alt="{{ $currentPageLogoTitle }}" />
             </a>
             {{ end }}
 
@@ -76,7 +76,7 @@
           {{ $normalized_cta_url = printf "%s/" $normalized_cta_url }}
         {{ end }}
         
-        {{ $abs_cfa := printf "%s" ($normalized_cta_url | absURL) }}
+        {{ $abs_cfa := printf "%s" ($normalized_cta_url | relURL) }}
         {{ $is_cfa_page := 0 }}
         {{ if or (eq $normalized_cta_url .Permalink) (eq $abs_cfa .Permalink) }}
           {{ $is_cfa_page = 1 }}
