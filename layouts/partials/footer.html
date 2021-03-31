@@ -75,14 +75,14 @@
 </footer>
 <!-- Placed at the end of the document so the pages load faster -->
 {{- with .Site.Params.js | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/main.min.js"}}
-<script src="{{ . | absURL }}"></script>
+<script src="{{ . | relURL }}"></script>
 {{ end }}
 {{ if isset .Site.Params "hugo_js" }}
   {{- with .Site.Params.hugo_js }}
-    <script src="{{ . | absURL }}"></script>
+    <script src="{{ . | relURL }}"></script>
   {{ end }}
 {{ else }}
-    <script src="{{ "/js/solstice.hugo.js" | absURL }}"></script>
+    <script src="{{ "/js/solstice.hugo.js" | relURL }}"></script>
 {{ end }}
 
 <!-- Read in mustache templates registered in page scratch -->

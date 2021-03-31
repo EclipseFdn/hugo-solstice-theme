@@ -31,12 +31,12 @@
 {{- end }}
 <meta name="author" content="{{ .Site.Author.name }}"/>
  {{- with  .Params.page_favicon | default .Site.Params.favicon | default "https://www.eclipse.org/favicon.ico"}}
-<link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
+<link href='{{ . | relURL }}' rel='icon' type='image/x-icon'/>
 {{- end -}}
 <!-- Social Media Tags -->
 {{- with .Params.share_img | default .Params.image  | default .Site.Params.share_img | default .Site.Params.logo }}
-<meta property="og:image" content="{{ . | absURL }}" />
-<meta name="twitter:image" content="{{ . | absURL }}" />
+<meta property="og:image" content="{{ . | relURL }}" />
+<meta name="twitter:image" content="{{ . | relURL }}" />
 {{- end }}
 <meta name="twitter:card" content="summary" />
 {{- with .Site.Author.twitter }}
@@ -61,7 +61,7 @@
 {{ end }}
 {{ if ne .Page.Params.disable_css "true" }}
 {{- with .Site.Params.styles | default "https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/quicksilver.min.css" }}
-<link rel="stylesheet" href="{{ . | absURL }}">
+<link rel="stylesheet" href="{{ . | relURL }}">
 {{- end }}
 {{- end }}
 {{- partial "google_tag_manager.html" . }}
