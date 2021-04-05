@@ -24,10 +24,12 @@
 <meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url={{ .Page.Params.redirect_url }}" />
 {{ end }}
-{{- with .Description | default .Summary  | default .Site.Params.description }}
+{{- with .Description | default .Summary }}
+{{- with  . | replaceRE "{{[\\s\\S]*?}}" " " | truncate 160 }}
 <meta name="description" content="{{ . }}">
 <meta property="og:description" content="{{ . }}">
-<meta name="twitter:description" content="{{ . | truncate 200 }}">
+<meta name="twitter:description" content="{{ . }}">
+{{- end }}
 {{- end }}
 <meta name="author" content="{{ .Site.Author.name }}"/>
  {{- with  .Params.page_favicon | default .Site.Params.favicon | default "https://www.eclipse.org/favicon.ico"}}
