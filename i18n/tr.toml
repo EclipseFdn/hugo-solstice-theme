@@ -26,7 +26,7 @@ other = "Yönetim"
 other = "Davranış Kuralları"
 
 [footer-foundation-logo-artwork-text]
-other = "Logo ve Sanat Eseri"
+other = "Logo ve Çizim"
 
 [footer-foundation-board-of-directors-text]
 other = "Yönetim Kurulu"
@@ -251,7 +251,7 @@ other = "Web sitesi <a href='//eclipse.org/legal/privacy.php'>gizlilik politikas
 other = "Yasal Belgeler"
 
 [not-found-template-logos-artwork]
-other = "Logolar ve Sanat Eserleri"
+other = "Logolar ve Çizimler"
 
 [not-found-template-webmaster-faq]
 other = "Web yöneticisi SSS"
