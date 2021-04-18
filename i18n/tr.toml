@@ -23,7 +23,7 @@ other = "Üyeler"
 other = "Yönetim"
 
 [footer-foundation-code-of-conduct-text]
-other = "Davranış Kuralları"
+other = "Etik Kurallar"
 
 [footer-foundation-logo-artwork-text]
 other = "Logo ve Çizim"
@@ -89,7 +89,7 @@ other = "Research@Eclipse"
 other = "Güvenlik Açığı Bildirin"
 
 [footer-other-status-text]
-other = "Servis Durumu"
+other = "Hizmet Durumu"
 
 [footer-sr-twitter-text]
 other = "Twitter hesabı"
@@ -110,10 +110,10 @@ other = "Başa dön"
 other = "Breadcrumb"
 
 [navigation-content-skip]
-other = "Ana içeriğe geç"
+other = "Ana içeriğe atla"
 
 [navigation-mobile-menu-toggle]
-other = "Gezintiyi Aç/Kapa"
+other = "Menüyü Aç/Kapa"
 
 [navigation-more-menu-label]
 other = "Daha"
@@ -239,7 +239,7 @@ other = "Sayfa bulunamadı"
 other = "Üzgünüz, istediğiniz sayfa bulunamıyor. Aşağıda yararlı olabilecek bazı bağlantılar verilmiştir."
 
 [not-found-template-eclipse-home]
-other = "Eclipse Ana"
+other = "Eclipse Anasayfa"
 
 [not-found-template-search-link]
 other = "Sitemizde <a href='//eclipse.org/projects/searchpage.php'>Ara</a>"
@@ -257,7 +257,7 @@ other = "Logolar ve Çizimler"
 other = "Web yöneticisi SSS"
 
 [not-found-template-email-webmaster]
-other = "Web yöneticisine e-posta"
+other = "Web yöneticisine e-posta gönder"
 
 [not-found-template-useful-links]
 other = "Yararlı linkler"
@@ -266,7 +266,7 @@ other = "Yararlı linkler"
 other = "Eclipse proje arşivleri"
 
 [not-found-template-project-downloads]
-other = "Eclipse project indirmeleri"
+other = "Eclipse proje indirme bağlantıları"
 
 [faq-list-heading]
 other = "İçindekiler"
@@ -305,7 +305,7 @@ other = "İletişim"
 other = "Günün Planı"
 
 [agenda-legend]
-other = "Efsane"
+other = "Açıklama/Sembol"
 
 [agenda-sessions]
 other = "Gündem"
