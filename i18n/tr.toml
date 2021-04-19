@@ -26,7 +26,7 @@ other = "Yönetim"
 other = "Etik Kurallar"
 
 [footer-foundation-logo-artwork-text]
-other = "Logo ve Çizim"
+other = "Logo ve Görsel"
 
 [footer-foundation-board-of-directors-text]
 other = "Yönetim Kurulu"
@@ -191,7 +191,7 @@ other = "Ara"
 other = "Lisanslar:"
 
 [project-single-tags-label]
-other = " Etiketler"
+other = "Etiketler"
 
 [project-summary-read-more]
 other = "Devamını oku..."
@@ -251,7 +251,7 @@ other = "Web sitesi <a href='//eclipse.org/legal/privacy.php'>gizlilik politikas
 other = "Yasal Belgeler"
 
 [not-found-template-logos-artwork]
-other = "Logolar ve Çizimler"
+other = "Logolar ve Görseller"
 
 [not-found-template-webmaster-faq]
 other = "Web yöneticisi SSS"
