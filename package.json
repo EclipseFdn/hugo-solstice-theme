@@ -26,7 +26,8 @@
     "axios": "^0.21.1",
     "eclipsefdn-solstice-assets": "0.0.153",
     "json2yaml": "^1.1.0",
-    "parse-link-header": "^1.0.1"
+    "parse-link-header": "^1.0.1",
+    "toml": "^3.0.0"
   },
   "browserslist": "last 5 version, > 0.2%, not dead, IE 11"
 }

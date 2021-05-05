@@ -1,5 +1,5 @@
 [eclipse-foundation-text]
-other = "Eclipse Vakfı"
+other = "Eclipse Foundation"
 
 [navbar-manage-cookies-label]
 other = "Çerezleri Yönet"
@@ -182,7 +182,7 @@ other = "IDE ve Araçlar"
 other = "Yeni Gelen Forumu"
 
 [footer-copyright-text]
-other = "Copyright &copy; Eclipse Vakfı. Tüm hakları saklıdır."
+other = "Copyright &copy; Eclipse Foundation. Tüm hakları saklıdır."
 
 [search-section-label]
 other = "Ara"
