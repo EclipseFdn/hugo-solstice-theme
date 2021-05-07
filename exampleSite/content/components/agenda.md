@@ -79,7 +79,7 @@ Targets ./data/en/default/day_2.yaml:
 Targets ./data/en/default/day_2.yaml:  
 
 
-{{< events/agenda title="Day 2 Agenda">}}
+{{< events/agenda title="Day 2 Agenda" src="day_2">}}
 
 ---
 
