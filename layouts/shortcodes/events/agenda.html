@@ -167,7 +167,17 @@ span.eclipsefdn-agenda-legend-icon-{{ urlize .id }}::after {
             {{ end }}
           </td>
           {{ else }}
-          <td>{{ .time }}</td>
+            {{if .times }}
+              <td>
+                <ul style="list-style: none; padding: 0; margin: 0">
+                  {{range .times}}
+                    <li>{{ . }}</li>
+                  {{end}}
+                </ul>
+              </td>
+            {{else}}
+              <td>{{.time}}</td>
+            {{end}}
           {{ end }}
           <!-- Write the slide column if it has been set -->
           {{ if $has_slides }}

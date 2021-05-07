@@ -105,6 +105,7 @@ Targets ./data/en/no_types/agenda.yaml:
 
 Targets ./data/en/active/agenda.yaml:
 
+Adding a "times" list into the items in agenda.yaml above will show multiple times like last 2 rows below
 
 {{< events/agenda event="active">}}
 
@@ -114,6 +115,7 @@ Targets ./data/en/active/agenda.yaml:
 
 Targets ./data/en/slides/agenda.yaml:
 
+Adding a "times" list into the items in agenda.yaml above will show multiple times like last 2 rows below
 
 {{< events/agenda event="slides">}}
 
