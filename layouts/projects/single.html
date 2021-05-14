@@ -1,7 +1,7 @@
 {{ define "main" }}
 	<ul class="nav nav-tabs" id="main-tabs" role="tablist">
 		<li role="presentation" class="active">
-			<a class="active"id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+			<a class="active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
 		</li>
 	</ul>
 	<div class="tab-content">
@@ -11,6 +11,9 @@
 			</div>
 			<h2><strong>{{ i18n "project-single-licenses-label" }}</strong></h2>
 			<p>{{ .Params.license }}</p>
+			<div class="btn-group">
+				<a href="{{ .Params.website }}" class="btn btn-sm btn-warning details-link">{{ i18n "project-summary-website-label" }}</a>
+			</div>
 		</div>
 	</div>
 {{ end }}
