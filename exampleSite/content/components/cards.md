@@ -17,3 +17,6 @@ hide_sidebar: true
 
 ## Horizontal cards default
 {{< cards source="cards_sample" containerClass="col-xs-24">}}
+
+## Colored cards
+{{< cards source="cards_branding" containerClass="col-xs-24 col-sm-12" useMatchHeight="true">}}
