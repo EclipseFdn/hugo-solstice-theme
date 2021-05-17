@@ -20,3 +20,6 @@ hide_sidebar: true
 
 ## Colored cards
 {{< cards source="cards_branding" containerClass="col-xs-24 col-sm-12" useMatchHeight="true">}}
+
+## Complex Example
+{{< cards source="cards_mixed" containerClass="col-xs-24 col-sm-12" useMatchHeight="true">}}
