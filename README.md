@@ -4,12 +4,22 @@
 
 ## Getting Started
 
+Dependencies:
+
+
+| Program | Version |
+|---------|---------|
+| node.js | ~ 12.22.0 |
+| npm | ~ 7.11 |
+| Hugo | > 0.76 |
+| Git | > 2.31 |
+| Make | > 4.3 |
+
+
 Install dependencies, build assets and start a webserver:
 
 ```bash
-npm install
-npm run build
-hugo server --source=exampleSite --themesDir="../../" 
+make run
 ```
 
 ### Getting Started (Windows)
