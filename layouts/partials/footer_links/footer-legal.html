@@ -1,4 +1,4 @@
-<section class="col-sm-6 hidden-print" id="footer-legal">
+<section class="{{- .Params.footer_section_legal_class | default .Site.Params.footer_section_legal_class | default "col-sm-6 hidden-print"}}" id="footer-legal">
   <h2 class="section-title">{{ i18n "footer-legal-section-text" }}</h2>
   <ul class="nav">
     <li><a href="https://www.eclipse.org/legal/privacy.php">{{ i18n "footer-legal-privacy-policy-text" }}</a></li>

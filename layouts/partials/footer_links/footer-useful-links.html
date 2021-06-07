@@ -1,4 +1,4 @@
-<section class="col-sm-6 hidden-print" id="footer-useful-links">
+<section class="{{- .Params.footer_section_useful_links_class | default .Site.Params.footer_section_useful_links_class | default "col-sm-6 hidden-print"}}" id="footer-useful-links">
   <h2 class="section-title">{{ i18n "footer-useful-links-section-text" }}</h2>
   <ul class="nav">
     <li><a href="https://bugs.eclipse.org/bugs/">{{ i18n "footer-useful-links-report-bug-text" }}</a></li>

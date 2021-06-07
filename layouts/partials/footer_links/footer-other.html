@@ -1,4 +1,4 @@
-<section class="col-sm-6 hidden-print" id="footer-other">
+<section class="{{- .Params.footer_section_other_class | default .Site.Params.footer_section_other_class | default "col-sm-6 hidden-print"}}" id="footer-other">
   <h2 class="section-title">{{ i18n "footer-other-section-text" }}</h2>
   <ul class="nav">
     <li><a href="https://www.eclipse.org/ide/">{{ i18n "footer-other-tools-text" }}</a></li>
