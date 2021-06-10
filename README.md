@@ -22,6 +22,20 @@ Install dependencies, build assets and start a webserver:
 make run
 ```
 
+To run npm watch and hugo server at the same time:
+
+In one terminal:
+
+```bash
+npm run watch
+```
+
+Once above process is done, in another terminal:
+
+```bash
+make run
+```
+
 ### Getting Started (Windows)
 
 To install our dependencies on Windows, replace the previous `npm install`  with this one:
