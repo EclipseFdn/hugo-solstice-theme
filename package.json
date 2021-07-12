@@ -24,9 +24,8 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "axios": "^0.21.1",
-    "eclipsefdn-solstice-assets": "0.0.157",
+    "eclipsefdn-solstice-assets": "0.0.159",
     "json2yaml": "^1.1.0",
-    "laravel-mix-transpile-node-modules": "^2.0.1",
     "parse-link-header": "^1.0.1",
     "toml": "^3.0.0"
   },
