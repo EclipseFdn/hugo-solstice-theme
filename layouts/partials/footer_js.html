@@ -7,8 +7,6 @@
   {{- with .Site.Params.hugo_js }}
     <script src="{{ . | relURL }}"></script>
   {{ end }}
-{{ else }}
-    <script src="{{ "/js/solstice.hugo.js" | relURL }}"></script>
 {{ end }}
 
 <!-- Read in mustache templates registered in page scratch -->
@@ -29,16 +27,6 @@
   {{ range (.Page.Scratch.Get "news-container-ids") }}
     $("#{{ . }}").eclipseFdnApi({
       type: "newsItems"
-    });
-  {{ end }}
-  {{ if ne .Page.Params.show_featured_story false }}
-    $("{{ .Site.Params.featured_footer_selector | default "#featured-story" }}").eclipseFdnApi({
-      type: "featuredStory"
-    });
-  {{ end }}
-  {{ if ne .Page.Params.show_featured_footer false }}
-    $("{{ .Site.Params.featured_footer_selector | default "#featured-footer" }}").eclipseFdnApi({
-      type: "featuredFooter"
     });
   {{ end }}
 })(jQuery, document);
