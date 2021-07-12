@@ -1,5 +1,7 @@
 let mix = require('laravel-mix');
+
 require('laravel-mix-transpile-node-modules')
+mix.transpileNodeModules(['eclipsefdn-solstice-assets']);
 
 mix.options({uglify: {uglifyOptions: {compress: false, output: {comments: true}}}});
 
@@ -17,4 +19,3 @@ mix.webpackConfig({
 });
 
 mix.js(['js/main.js'], './static/js/solstice.js');
-mix.transpileNodeModules(['eclipsefdn-solstice-assets']);
