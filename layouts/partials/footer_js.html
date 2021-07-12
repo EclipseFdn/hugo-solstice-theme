@@ -7,8 +7,6 @@
   {{- with .Site.Params.hugo_js }}
     <script src="{{ . | relURL }}"></script>
   {{ end }}
-{{ else }}
-    <script src="{{ "/js/solstice.hugo.js" | relURL }}"></script>
 {{ end }}
 
 <!-- Read in mustache templates registered in page scratch -->
