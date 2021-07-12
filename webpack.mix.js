@@ -16,9 +16,5 @@ mix.webpackConfig({
   },
 });
 
-mix.options({
-  babelLoader: {
-      test: /\.(js?)$/,
-  }
-}).js(['js/main.js'], './static/js/solstice.js');
-//mix.transpileNodeModules(['eclipsefdn-solstice-assets']);
+mix.js(['js/main.js'], './static/js/solstice.js');
+mix.transpileNodeModules(['eclipsefdn-solstice-assets']);
