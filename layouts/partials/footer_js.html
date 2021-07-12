@@ -31,3 +31,9 @@
   {{ end }}
 })(jQuery, document);
 </script>
+
+<script>
+  if (eclipsefdn_adopters_configs.working_group && eclipsefdn_adopters_configs.ul_classes) {
+    eclipseFdnAdopters.getWGList({src_root: "https://api.eclipse.org/adopters", working_group: eclipsefdn_adopters_configs.working_group, ul_classes: eclipsefdn_adopters_configs.ul_classes});
+  }
+</script>
