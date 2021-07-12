@@ -18,4 +18,4 @@ mix.webpackConfig({
   },
 });
 
-mix.js(['js/main.js'], './static/js/solstice.js');
+mix.js(['./node_modules/eclipsefdn-solstice-assets/js/main.js'], './static/js/solstice.js');
