@@ -24,7 +24,7 @@
          {{ if isset .Page.Params "tagline" }}
         <div class="row">
           <div class="{{- .Params.jumbotron_tagline_class | default .Site.Params.jumbotron_tagline_class | default "col-sm-18 col-sm-offset-3"}}">
-            <p>{{ .Page.Params.tagline }}</p>
+            <p>{{ .Page.Params.tagline | safeHTML }}</p>
           </div>
         </div>
         {{end}} 
