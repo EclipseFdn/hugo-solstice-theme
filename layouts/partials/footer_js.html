@@ -33,8 +33,9 @@
 </script>
 
 <script>
-  (function (eclipseFdnAdopters, eclipsefdn_adopters_configs) {
+  (function (eclipseFdnAdopters) {
     if (
+      eclipsefdn_adopters_configs &&
       eclipsefdn_adopters_configs.working_group &&
       eclipsefdn_adopters_configs.ul_classes
     ) {
@@ -44,5 +45,5 @@
         ul_classes: eclipsefdn_adopters_configs.ul_classes,
       });
     }
-  })(eclipseFdnAdopters, eclipsefdn_adopters_configs);
+  })(eclipseFdnAdopters);
 </script>
