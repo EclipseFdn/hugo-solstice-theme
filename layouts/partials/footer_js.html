@@ -3,11 +3,11 @@
 {{- with .Site.Params.js | default "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/main.min.js"}}
 <script src="{{ . | relURL }}"></script>
 {{ end }}
-{{ if isset .Site.Params "hugo_js" }}
-  {{- with .Site.Params.hugo_js }}
-    <script src="{{ . | relURL }}"></script>
-  {{ end }}
+
+{{- with .Site.Params.hugo_js }}
+  <script src="{{ . | relURL }}"></script>
 {{ end }}
+
 
 <!-- Read in mustache templates registered in page scratch -->
 {{ range $key, $value := (.Page.Scratch.Get "mustache-templates") }}
@@ -30,4 +30,19 @@
     });
   {{ end }}
 })(jQuery, document);
+</script>
+
+<script>
+  (function (eclipseFdnAdopters, eclipsefdn_adopters_configs) {
+    if (
+      eclipsefdn_adopters_configs.working_group &&
+      eclipsefdn_adopters_configs.ul_classes
+    ) {
+      eclipseFdnAdopters.getWGList({
+        src_root: 'https://api.eclipse.org/adopters',
+        working_group: eclipsefdn_adopters_configs.working_group,
+        ul_classes: eclipsefdn_adopters_configs.ul_classes,
+      });
+    }
+  })(eclipseFdnAdopters, eclipsefdn_adopters_configs);
 </script>

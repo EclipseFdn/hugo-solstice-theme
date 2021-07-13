@@ -15,5 +15,8 @@
 
 <div id="{{ $container_id }}" class="{{ $class }}"></div>
 <script>
-  eclipseFdnAdopters.getWGList({src_root: "https://api.eclipse.org/adopters", working_group: "{{ $working_group }}", ul_classes: "{{ $ul_classes }}"})
+  var eclipsefdn_adopters_configs = {
+    working_group: "{{ $working_group }}",
+    ul_classes: "{{ $ul_classes }}"
+  }
 </script>
