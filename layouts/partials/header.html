@@ -1,4 +1,4 @@
-<!-- 
+<!--
   Copyright (c) 2018 Eclipse Foundation, Inc.
 
   This program and the accompanying materials are made available under the
@@ -13,6 +13,7 @@
 {{- partial "google_tag_manager_no_script.html" . }}
 <a class="sr-only" href="#content">{{ i18n "navigation-content-skip" }}</a>
 <header class="header-wrapper{{- with .Params.header_wrapper_class | default .Site.Params.header_wrapper_class }} {{ . }}{{end}}" id="header-wrapper">
+  {{ partial "toolbar.html" . }}
   {{ partial "navbar.html" . }}
   {{ partial "jumbotron.html" . }}
 </header>
