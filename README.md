@@ -22,12 +22,12 @@ Install dependencies, build assets and start a webserver:
 make run
 ```
 
-To run npm watch and hugo server at the same time:
+To run yarn watch and hugo server at the same time:
 
 In one terminal:
 
 ```bash
-npm run watch
+yarn run watch
 ```
 
 Once above process is done, in another terminal:
@@ -39,17 +39,17 @@ make run
 ### Getting Started (Windows)
 
 To install our dependencies on Windows, replace the previous `npm install`  with this one:
-  
+
 ```bash
 set NODE_ENV=production && npm install
 ```
 
 #### Alternative Solution
-  
+
 Install [win-node-en](https://github.com/laggingreflex/win-node-env) globally and then install our dependencies by following the steps from our [Getting Started](https://github.com/EclipseFdn/hugo-solstice-theme#getting-started) section.
 
 ```bash
-npm install -g win-node-env
+yarn add -g win-node-env
 ```
 
 ### Known Issues
@@ -80,4 +80,4 @@ Have a bug or a feature request? Please search for existing and closed issues. I
 
 ## Copyright and License
 
-Copyright 2018-2020 the [Eclipse Foundation, Inc.](https://www.eclipse.org) and the [hugo-solstice-theme authors](https://github.com/eclipsefdn/hugo-solstice-theme/graphs/contributors). Code released under the [Eclipse Public License Version 2.0 (EPL-2.0)](https://github.com/jakartaee/jakartaee.github.io/blob/src/LICENSE). 
+Copyright 2018-2020 the [Eclipse Foundation, Inc.](https://www.eclipse.org) and the [hugo-solstice-theme authors](https://github.com/eclipsefdn/hugo-solstice-theme/graphs/contributors). Code released under the [Eclipse Public License Version 2.0 (EPL-2.0)](https://github.com/jakartaee/jakartaee.github.io/blob/src/LICENSE).

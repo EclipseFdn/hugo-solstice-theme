@@ -1,11 +1,11 @@
-install:; npm ci
-build: install; npm run build
+install:; yarn install --frozen-lockfile
+build: install; yarn run build
 run: build; hugo server -s exampleSite --themesDir=../..
 clean:;
 	rmdir node_modules
-	rm package-lock.json
+	rm yarn.lock
 release: clean;
-	npm install
-	npm run production
+	yarn
+	yarn run production
 	git add .
 	git commit -m "prepare new release" -s
