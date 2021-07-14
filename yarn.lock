@@ -2481,10 +2481,10 @@ duplexer3@^0.1.4:
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
-eclipsefdn-solstice-assets@0.0.162:
-  version "0.0.162"
-  resolved "https://registry.yarnpkg.com/eclipsefdn-solstice-assets/-/eclipsefdn-solstice-assets-0.0.162.tgz#df538d5ff56fdac15321b336eddc1274100c8a1a"
-  integrity sha512-K8gYPdqwiMJxaoSk4wPJXi9NzF8xjPmS9nJwcgONZRzR9/cRQ2CNJB38xuFPiuc+pY1m6AyY00szNvHSkSrrdg==
+eclipsefdn-solstice-assets@0.0.163:
+  version "0.0.163"
+  resolved "https://registry.yarnpkg.com/eclipsefdn-solstice-assets/-/eclipsefdn-solstice-assets-0.0.163.tgz#804685ebe3caecf7664a81de83eb0f9269b4928f"
+  integrity sha512-sBLiWnMT2C/FHgN7s9/XGv7cP4fZqeIi2ac9aBlaR3l8DUA5ts0xOSOVvWUJuHb9SWE5pHVfqh0HdMgyShnmCQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.12.1"
     "@babel/plugin-syntax-class-properties" "^7.12.1"
@@ -2494,6 +2494,7 @@ eclipsefdn-solstice-assets@0.0.162:
     browserslist "^4.16.6"
     cookieconsent "^3.1.0"
     core-js "^3.15.2"
+    element-closest-polyfill "^1.0.4"
     feather-icons "^4.7.0"
     file-loader "^6.2.0"
     font-awesome "^4.7.0"
@@ -2519,6 +2520,11 @@ electron-to-chromium@^1.3.723:
   version "1.3.775"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.775.tgz#046517d1f2cea753e06fff549995b9dc45e20082"
   integrity sha512-EGuiJW4yBPOTj2NtWGZcX93ZE8IGj33HJAx4d3ouE2zOfW2trbWU+t1e0yzLr1qQIw81++txbM3BH52QwSRE6Q==
+
+element-closest-polyfill@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/element-closest-polyfill/-/element-closest-polyfill-1.0.4.tgz#479706b479e258bc9dd5c4fbebe3efc580bdfab6"
+  integrity sha512-Bu9+TU0GXZvYXJuyXFgwcoOFNt0qsj+c4m7/gqzoHhZhL3D3xMTxzmAFgwu4LabHNCqXgymauGtZSCKV2oHIGg==
 
 elliptic@^6.5.3:
   version "6.5.4"
