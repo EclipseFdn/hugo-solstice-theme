@@ -2481,10 +2481,10 @@ duplexer3@^0.1.4:
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
-eclipsefdn-solstice-assets@0.0.163:
-  version "0.0.163"
-  resolved "https://registry.yarnpkg.com/eclipsefdn-solstice-assets/-/eclipsefdn-solstice-assets-0.0.163.tgz#804685ebe3caecf7664a81de83eb0f9269b4928f"
-  integrity sha512-sBLiWnMT2C/FHgN7s9/XGv7cP4fZqeIi2ac9aBlaR3l8DUA5ts0xOSOVvWUJuHb9SWE5pHVfqh0HdMgyShnmCQ==
+eclipsefdn-solstice-assets@0.0.164:
+  version "0.0.164"
+  resolved "https://registry.yarnpkg.com/eclipsefdn-solstice-assets/-/eclipsefdn-solstice-assets-0.0.164.tgz#539c2d53da82b012c81ef9a6dc850cdb29aa2529"
+  integrity sha512-++2ucZuG3uBXcuOWPSwXnYwqczlDVoQcpdQ/cBeX2/q8AXDesxCWJQPXA6amkMBdV/s53GilysxHiQmAxUgksA==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.12.1"
     "@babel/plugin-syntax-class-properties" "^7.12.1"
