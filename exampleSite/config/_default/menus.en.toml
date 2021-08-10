@@ -4,31 +4,31 @@
     url = "#"
     weight = 2
     identifier = "examples"
-    
+
 [[main]]
     name = "Single Page"
     url = "/single_page/"
     weight = 1
     parent = "examples"
-    
+
 [[main]]
     name = "News sample"
     url = "/news/"
     weight = 2
     parent = "examples"
-    
+
 [[main]]
     name = "Membership sample"
     url = "/membership/"
     weight = 3
     parent = "examples"
-    
+
 [[main]]
     name = "Events sample"
     url = "/events/"
     weight = 3
     parent = "examples"
-    
+
 [[main]]
     name = "FAQ sample"
     url = "/faq/"
@@ -62,7 +62,13 @@
 [[main]]
     name = "Custom Jumbotron"
     url = "/custom-jumbotron/"
-    weight = 8
+    weight = 9
+    parent = "examples"
+
+[[main]]
+    name = "Coming Soon"
+    url = "/coming-soon/"
+    weight = 10
     parent = "examples"
 
 [[main]]
@@ -103,68 +109,68 @@
     name = "Membership"
     url = "/components/members/"
     weight = 3
-    parent = "solstice"    
-    
+    parent = "solstice"
+
 [[main]]
     name = "Taxonomy list"
     url = "/components/taxonomy_list/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "Testimonials"
     url = "/components/testimonials/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "YouTube videos"
     url = "/components/youtube/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "FAQ"
     url = "/components/faq/"
     weight = 4
     parent = "solstice"
-    
+
 [[main]]
     name = "Featured Footer"
     url = "/components/featured_footer/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "Featured Story"
     url = "/components/featured_story/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "Project list"
     url = "/components/project_list/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "EclipseFdn Project list"
     url = "/components/eclipsefdn_projects/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "HTML Tables"
     url = "/components/tables/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "Text Target"
     url = "/components/text_target/"
     weight = 3
     parent = "solstice"
-    
+
 [[main]]
     name = "RSS Feed"
     url = "/components/rss/"
@@ -176,37 +182,37 @@
     url = "/components/user_display/"
     weight = 3
     parent = "events"
-    
+
 [[main]]
     name = "User Bios"
     url = "/components/user_bios/"
     weight = 3
     parent = "events"
-    
+
 [[main]]
     name = "Registration"
     url = "/components/registration/"
     weight = 3
     parent = "events"
-    
+
 [[main]]
     name = "Agenda"
     url = "/components/agenda/"
     weight = 3
     parent = "events"
-    
+
 [[main]]
     name = "Newsroom News"
     url = "/components/newsroom/news/"
     weight = 3
     parent = "dynamic"
-    
+
 [[main]]
     name = "Newsroom Events"
     url = "/components/newsroom/events/"
     weight = 3
     parent = "dynamic"
-    
+
 [[main]]
     name = "News"
     url = "/components/news/"
@@ -218,13 +224,13 @@
     url = "/components/events/"
     weight = 3
     parent = "deprecated"
-    
+
 [[sidebar]]
     name = "Hugo Solstice Theme"
     url = "/"
     weight = 3
     identifier = "home"
-      
+
 [[sidebar]]
     name = "Component list"
     url = "/components"
@@ -232,29 +238,29 @@
     parent = "home"
     pre = "<i class=\"fa fa-chevron-right fa-fw\"></i>"
     identifier = "component-list"
-    
+
 [[sidebar]]
-    name = "GitHub repository" 
+    name = "GitHub repository"
     url = "https://github.com/EclipseFdn/hugo-solstice-theme"
     weight = 2
     parent = "home"
     pre = "<i class=\"fa fa-github fa-fw\"></i>"
 
 [[sidebar]]
-    name = "Translation Guide" 
+    name = "Translation Guide"
     url = "/translations"
     weight = 3
     parent = "home"
     identifier = "translation-guide"
-    
+
 [[sidebar]]
-    name = "Translation Guide 1" 
+    name = "Translation Guide 1"
     url = "/translations"
     weight = 1
     parent = "translation-guide"
-    
+
 [[sidebar]]
-    name = "Translation Guide 2" 
+    name = "Translation Guide 2"
     url = "/translations"
     weight = 1
     parent = "translation-guide"
@@ -293,7 +299,7 @@
     url = "/third-parent/test-children/test-children-children-2"
     weight = 2
     parent = "test-children"
-    
+
 [[sidebar]]
     name = "Membership"
     url = "#"
