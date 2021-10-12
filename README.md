@@ -1,5 +1,11 @@
 # hugo-solstice-theme
 
+---
+**NOTE**
+
+This project was migrated to [Eclipse Gitlab](https://gitlab.eclipse.org/eclipsefdn/it/webdev/hugo-solstice-theme) on October 12, 2021.
+---
+
 ## Getting Started
 
 Dependencies:
